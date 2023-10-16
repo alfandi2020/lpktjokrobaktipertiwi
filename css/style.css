@@ -2930,7 +2930,8 @@ blockquote:before {
 .logo-footer img {
     height: auto;
 	width: 100%;
-	max-width: 50px;
+	max-width: 75px;
+    margin: 3px;
 }
 .logo-header span,
 .logo-footer span {
