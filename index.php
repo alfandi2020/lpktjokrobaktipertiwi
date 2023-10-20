@@ -937,7 +937,10 @@
 									Rusdiyanto +628119401954 <br>
 									Syamsul Rofik +6285714243325 <br>
 									Endrik +6281227640349</li>
-								<li><i class="ti-email"></i><strong>email</strong>info@lpktjokrobaktipertiwi.id</li>
+								<li><i class="ti-email"></i>
+								<strong>email</strong>info@lpktjokrobaktipertiwi.id
+								marketing@lpktjokrobaktipertiwi.id
+							</li>
                             </ul>
                         </div>
                     </div>
