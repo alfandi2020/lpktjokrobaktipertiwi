@@ -352,29 +352,9 @@
 				</div>
 			</div>
 			<br><br>
-            <div class="section-full bg-white content-inner-2 project-slider" style="background-image:url(images/background/bg11.jpg); background-repeat:no-repeat;
-				background-position:right bottom;">
+            <div class="section-full bg-white content-inner-2">
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col-lg-6 col-md-6 p-lr0">
-							<div class="project-carousel-2 owl-carousel owl-btn-center-lr owl-btn-1 black  wow fadeInLeft" data-wow-delay="0.2s"  data-wow-duration="2s">
-								<div class="item">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/portfolio/construct/image_1.jpg" alt="">
-									</div>
-								</div>
-								<div class="item">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/portfolio/construct/image_2.jpg" alt="">
-									</div>
-								</div>
-								<div class="item">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/portfolio/construct/image_3.jpg" alt="">
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class="col-lg-6 col-md-6">
 							<div class="about-content wow fadeIn" data-wow-delay="0.2s"  data-wow-duration="2s">
 								<div class="section-head style2">
@@ -402,6 +382,26 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-lg-6 col-md-6 p-lr0">
+							<div class="project-carousel-2 owl-carousel owl-btn-center-lr owl-btn-1 black  wow fadeInLeft" data-wow-delay="0.2s"  data-wow-duration="2s">
+								<div class="item">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
+										<img src="images/portfolio/construct/image_1.jpg" alt="">
+									</div>
+								</div>
+								<div class="item">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
+										<img src="images/portfolio/construct/image_2.jpg" alt="">
+									</div>
+								</div>
+								<div class="item">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
+										<img src="images/portfolio/construct/image_3.jpg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -935,7 +935,7 @@
                             <ul>
                                 <li><i class="ti-location-pin"></i><strong>address</strong>  KIP. JL. Puloagadung No. 24 Kel. Jatinegara Kec. Cakung, Jakarta Timur, DKI Jakarta, Indonesia 6221-4605741</li>
                                 <li><i class="ti-mobile"></i><strong>phone</strong>
-									Hartono Yacob <a href="wa.me/628176877606"> </a> <br>
+									Hartono Yacob +628176877606 <br>
 									Rusdiyanto +628119401954 <br>
 									Syamsul Rofik +6285714243325 <br>
 									Endrik +6281227640349</li>
