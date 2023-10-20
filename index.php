@@ -234,20 +234,20 @@
 								</ul>
 							</li>
 							<li>
-								<a href="javascript:;">Berita</a>
+								<a href="#berita">Berita</a>
 							</li>
 							<li>
 								<a href="#kontak">Kontak</a>
 							</li>
 						</ul>	
-						<div class="dlab-social-icon">
+						<!-- <div class="dlab-social-icon">
 							<ul>
 								<li><a class="site-button facebook circle-sm outline fab fa-facebook-f" href="javascript:void(0);"></a></li>
 								<li><a class="site-button twitter circle-sm outline fab fa-twitter" href="javascript:void(0);"></a></li>
 								<li><a class="site-button linkedin circle-sm outline fab fa-linkedin-in" href="javascript:void(0);"></a></li>
 								<li><a class="site-button instagram circle-sm outline fab fa-instagram" href="javascript:void(0);"></a></li>
 							</ul>
-						</div>		
+						</div>		 -->
                     </div>
                 </div>
             </div>
@@ -289,36 +289,71 @@
 		<!-- Slider END -->
         <!-- contact area -->
         <div class="content-block">
-			<!-- Content Section -->
-			<div class="section-full content-inner const-about">
+			<!-- <div class="section-full content-inner const-about">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
 							<div class="radius-sm m-b30 img-ho1">
-								<img src="images/about/pic11.jpg" alt=""/>
+								<img src="images/about/pendidikan.png" alt=""/>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
 							<div class="content-bx1">
-								<!-- <div class="about-year">
-									<span>26</span>
-									<p>Years<br/>Experience<br/>Working</p>
-								</div> -->
 								<div class="section-head style2">
 									<h2 class="title">Pendidikan</h2>
-									<p>Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada vel. Praesent pharetra orci odio, ut mattis tellus</p>
+									<p>Memberikan <?= strtolower("EDUKASI DAN TRAINING KEPADA PARA PEMUDA INDONESIA DENGAN MEMBUKA DAN MELALUI TRAINING OVERSEAS KE NEGARA JEPANG, SEHINGGA PARA PEMUDA TSB DIHARAPKAN KETIKA PULANG NANTI MAMPU MEMBERIKAN KONTRIBUSI TERBAIK NYA UNTUK NEGARA INDONESIA.(DIHARAPKAN PADA SUATU HARI NANTI, DARI HASIL EDUKASI DAN TRAINING YANG DI DAPAT, PARA PEMUDA INDONESIA TERSEBUT JUGA MAMPU MEMBUAT LEMBAGA ATAU PROGRAM PENDIDIKAN SEJENIS).")?>
+									</p>
 								</div>
 								<a href="portfolio-details.html" class="site-button m-r10 m-b10 btnhover20">View Portfolio</a>
-								<a href="about-1.html" class="site-button black m-b10 btnhover20">About Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!-- Content Section End -->
+			<!-- About Us -->
+            <div class="section-full bg-white content-inner-2 project-slider" style="background-image:url(images/background/bg11.jpg); background-repeat:no-repeat;
+				background-position:right bottom;">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-6 p-lr0">
+							<div class="radius-sm m-b30 img-ho1">
+								<img src="images/about/pendidikan.png" alt=""/>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="about-content wow fadeIn" data-wow-delay="0.2s"  data-wow-duration="2s">
+								<div class="section-head style2">
+									<h2 class="title">Pendidikan</h2>
+									<p>Memberikan <?= strtolower("EDUKASI DAN TRAINING KEPADA PARA PEMUDA INDONESIA DENGAN MEMBUKA DAN MELALUI TRAINING OVERSEAS KE NEGARA JEPANG, SEHINGGA PARA PEMUDA TSB DIHARAPKAN KETIKA PULANG NANTI MAMPU MEMBERIKAN KONTRIBUSI TERBAIK NYA UNTUK NEGARA INDONESIA.(DIHARAPKAN PADA SUATU HARI NANTI, DARI HASIL EDUKASI DAN TRAINING YANG DI DAPAT, PARA PEMUDA INDONESIA TERSEBUT JUGA MAMPU MEMBUAT LEMBAGA ATAU PROGRAM PENDIDIKAN SEJENIS).")?>
+								</div>
+								<!-- <div class="m-b30">
+									<ul class="list-details">
+										<li>
+											<strong>Clients:</strong>
+											<span>Ethan Hunt</span>
+										</li>
+										<li>
+											<strong>Completion:</strong>
+											<span>February 5th, 2017</span>
+										</li>
+										<li>
+											<strong>Project Type:</strong>
+											<span>Villa, Residence</span>
+										</li>
+									</ul>
+								</div> -->
+								<div class="">
+									<a href="portfolio-details.html" class="site-button btnhover20">Selengkapnya</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Content Section End -->
-			<!-- About Us -->
+			<br><br>
             <div class="section-full bg-white content-inner-2 project-slider" style="background-image:url(images/background/bg11.jpg); background-repeat:no-repeat;
-			background-position:right bottom;">
+				background-position:right bottom;">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col-lg-6 col-md-6 p-lr0">
@@ -343,7 +378,7 @@
 						<div class="col-lg-6 col-md-6">
 							<div class="about-content wow fadeIn" data-wow-delay="0.2s"  data-wow-duration="2s">
 								<div class="section-head style2">
-									<h2 class="title">Our Latest Project Industrial <br/>Style Apartment</h2>
+									<h2 class="title">Kegiatan</h2>
 									<p>Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p>
 								</div>
 								<div class="m-b30">
@@ -785,10 +820,10 @@
             </div>
 			<!-- Testimonials End -->
 			<!-- Latest blog -->
-			<div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
+			<div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s" id="berita">
 				<div class="container">
 					<div class="section-head style2 text-center">
-						<h2 class="title">Latest blog post</h2>
+						<h2 class="title">Berita</h2>
 						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
 					</div>
 					<div class="blog-carousel owl-none owl-carousel">
@@ -881,16 +916,17 @@
                             </ul>
                         </div>
                     </div>
-					<div class="col-md-3 col-7 col-xl-2 col-lg-3 col-sm-6 footer-col-4">
+					<div class="col-md-3 col-7 col-xl-6 col-lg-3 col-sm-6 footer-col-4">
                         <div class="widget widget_services border-0">
-                            <h5 class="footer-title text-white">Useful Link</h5>
-                            <ul>
+                            <h5 class="footer-title text-white">Maps</h5>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <!-- <ul>
 								<li><a href="help-desk.html">Help Desk </a></li>
                                 <li><a href="shop.html">Shop</a></li>
                                 <li><a href="contact-1.html">Contact</a></li>
                                 <li><a href="portfolio-details.html">Portfolio</a></li>
                                 <li><a href="team-1.html">Team</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
 					<div class="col-md-6 col-xl-4 col-lg-3 col-sm-6 footer-col-4">
@@ -907,10 +943,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-12 col-xl-4 col-lg-4 col-sm-6 footer-col-4 ">
+                    <!-- <div class="col-md-12 col-xl-3 col-lg-4 col-sm-6 footer-col-4 ">
                         <div class="widget">
                             <h5 class="footer-title text-white">Subscribe To Our Newsletter</h5>
-							<!-- <p class="text-capitalize m-b20">Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the..</p> -->
                             <div class="subscribe-form m-b20">
 								<form class="dzSubscribe" action="script/mailchamp.php" method="post">
 									<div class="dzSubscribeMsg"></div>
@@ -922,15 +957,8 @@
 									</div>
 								</form>
 							</div>
-							<!-- <ul class="list-inline m-a0">
-								<li><a href="javascript:void(0);" class="site-button facebook circle "><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="javascript:void(0);" class="site-button google-plus circle "><i class="fab fa-google-plus-g"></i></a></li>
-								<li><a href="javascript:void(0);" class="site-button linkedin circle "><i class="fab fa-linkedin-in"></i></a></li>
-								<li><a href="javascript:void(0);" class="site-button instagram circle "><i class="fab fa-instagram"></i></a></li>
-								<li><a href="javascript:void(0);" class="site-button twitter circle "><i class="fab fa-twitter"></i></a></li>
-							</ul> -->
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

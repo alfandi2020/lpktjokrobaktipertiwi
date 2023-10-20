@@ -2961,7 +2961,7 @@ blockquote:before {
     }
 	.logo-header img, 
 	.logo-footer img {
-		max-width: 135px;
+		max-width: 42px;
 	}
     .is-fixed .logo-header a img,
     .is-fixed.header-curve .logo-header a img {
