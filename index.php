@@ -358,7 +358,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="about-content wow fadeIn" data-wow-delay="0.2s"  data-wow-duration="2s">
 								<div class="section-head style2 container">
-									<h1 class="bold text-right wow fadeInRight"><b>KEGIATAN</b></h1>
+									<h1 class="bold text-right wow fadeInRight"><b>KEGIATAN LPK TJOKROBAKTIPERTIWI</b></h1>
 									<!-- <p class="col-xl-4">Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p> -->
 								</div>
 								<!-- <div class="m-b30">
