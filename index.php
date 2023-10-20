@@ -355,13 +355,13 @@
             <div class="section-full bg-white content-inner-2">
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col-lg-6 col-md-6">
+						<div class="col-lg-4 col-md-6">
 							<div class="about-content wow fadeIn" data-wow-delay="0.2s"  data-wow-duration="2s">
-								<div class="section-head style2">
-									<h2 class="title">Kegiatan</h2>
-									<p>Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p>
+								<div class="section-head style2 container">
+									<h1 class="bold text-right wow fadeInRight"><b>KEGIATAN</b></h1>
+									<!-- <p class="col-xl-4">Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p> -->
 								</div>
-								<div class="m-b30">
+								<!-- <div class="m-b30">
 									<ul class="list-details">
 										<li>
 											<strong>Clients:</strong>
@@ -376,27 +376,27 @@
 											<span>Villa, Residence</span>
 										</li>
 									</ul>
-								</div>
-								<div class="">
+								</div> -->
+								<!-- <div class="">
 									<a href="portfolio-details.html" class="site-button btnhover20">View Portfolio</a>
-								</div>
+								</div> -->
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6 p-lr0">
+						<div class="col-lg-8 col-md-6 p-lr0">
 							<div class="project-carousel-2 owl-carousel owl-btn-center-lr owl-btn-1 black  wow fadeInLeft" data-wow-delay="0.2s"  data-wow-duration="2s">
 								<div class="item">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/portfolio/construct/image_1.jpg" alt="">
+										<img height="900" src="images/kegiatan1.png" alt="">
 									</div>
 								</div>
 								<div class="item">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/portfolio/construct/image_2.jpg" alt="">
+										<img height="200" src="images/kegiatan2.png" alt="">
 									</div>
 								</div>
 								<div class="item">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/portfolio/construct/image_3.jpg" alt="">
+										<img src="images/kegiatan3.png" alt="">
 									</div>
 								</div>
 							</div>
@@ -824,7 +824,7 @@
 				<div class="container">
 					<div class="section-head style2 text-center">
 						<h2 class="title">Berita</h2>
-						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+						<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
 					</div>
 					<div class="blog-carousel owl-none owl-carousel">
 						<div class="item">
@@ -906,13 +906,11 @@
                 <div class="row">
 					<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
                         <div class="widget widget_services border-0">
-                            <h5 class="footer-title text-white">Company</h5>
+                            <h5 class="footer-title text-white">Tentang</h5>
                             <ul>
-                                <li><a href="about-1.html">About Us</a></li>
-                                <li><a href="blog-grid-2.html">Blog</a></li>
-                                <li><a href="services-1.html">Services</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                <li><a href="portfolio-details.html">Projects </a></li>
+                                <li><a href="about-1.html">Visi dan Misi</a></li>
+                                <li><a href="blog-grid-2.html">Berita</a></li>
+                                <li><a href="blog-grid-2.html">Manajemen</a></li>
                             </ul>
                         </div>
                     </div>
