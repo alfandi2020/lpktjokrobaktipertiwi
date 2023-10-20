@@ -408,8 +408,8 @@
 			<div class="section-full bg-white content-inner-2 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
                 <div class="container">
                     <div class="section-head style2 text-center">
-						<h2 class="title m-b10">Design Projects</h2>
-						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+						<h2 class="title m-b10">PROGRAM</h2>
+						<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
 					</div>
 					<div class="row">
 						<div class="col-lg-12 text-center">
