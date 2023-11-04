@@ -23,15 +23,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!--[if lt IE 9]>
-	<script src="js/html5shiv.min.js"></script>
-	<script src="js/respond.min.js"></script>
+	<script src="<?= base_url() ?>assets/asset_fr/js/html5shiv.min.js"></script>
+	<script src="<?= base_url() ?>assets/asset_fr/js/respond.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 	<!-- STYLESHEETS -->
-	<link rel="stylesheet" type="text/css" href="css/plugins.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-3.css">
-	<link rel="stylesheet" type="text/css" href="css/templete.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/plugins.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/style.css">
+	<link class="skin" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/skin/skin-3.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/templete.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Google Font -->
 	<style>
@@ -39,7 +39,7 @@
 	</style>
 	
 	<!-- REVOLUTION SLIDER CSS -->
-	<link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/revolution.min.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/css/revolution.min.css">
 
 </head>
 <body id="bg">
@@ -81,8 +81,8 @@
                     <!-- website logo -->
                     <div class="logo-header mostion logo-dark">
 						<a href="index.html">
-							<img src="images/log.png" height="10" alt="">
-							<img src="images/log2.png" height="10" alt="">
+							<img src="<?= base_url() ?>assets/asset_fr/images/log.png" height="10" alt="">
+							<img src="<?= base_url() ?>assets/asset_fr/images/log2.png" height="10" alt="">
 						</a>
 					</div>
                     <!-- nav toggle button -->
@@ -105,7 +105,7 @@
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
 						<div class="logo-header d-md-block d-lg-none">
-							<a href="index.html"><img src="images/logo-3.png" alt=""></a>
+							<a href="index.html"><img src="<?= base_url() ?>assets/asset_fr/images/logo-3.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
 							<li class="active has-mega-menu"> <a href="javascript:;">Tentang<i class="fa fa-chevron-down"></i></a>
@@ -268,12 +268,12 @@
 								<!-- SLIDE  -->
 								<!-- <li data-index="rs-100" data-transition="slideoververtical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> -->
 									<!-- MAIN IMAGE -->
-									<!-- <img src="images/main-slider/dummy.png"  alt=""  data-lazyload="images/main-slider/slide9.jpg" data-bgposition="center center" data-kenburns="on" data-duration="4000" data-ease="Power3.easeInOut" data-scalestart="150" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="-100 0" data-offsetend="-100 0" data-bgparallax="4" class="rev-slidebg" data-no-retina> -->
+									<!-- <img src="<?= base_url() ?>assets/asset_fr/images/main-slider/dummy.png"  alt=""  data-lazyload="images/main-slider/slide9.jpg" data-bgposition="center center" data-kenburns="on" data-duration="4000" data-ease="Power3.easeInOut" data-scalestart="150" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="-100 0" data-offsetend="-100 0" data-bgparallax="4" class="rev-slidebg" data-no-retina> -->
 									<!-- LAYER NR. 1 -->
 									
 									<!-- BACKGROUND VIDEO LAYER -->
 									<video width="100%" height="100%" loop="true" autoplay="autoplay" muted>
-										<source src="video/video6.mp4" type="video/mp4" />
+										<source src="<?= base_url() ?>assets/asset_fr/video/video6.mp4" type="video/mp4" />
 									  </video>
 									  
 
@@ -294,7 +294,7 @@
 					<div class="row align-items-center">
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
 							<div class="radius-sm m-b30 img-ho1">
-								<img src="images/about/pendidikan.png" alt=""/>
+								<img src="<?= base_url() ?>assets/asset_fr/images/about/pendidikan.png" alt=""/>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
@@ -318,7 +318,7 @@
 					<div class="row align-items-center">
 						<div class="col-lg-6 col-md-6 p-lr0">
 							<div class="radius-sm m-b30 img-ho1">
-								<img src="images/about/pendidikan.png" alt=""/>
+								<img src="<?= base_url() ?>assets/asset_fr/images/about/pendidikan.png" alt=""/>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6">
@@ -386,17 +386,17 @@
 							<div class="project-carousel-2 owl-carousel owl-btn-center-lr owl-btn-1 black  wow fadeInLeft" data-wow-delay="0.2s"  data-wow-duration="2s">
 								<div class="item">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img height="900" src="images/kegiatan1.png" alt="">
+										<img height="900" src="<?= base_url() ?>assets/asset_fr/images/kegiatan1.png" alt="">
 									</div>
 								</div>
 								<div class="item">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img height="200" src="images/kegiatan2.png" alt="">
+										<img height="200" src="<?= base_url() ?>assets/asset_fr/images/kegiatan2.png" alt="">
 									</div>
 								</div>
 								<div class="item">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-										<img src="images/kegiatan3.png" alt="">
+										<img src="<?= base_url() ?>assets/asset_fr/images/kegiatan3.png" alt="">
 									</div>
 								</div>
 							</div>
@@ -428,7 +428,7 @@
 							<ul id="masonry" class="dlab-gallery-listing gallery mfp-gallery text-center">
 								<li class="card-container col-lg-4 col-md-6 col-sm-6 royal">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-										<img src="images/portfolio/construct/image_2.jpg" alt=""/>
+										<img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_2.jpg" alt=""/>
 										<div class="overlay-bx">
 											<div class="portinner">
 												<div class="port-up">
@@ -444,7 +444,7 @@
 								</li>
 								<li class="card-container col-lg-4 col-md-6 col-sm-6 standard penthouse">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-										<img src="images/portfolio/construct/image_1.jpg" alt=""/>
+										<img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_1.jpg" alt=""/>
 										<div class="overlay-bx">
 											<div class="portinner">
 												<div class="port-up">
@@ -460,7 +460,7 @@
 								</li>
 								<li class="card-container col-lg-4 col-md-6 col-sm-6 royal">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-										<img src="images/portfolio/construct/image_3.jpg" alt=""/>
+										<img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_3.jpg" alt=""/>
 										<div class="overlay-bx">
 											<div class="portinner">
 												<div class="port-up">
@@ -476,7 +476,7 @@
 								</li>
 								<li class="card-container col-lg-4 col-md-6 col-sm-6 penthouse">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-										<img src="images/portfolio/construct/image_4.jpg" alt=""/>
+										<img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_4.jpg" alt=""/>
 										<div class="overlay-bx">
 											<div class="portinner">
 												<div class="port-up">
@@ -492,7 +492,7 @@
 								</li>
 								<li class="card-container col-lg-4 col-md-6 col-sm-6 standard">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-										<img src="images/portfolio/construct/image_5.jpg" alt=""/>
+										<img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_5.jpg" alt=""/>
 										<div class="overlay-bx">
 											<div class="portinner">
 												<div class="port-up">
@@ -508,7 +508,7 @@
 								</li>
 								<li class="card-container col-lg-4 col-md-6 col-sm-6 standard penthouse">
 									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-										<img src="images/portfolio/construct/image_6.jpg" alt=""/>
+										<img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_6.jpg" alt=""/>
 										<div class="overlay-bx">
 											<div class="portinner">
 												<div class="port-up">
@@ -539,7 +539,7 @@
 						<div class="item">
 							 <div class="project-info-box">
 								<div class="project-media">
-									<img src="images/our-services/construct/pic1.jpg" alt=""/>
+									<img src="<?= base_url() ?>assets/asset_fr/images/our-services/construct/pic1.jpg" alt=""/>
 								</div>
 								<div class="project-content">
 									<ul class="list-details">
@@ -569,7 +569,7 @@
 						<div class="item">
 							 <div class="project-info-box">
 								<div class="project-media">
-									<img src="images/our-services/construct/pic2.jpg" alt=""/>
+									<img src="<?= base_url() ?>assets/asset_fr/images/our-services/construct/pic2.jpg" alt=""/>
 								</div>
 								<div class="project-content">
 									<ul class="list-details">
@@ -684,7 +684,7 @@
 								<div class="dlab-border-right"></div>
 								<div class="dlab-media">
 									<a href="javascript:;">
-										<img width="358" height="460" alt="" src="images/our-team/pic1.jpg">
+										<img width="358" height="460" alt="" src="<?= base_url() ?>assets/asset_fr/images/our-team/pic1.jpg">
 									</a>
 								</div>
 								<div class="dlab-info">
@@ -705,7 +705,7 @@
 								<div class="dlab-border-right"></div>
 								<div class="dlab-media">
 									<a href="javascript:;">
-										<img alt="" src="images/our-team/pic2.jpg">
+										<img alt="" src="<?= base_url() ?>assets/asset_fr/images/our-team/pic2.jpg">
 									</a>
 								</div>
 								<div class="dlab-info">
@@ -726,7 +726,7 @@
 								<div class="dlab-border-right"></div>
 								<div class="dlab-media">
 									<a href="javascript:;">
-										<img alt="" src="images/our-team/pic3.jpg">
+										<img alt="" src="<?= base_url() ?>assets/asset_fr/images/our-team/pic3.jpg">
 									</a>
 								</div>
 								<div class="dlab-info">
@@ -747,7 +747,7 @@
 								<div class="dlab-border-right"></div>
 								<div class="dlab-media">
 									<a href="javascript:;">
-										<img alt="" src="images/our-team/pic4.jpg">
+										<img alt="" src="<?= base_url() ?>assets/asset_fr/images/our-team/pic4.jpg">
 									</a>
 								</div>
 								<div class="dlab-info">
@@ -776,7 +776,7 @@
 						<div class="item">
 							<div class="testimonial-12 text-white">
 								<div class="testimonial-pic">
-									<img src="images/our-team/pic12.jpg" alt="">
+									<img src="<?= base_url() ?>assets/asset_fr/images/our-team/pic12.jpg" alt="">
 								</div>
 								<div class="testimonial-detail">
 									<h4 class="testimonial-name m-t0 m-b5">David Matin</h4> 
@@ -790,7 +790,7 @@
 						<div class="item">
 							<div class="testimonial-12 text-white">
 								<div class="testimonial-pic">
-									<img src="images/our-team/pic13.jpg" alt="">
+									<img src="<?= base_url() ?>assets/asset_fr/images/our-team/pic13.jpg" alt="">
 								</div>
 								<div class="testimonial-detail">
 									<h4 class="testimonial-name m-t0 m-b5">David Matin</h4> 
@@ -804,7 +804,7 @@
 						<div class="item">
 							<div class="testimonial-12 text-white">
 								<div class="testimonial-pic">
-									<img src="images/our-team/pic14.jpg" alt="">
+									<img src="<?= base_url() ?>assets/asset_fr/images/our-team/pic14.jpg" alt="">
 								</div>
 								<div class="testimonial-detail">
 									<h4 class="testimonial-name m-t0 m-b5">David Matin</h4>
@@ -830,7 +830,7 @@
 						<div class="item">
 							<div class="blog-post post-style-2">
 								<div class="dlab-post-media dlab-img-effect zoom">
-									<a href="blog-single.html"><img src="images/blog/latest-blog/pic1.jpg" alt=""></a>
+									<a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/blog/latest-blog/pic1.jpg" alt=""></a>
 								</div>
 								<div class="dlab-post-info">
 									<div class="dlab-post-meta">
@@ -851,7 +851,7 @@
 						<div class="item">
 							<div class="blog-post post-style-2">
 								<div class="dlab-post-media dlab-img-effect zoom">
-									<a href="blog-single.html"><img src="images/blog/latest-blog/pic2.jpg" alt=""></a>
+									<a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/blog/latest-blog/pic2.jpg" alt=""></a>
 								</div>
 								<div class="dlab-post-info">
 									<div class="dlab-post-meta">
@@ -872,7 +872,7 @@
 						<div class="item">
 							<div class="blog-post post-style-2">
 								<div class="dlab-post-media dlab-img-effect zoom"> 
-									<a href="blog-single.html"><img src="images/blog/latest-blog/pic3.jpg" alt=""></a>
+									<a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/blog/latest-blog/pic3.jpg" alt=""></a>
 								</div>
 								<div class="dlab-post-info">
 									<div class="dlab-post-meta">
@@ -917,7 +917,7 @@
 					<div class="col-md-3 col-7 col-xl-6 col-lg-3 col-sm-6 footer-col-4">
                         <div class="widget widget_services border-0">
                             <h5 class="footer-title text-white">Maps</h5>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<iframe src="<?= base_url() ?>assets/asset_fr/https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             <!-- <ul>
 								<li><a href="help-desk.html">Help Desk </a></li>
                                 <li><a href="shop.html">Shop</a></li>
@@ -986,41 +986,41 @@
 </div>
 <!-- JAVASCRIPT FILES ========================================= -->
 <!-- JAVASCRIPT FILES ========================================= -->
-<script src="js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
-<script src="plugins/wow/wow.js"></script><!-- WOW JS -->
+<script src="<?= base_url() ?>assets/asset_fr/js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/wow/wow.js"></script><!-- WOW JS -->
 
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
-<script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
-<script src="plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
-<script src="plugins/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
-<script src="plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
-<script src="plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
-<script src="plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
-<script src="plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
-<script src="plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
-<script src="plugins/lightgallery/js/lightgallery-all.min.js"></script><!-- Lightgallery -->
-<script src="plugins/scroll/scrollbar.min.js"></script><!-- scroll -->
-<script src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
-<script src="js/dz.carousel.min.js"></script><!-- SORTCODE FUCTIONS  -->
-<script src="plugins/countdown/jquery.countdown.js"></script><!-- COUNTDOWN FUCTIONS  -->
-<script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
-<script src="plugins/rangeslider/rangeslider.js" ></script><!-- Rangeslider -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/lightgallery/js/lightgallery-all.min.js"></script><!-- Lightgallery -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/scroll/scrollbar.min.js"></script><!-- scroll -->
+<script src="<?= base_url() ?>assets/asset_fr/js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
+<script src="<?= base_url() ?>assets/asset_fr/js/dz.carousel.min.js"></script><!-- SORTCODE FUCTIONS  -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/countdown/jquery.countdown.js"></script><!-- COUNTDOWN FUCTIONS  -->
+<script src="<?= base_url() ?>assets/asset_fr/js/dz.ajax.js"></script><!-- CONTACT JS  -->
+<script src="<?= base_url() ?>assets/asset_fr/plugins/rangeslider/rangeslider.js" ></script><!-- Rangeslider -->
 
-<script src="js/jquery.lazy.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/js/jquery.lazy.min.js"></script>
 <!-- REVOLUTION JS FILES -->
-<script src="plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="plugins/revolution/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="js/rev.slider.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="<?= base_url() ?>assets/asset_fr/js/rev.slider.js"></script>
 <script>
 jQuery(document).ready(function() {
 	'use strict';
