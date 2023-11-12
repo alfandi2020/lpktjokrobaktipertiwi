@@ -1,25 +1,29 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller {
-	// private $param;
+class Home extends CI_Controller
+{
+    // private $param;
 
-	public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
-        // $this->load->library('Pdf');
-        // $this->load->model('M_admin');
         $this->load->helper(array('form', 'url'));
-        // $this->load->library(array('form_validation','Routerosapi'));
-        //cek jika user blm login maka redirect ke halaman login
-        if ($this->session->userdata('username', 'nama')  != true) {
-            $this->session->set_flashdata('massage', '<div class="alert alert-danger" role="alert">Maaf anda belum login !</div>');
-            redirect('login');
-        }
-	}
-	public function index()
-	{
-		// $this->load->view('body/header');
-		$this->load->view('id/index');
-		// $this->load->view('body/footer');
-	}
+        $this->load->helper('date');
+
+        $this->load->model('M_Article');
+        $this->load->model('M_Setting');
+    }
+
+    public function index()
+    {
+        $data = [
+            'title' => 'Home',
+            'pages' => 'id/pages/v_home',
+            'articles' => $this->M_Article->lists(),
+            'videotron' => $this->M_Setting->videotron()
+        ];
+
+        $this->load->view('id/index', $data);
+    }
 }
