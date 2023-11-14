@@ -4,10 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_Setting extends CI_Model
 {
-    var $table = 'v_menu';
-    var $column_order = array(null, 'menu_nama', 'menu_harga', 'menu_seo', 'kategori_nama');
-    var $order = array(null, 'menu_nama', 'menu_harga', 'menu_seo', 'kategori_nama');
-
     public function __construct()
     {
         parent::__construct();
@@ -16,20 +12,16 @@ class M_Setting extends CI_Model
 
     public function videotron()
     {
-        $query = $this->db->where('Id', '1')->get('videotron')->row_array();
+        $query = $this->db->where('Id', '1')->get('settings')->row_array();
         return $query;
     }
 
     public function update_videotron($data, $id)
     {
-        $query = $this->db->where('Id', $id)->get('videotron')->row_array();
+        $query = $this->db->where('Id', $id)->get('settings')->row_array();
 
-        $videotron = $query["nama_video"];
+        $videotron = $query["content"];
         $path = "assets/asset_fr/video/" . $videotron;
-
-        // var_dump($path);
-        // exit;
-
 
         if (file_exists($path)) {
             unlink($path);
@@ -42,7 +34,7 @@ class M_Setting extends CI_Model
             'max_size' => "",
             'max_height' => "",
             'max_width' => "",
-            'file_name' => $data["nama_video"]
+            'file_name' => $data["content"]
         );
 
         // var_dump($config);exit;
@@ -56,16 +48,44 @@ class M_Setting extends CI_Model
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             // After that you need to used redirect function instead of load view such as 
-            redirect("dash/settings/videotron/", $error);
+            redirect("dash/settings/", $error);
         } else {
             $this->db->where('Id', $id);
-            $this->db->update('videotron', $data);
+            $this->db->update('settings', $data);
             $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 			Videotron has been successfully updated.
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             // After that you need to used redirect function instead of load view such as 
-            redirect("dash/settings/videotron/");
+            redirect("dash/settings");
         }
+    }
+
+    public function visi()
+    {
+        $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
+        return $query;
+    }
+
+    public function misi()
+    {
+        $query = $this->db->where('kategori', 'misi')->get('settings')->row_array();
+        return $query;
+    }
+
+    public function update_visimisi($data_visi, $data_misi)
+    {
+        $this->db->where('kategori', 'visi');
+        $this->db->update('settings', $data_visi);
+
+        $this->db->where('kategori', 'misi');
+        $this->db->update('settings', $data_misi);
+
+        $this->session->set_flashdata('message_visimisi', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Visi misi has been successfully updated.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+        redirect("dash/settings");
     }
 }

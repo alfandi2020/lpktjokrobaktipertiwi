@@ -26,4 +26,16 @@ class Home extends CI_Controller
 
         $this->load->view('id/index', $data);
     }
+
+    public function tentang()
+    {
+        $data = [
+            'title' => 'Tentang',
+            'pages' => 'id/pages/v_about',
+            'visi' => $this->M_Setting->visi(),
+            'misi' => $this->M_Setting->misi()
+        ];
+
+        $this->load->view('id/index', $data);
+    }
 }

@@ -15,7 +15,7 @@
 
                     <!-- BACKGROUND VIDEO LAYER -->
                     <video width="100%" height="100%" loop="true" autoplay="autoplay" muted>
-                        <source src="<?= base_url() ?>assets/asset_fr/video/<?= $videotron['nama_video'] ?>" type="video/mp4" />
+                        <source src="<?= base_url() ?>assets/asset_fr/video/<?= $videotron['content'] ?>" type="video/mp4" />
                     </video>
 
 

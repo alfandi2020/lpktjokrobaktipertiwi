@@ -114,8 +114,7 @@
 						<!-- website logo -->
 						<div class="logo-header mostion logo-dark">
 							<a href="<?= base_url() ?>">
-								<img src="<?= base_url() ?>assets/asset_fr/images/log.png" alt="">
-								<img src="<?= base_url() ?>assets/asset_fr/images/log2.png" alt="">
+								<img src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt="">
 							</a>
 						</div>
 						<!-- nav toggle button -->
@@ -151,41 +150,8 @@
 								<a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/asset_fr/images/logo-3.png" alt=""></a>
 							</div>
 							<ul class="nav navbar-nav">
-								<li class="active has-mega-menu"> <a href="javascript:;">Tentang<i class="fa fa-chevron-down"></i></a>
-									<ul class="mega-menu">
-										<li><a href="javascript:;">Home</a>
-											<ul>
-												<li><a href="index-16.html">Home - Event Industry</a></li>
-												<li><a href="<?= base_url() ?>">Home - Default</a></li>
-												<li><a href="index-2.html">Home - Oil/Gas Plant</a></li>
-												<li><a href="index-3.html">Home - Steel Plant</a></li>
-											</ul>
-										</li>
-										<li> <a href="javascript:;">Home</a>
-											<ul>
-												<li><a href="index-4.html">Home - Factory</a></li>
-												<li><a href="index-5.html">Home - Construct</a></li>
-												<li><a href="index-6.html">Home - Solar Plant</a></li>
-												<li><a href="index-7.html">Home - Food Industry</a></li>
-											</ul>
-										</li>
-										<li> <a href="javascript:;">Home</a>
-											<ul>
-												<li><a href="index-8.html">Home - Agriculture</a></li>
-												<li><a href="index-9.html">Home - Ship Industry</a></li>
-												<li><a href="index-10.html">Home - Leather Industry</a></li>
-												<li><a href="index-11.html">Home - Nuclear Plant</a></li>
-											</ul>
-										</li>
-										<li> <a href="javascript:;">Home</a>
-											<ul>
-												<li><a href="index-12.html">Home - Beer Factory</a></li>
-												<li><a href="index-13.html">Home - Mining Industry</a></li>
-												<li><a href="index-14.html">Home - Car Industry</a></li>
-												<li><a href="index-15.html">Home - Plastic Industry</a></li>
-											</ul>
-										</li>
-									</ul>
+								<li>
+									<a href="<?= base_url('home/tentang') ?>">Tentang</a>
 								</li>
 
 								<li class="has-mega-menu"> <a href="javascript:;">Program<i class="fas fa-chevron-down"></i></a>
