@@ -16,7 +16,7 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="<?= base_url('article') ?>">Article</a>
+                        <a href="<?= base_url('dash/article') ?>">Article</a>
                     </li>
                     <li class="breadcrumb-item">Create</li>
                 </ol>
@@ -57,9 +57,15 @@
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="article_category" class="form-label">Category</label>
-                                        <select class="form-select input-air-primary digits" id="article_category" name="article_category">
-                                            <option <?php if ($article['id_category'] == "1") echo "selected"; ?> value="1">Tivo</option>
-                                            <option <?php if ($article['id_category'] == "2") echo "selected"; ?> value="2">Roxo</option>
+                                        <select class="form-select input-air-primary digits" id="article_category" name="article_category" required>
+                                            <option value="">--Pilih kategori</option>
+                                            <?php
+                                            foreach ($categories as $c) {
+                                            ?>
+                                                <option <?php if ($article['id_category'] == $c->Id) echo "selected"; ?> value="<?= $c->Id ?>"><?= $c->category_name ?></option>
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -82,7 +88,7 @@
                         </div>
                         <div class="card-footer text-end">
                             <button class="btn btn-primary me-3" type="submit">Update</button>
-                            <input class="btn btn-light" type="reset" value="Cancel">
+                            <a href="<?= base_url('dash/article') ?>" class="btn btn-light">Kembali</a>
                         </div>
                     </form>
                 </div>
@@ -113,7 +119,7 @@
                         </div>
                         <div class="card-footer text-end">
                             <button class="btn btn-primary me-3" type="submit">Update</button>
-                            <input class="btn btn-light" type="reset" value="Cancel">
+                            <a href="<?= base_url('dash/article') ?>" class="btn btn-light">Kembali</a>
                         </div>
                     </form>
                 </div>
@@ -149,12 +155,15 @@
                                 <div class="col-4">
                                     <div class="mb-3">
                                         <label for="article_category" class="form-label">Category</label>
-                                        <select class="form-select input-air-primary digits" id="article_category" name="article_category">
-                                            <option value="1">Tivo</option>
-                                            <option value="2">Roxo</option>
-                                            <option value="3">Wingo</option>
-                                            <option value="4">Cuba</option>
-                                            <option value="5">Koho</option>
+                                        <select class="form-select input-air-primary digits" id="article_category" name="article_category" required>
+                                            <option value="">--Pilih kategori</option>
+                                            <?php
+                                            foreach ($categories as $c) {
+                                            ?>
+                                                <option value="<?= $c->Id ?>"><?= $c->category_name ?></option>
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>

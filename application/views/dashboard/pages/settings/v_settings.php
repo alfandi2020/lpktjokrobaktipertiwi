@@ -15,9 +15,6 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item">
-                        <a href="<?= base_url('Settings') ?>">Article</a>
-                    </li>
                     <li class="breadcrumb-item">Settings</li>
                 </ol>
             </div>
@@ -92,5 +89,136 @@
                 </form>
             </div>
         </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header pb-0 card-no-border">
+                    <h5>Kategori konten</h5>
+                </div>
+                <form action="<?= base_url('dash/settings/add_category') ?>" method="post" class="form theme-form dark-input">
+                    <div class="card-body">
+
+                        <?= $this->session->flashdata('message_category') ?>
+                        <div class="row">
+                            <div class="col">
+                                <!-- <div class=""> -->
+                                <label for="category" class="form-label">Category</label>
+                                <div class="input-group">
+                                    <input class="form-control input-air-primary" type="text" placeholder="Article category" aria-label="Article category" aria-describedby="button-addon2" name="category_name">
+                                    <button class="btn btn-primary" id="button-addon2" type="submit">Submit</button>
+                                </div>
+                                <!-- <input type="text" class="form-control input-air-primary" name="category_name"> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama</th>
+                                            <th>Act.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($categories as $c) {
+                                        ?>
+                                            <tr>
+                                                <td><?= $no++; ?>.</td>
+                                                <td><?= $c->category_name ?></td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm">
+                                                        Edit
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header pb-0 card-no-border">
+                    <h5>Kontak</h5>
+                </div>
+                <form action="<?= base_url('dash/settings/update_contact') ?>" method="post" class="form theme-form dark-input">
+                    <div class="card-body">
+
+                        <?= $this->session->flashdata('message_contact') ?>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <textarea name="alamat" id="" cols="30" rows="5" class="form-control"><?= $alamat['content'] ?></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="telepon" class="form-label">Telepon</label>
+                                    <input type="hidden" id="hiddenInput" name="telepon" value='<?= $telepon['content'] ?>' class="form-control input-air-primary">
+                                    <div id="input_telepon" style="min-height: 160px;"><?= $telepon['content'] ?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="">
+                                    <label for="email" class="form-label">Email</label>
+                                    <!-- <textarea name="email" id="" cols="30" rows="6" class="form-control"><?= $email['content'] ?></textarea> -->
+                                    <input type="hidden" id="hiddenInput" name="email" value='<?= $email['content'] ?>' class="form-control input-air-primary">
+                                    <div id="input_email" style="min-height: 160px;"><?= $email['content'] ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-primary me-3" type="submit">Update</button>
+                        <input class="btn btn-light" type="reset" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
+
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    var quill = new Quill('#input_telepon', {
+        theme: 'snow',
+    });
+    quill.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='telepon']").value = quill.root.innerHTML;
+    });
+
+    document.getElementById('telepon').addEventListener('input', function() {
+        var content = this.innerHTML;
+        document.getElementById('hiddenInput').value = content;
+    });
+</script>
+<script>
+    var quill = new Quill('#input_email', {
+        theme: 'snow',
+    });
+    quill.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='email']").value = quill.root.innerHTML;
+    });
+
+    document.getElementById('email').addEventListener('input', function() {
+        var content = this.innerHTML;
+        document.getElementById('hiddenInput').value = content;
+    });
+</script>

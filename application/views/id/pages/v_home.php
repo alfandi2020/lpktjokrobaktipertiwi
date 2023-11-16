@@ -29,6 +29,30 @@
         </div>
     </div>
     <!-- Slider END -->
+    <!-- Latest blog END -->
+    <div class="section-full dlab-we-find bg-img-fix p-t20 p-b20 bg-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
+        <div class="container">
+            <div class="section-content">
+                <div class="client-logo-carousel mfp-gallery gallery owl-btn-center-lr owl-carousel owl-btn-3">
+                    <?php
+                    foreach ($partners as $p) {
+                    ?>
+                        <div class="item text-center">
+                            <!-- <div class="ow-client-logo">
+                                    <div class="client-logo">
+                                        <a href="javascript:void(0);">
+                                        </a>
+                                    </div>
+                                </div> -->
+                            <?= $p->nama_partner ?>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- contact area -->
     <div class="content-block">
         <!-- <div class="section-full content-inner const-about">
@@ -93,7 +117,7 @@
             </div>
         </div>
         <br><br>
-        <div class="section-full bg-white content-inner-2">
+        <div class="section-full bg-white content-inner-2" id="kegiatan">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-6">
@@ -146,129 +170,7 @@
                 </div>
             </div>
         </div>
-        <div class="section-full bg-white content-inner-2 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
-            <div class="container">
-                <div class="section-head style2 text-center">
-                    <h2 class="title m-b10">PROGRAM</h2>
-                    <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="site-filters m-b20 filters2">
-                            <ul class="filters" data-bs-toggle="buttons">
-                                <li data-filter="" class="btn active"><input type="radio"><a href="#"><i class="flaticon-worker"></i><span>Construction</span></a></li>
-                                <li data-filter="penthouse" class="btn"><input type="radio"><a href="#"><i class="flaticon-crane"></i><span>Architecture</span></a></li>
-                                <li data-filter="royal" class="btn"><input type="radio"><a href="#"><i class="flaticon-analytics"></i><span>Consulting</span></a></li>
-                                <li data-filter="standard" class="btn"><input type="radio"><a href="#"><i class="flaticon-optimization"></i><span>Mechanical</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row p-l0 sp10">
-                    <div class="col-lg-12">
-                        <ul id="masonry" class="dlab-gallery-listing gallery mfp-gallery text-center">
-                            <li class="card-container col-lg-4 col-md-6 col-sm-6 royal">
-                                <div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-                                    <img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_2.jpg" alt="" />
-                                    <div class="overlay-bx">
-                                        <div class="portinner">
-                                            <div class="port-up">
-                                                <span class="text-primary">Building</span>
-                                                <h3 class="port-title"><a href="portfolio-details.html">Westwood Child Center</a></h3>
-                                            </div>
-                                            <div class="port-down">
-                                                <a href="portfolio-details.html" class="btn-link">View Detail <i class="la la-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card-container col-lg-4 col-md-6 col-sm-6 standard penthouse">
-                                <div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-                                    <img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_1.jpg" alt="" />
-                                    <div class="overlay-bx">
-                                        <div class="portinner">
-                                            <div class="port-up">
-                                                <span class="text-primary">Industry</span>
-                                                <h3 class="port-title"><a href="portfolio-details.html">Westwood Child Center</a></h3>
-                                            </div>
-                                            <div class="port-down">
-                                                <a href="portfolio-details.html" class="btn-link">View Detail <i class="la la-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card-container col-lg-4 col-md-6 col-sm-6 royal">
-                                <div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-                                    <img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_3.jpg" alt="" />
-                                    <div class="overlay-bx">
-                                        <div class="portinner">
-                                            <div class="port-up">
-                                                <span class="text-primary">Manufacturing</span>
-                                                <h3 class="port-title"><a href="portfolio-details.html">Westwood Child Center</a></h3>
-                                            </div>
-                                            <div class="port-down">
-                                                <a href="portfolio-details.html" class="btn-link">View Detail <i class="la la-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card-container col-lg-4 col-md-6 col-sm-6 penthouse">
-                                <div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-                                    <img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_4.jpg" alt="" />
-                                    <div class="overlay-bx">
-                                        <div class="portinner">
-                                            <div class="port-up">
-                                                <span class="text-primary">Building</span>
-                                                <h3 class="port-title"><a href="portfolio-details.html">Westwood Child Center</a></h3>
-                                            </div>
-                                            <div class="port-down">
-                                                <a href="portfolio-details.html" class="btn-link">View Detail <i class="la la-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card-container col-lg-4 col-md-6 col-sm-6 standard">
-                                <div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-                                    <img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_5.jpg" alt="" />
-                                    <div class="overlay-bx">
-                                        <div class="portinner">
-                                            <div class="port-up">
-                                                <span class="text-primary">Industry</span>
-                                                <h3 class="port-title"><a href="portfolio-details.html">Westwood Child Center</a></h3>
-                                            </div>
-                                            <div class="port-down">
-                                                <a href="portfolio-details.html" class="btn-link">View Detail <i class="la la-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card-container col-lg-4 col-md-6 col-sm-6 standard penthouse">
-                                <div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox3">
-                                    <img src="<?= base_url() ?>assets/asset_fr/images/portfolio/construct/image_6.jpg" alt="" />
-                                    <div class="overlay-bx">
-                                        <div class="portinner">
-                                            <div class="port-up">
-                                                <span class="text-primary">Manufacturing</span>
-                                                <h3 class="port-title"><a href="portfolio-details.html">Westwood Child Center</a></h3>
-                                            </div>
-                                            <div class="port-down">
-                                                <a href="portfolio-details.html" class="btn-link">View Detail <i class="la la-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-full bg-white content-inner-1 project-area  bg-img-fix" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg9.jpg); background-size: cover;">
+        <!-- <div class="section-full bg-white content-inner-1 project-area  bg-img-fix" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg9.jpg); background-size: cover;">
             <div class="container">
                 <div class="section-head text-white style2 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
                     <h2 class="title m-b10">The Luxury Residence In Forest</h2>
@@ -339,80 +241,43 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section-full bg-white content-inner-2">
+        </div> -->
+        <div class="section-full bg-white content-inner-2" id="program">
             <div class="container">
+                <div class="section-head style2 text-center">
+                    <h2 class="title m-b10">PROGRAM</h2>
+                    <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
+                </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-                        <div class="icon-bx-wraper sr-iconbox style2">
-                            <div class="icon-lg m-b10">
-                                <a href="javascript:void(0)" class="icon-cell"><i class="flaticon-worker"></i></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Interior design</h4>
-                                <p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
-                        <div class="icon-bx-wraper sr-iconbox style2">
-                            <div class="icon-lg m-b10">
-                                <a href="javascript:void(0)" class="icon-cell"><i class="flaticon-factory-1"></i></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Architecture</h4>
-                                <p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
-                        <div class="icon-bx-wraper sr-iconbox style2">
-                            <div class="icon-lg m-b10">
-                                <a href="javascript:void(0)" class="icon-cell"><i class="flaticon-design-tools"></i></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Product design</h4>
-                                <p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+                    <?php
+                    $duration = 2;
+                    $delay = 0.3;
+                    foreach ($programs as $p) {
+                    ?>
+                        <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
+                            <div class="icon-bx-wraper sr-iconbox style2">
+                                <div class=" m-b10">
+
+                                    <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" />
+                                </div>
+                                <div class="icon-content">
+                                    <h4 class="dlab-tilte">
+                                        <a href=""><?= $p->nama_program ?>
+                                        </a>
+                                    </h4>
+                                    <p><?= $p->keterangan ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-                        <div class="icon-bx-wraper sr-iconbox style2">
-                            <div class="icon-lg m-b10">
-                                <a href="javascript:void(0)" class="icon-cell"><i class="flaticon-settings"></i></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Accreditation</h4>
-                                <p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
-                        <div class="icon-bx-wraper sr-iconbox style2">
-                            <div class="icon-lg m-b10">
-                                <a href="javascript:void(0)" class="icon-cell"><i class="flaticon-worker"></i></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Foundations</h4>
-                                <p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
-                        <div class="icon-bx-wraper sr-iconbox style2">
-                            <div class="icon-lg m-b10">
-                                <a href="javascript:void(0)" class="icon-cell"><i class="flaticon-factory-2"></i></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Enrollment</h4>
-                                <p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        $duration += 0.5;
+                        $delay += 0.3;
+                    }
+                    ?>
                 </div>
             </div>
         </div>
-        <div class="section-full bg-gray content-inner">
+        <!-- <div class="section-full bg-gray content-inner">
             <div class="container">
                 <div class="section-head style2 text-center">
                     <h2 class="title">Our Team</h2>
@@ -429,13 +294,26 @@
                                 </a>
                             </div>
                             <div class="dlab-info">
-                                <h4 class="dlab-title"><a href="team-1.html">Nashid Martines</a></h4>
+                                <h4 class="dlab-title">
+                                    <a href="team-1.html">Nashid Martines</a></h4>
                                 <span class="dlab-position">Director</span>
                                 <ul class="dlab-social-icon">
-                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);">
+
+   
+                                </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -450,13 +328,26 @@
                                 </a>
                             </div>
                             <div class="dlab-info">
-                                <h4 class="dlab-title"><a href="team-1.html">Konne Backfield</a></h4>
+                                <h4 class="dlab-title">
+                                    <a href="team-1.html">Konne Backfield</a></h4>
                                 <span class="dlab-position">Designer</span>
                                 <ul class="dlab-social-icon">
-                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);">
+
+   
+                                </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -471,13 +362,26 @@
                                 </a>
                             </div>
                             <div class="dlab-info">
-                                <h4 class="dlab-title"><a href="team-1.html">Hackson Willingham</a></h4>
+                                <h4 class="dlab-title">
+                                    <a href="team-1.html">Hackson Willingham</a></h4>
                                 <span class="dlab-position">Developer</span>
                                 <ul class="dlab-social-icon">
-                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);">
+
+   
+                                </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -492,22 +396,35 @@
                                 </a>
                             </div>
                             <div class="dlab-info">
-                                <h4 class="dlab-title"><a href="team-1.html">Konne Backfield</a></h4>
+                                <h4 class="dlab-title">
+                                    <a href="team-1.html">Konne Backfield</a></h4>
                                 <span class="dlab-position">Manager</span>
                                 <ul class="dlab-social-icon">
-                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+                                    <li><a class="site-button circle-sm white fab fa-facebook-f" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-twitter" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-linkedin-in" href="javascript:void(0);">
+
+   
+                                </a></li>
+                                    <li><a class="site-button circle-sm white fab fa-pinterest-p" href="javascript:void(0);">
+
+   
+                                </a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Testimonials -->
-        <div class="section-full content-inner-2 bg-white wow fadeIn" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/map-bg1.png)" data-wow-duration="2s" data-wow-delay="0.6s">
+        <!-- <div class="section-full content-inner-2 bg-white wow fadeIn" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/map-bg1.png)" data-wow-duration="2s" data-wow-delay="0.6s">
             <div class="container">
                 <div class="section-head style2 text-center">
                     <h2 class="title">Clients Say About Us</h2>
@@ -558,53 +475,33 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Testimonials End -->
         <!-- Latest blog -->
-        <div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s" id="berita">
+        <!-- Latest blog END -->
+        <div class="section-full dlab-we-find bg-img-fix p-t20 p-b20 bg-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
             <div class="container">
-                <div class="section-head style2 text-center">
-                    <h2 class="title">Artikel</h2>
-                    <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-                </div>
-
-                <div class="section-full bg-gray content-inner">
-                    <div class="container">
-                        <div class="row">
-
-                            <?php
-                            $duration = 2;
-                            $delay = 0.3;
-                            foreach ($articles as $a) {
-                            ?>
-                                <div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp h-100" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
-                                    <div class="blog-post blog-grid blog-rounded blog-effect1">
-                                        <div class="dlab-post-media dlab-img-effect rotate"> <a href="javascript:void(0);"><img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt=""></a> </div>
-                                        <div class="dlab-info p-a20 border-1">
-                                            <div class="dlab-post-title">
-                                                <h4 class="post-title"><a href="<?= base_url('article/detail/' . $a->slug) ?>"><?= $a->judul ?></a></h4>
-                                            </div>
-                                            <div class="dlab-post-text">
-                                                <p><?= $a->headline ?></p>
-                                            </div>
-                                            <div class="dlab-post-readmore">
-                                                <a href="<?= base_url('article/detail/' . $a->slug) ?>" title="READ MORE" rel="bookmark" class="site-button btnhover20">READ MORE</a>
-                                            </div>
-                                        </div>
+                <div class="section-content">
+                    <div class="client-logo-carousel mfp-gallery gallery owl-btn-center-lr owl-carousel owl-btn-3">
+                        <?php
+                        foreach ($partners as $p) {
+                        ?>
+                            <div class="item text-center">
+                                <!-- <div class="ow-client-logo">
+                                    <div class="client-logo">
+                                        <a href="javascript:void(0);">
+                                        </a>
                                     </div>
-                                </div>
-
-                            <?php
-                                $duration += 0.5;
-                                $delay += 0.3;
-                            }
-                            ?>
-                        </div>
+                                </div> -->
+                                <?= $p->nama_partner ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Latest blog END -->
 
     </div>
     <!-- contact area END -->

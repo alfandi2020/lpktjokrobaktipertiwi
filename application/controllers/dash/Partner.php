@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Article extends CI_Controller
+class Partner extends CI_Controller
 {
 
     public function __construct()
@@ -11,8 +11,7 @@ class Article extends CI_Controller
         $this->load->helper('string');
         $this->load->helper('date');
         $this->load->model('M_Auth');
-        $this->load->model('M_Article');
-        $this->load->model('M_Setting');
+        $this->load->model('M_Partner');
 
         if (!$this->session->userdata('is_logged_in')) {
 
@@ -31,9 +30,9 @@ class Article extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Article',
-            'pages' => 'dashboard/pages/article/v_article',
-            'articles' => $this->M_Article->lists(),
+            'title' => 'Partner',
+            'pages' => 'dashboard/pages/partner/v_partner',
+            'partners' => $this->M_Partner->lists(),
             'user' => $this->M_Auth->cek_user($this->session->userdata('username'))
         ];
         $this->load->view('dashboard/index', $data);
@@ -42,9 +41,8 @@ class Article extends CI_Controller
     public function create()
     {
         $data = [
-            'title' => 'Create Article',
-            'pages' => 'dashboard/pages/article/v_create',
-            'categories' => $this->M_Setting->category(),
+            'title' => 'Add partner',
+            'pages' => 'dashboard/pages/partner/v_create',
             'user' => $this->M_Auth->cek_user($this->session->userdata('username'))
         ];
         $this->load->view('dashboard/index', $data);
@@ -53,10 +51,10 @@ class Article extends CI_Controller
     public function store()
     {
         $user_id = $this->session->userdata('user_id');
-        $article_title = trim($this->input->post('article_title'));
+        $nama_partner = trim($this->input->post('nama_partner'));
 
         // pembuatan slug dari nama produk
-        $out = explode(" ", $article_title);
+        $out = explode(" ", $nama_partner);
         $slug = preg_replace("/[^A-Za-z0-9\-]/", "", strtolower(implode("-", $out)));
 
         $now = date('Y-m-d H:i:s');
@@ -66,46 +64,32 @@ class Article extends CI_Controller
         if ($old_slug) {
 
             $data = [
-                'id_category' => $this->input->post('article_category'),
-                'judul' => $article_title,
-                'headline' => trim($this->input->post('article_headline')),
-                'content' => trim($this->input->post('content')),
-                'author' => $user_id,
-                'publish_date' => $this->input->post('article_publish_date'),
+                'nama_partner' => $nama_partner,
                 'slug' => trim($slug),
-                'updated_at' => $now,
-                'updated_by' => $user_id
             ];
             // echo '<pre>';
             // print_r($data);
             // echo '</pre>';
             // exit;
 
-            $this->M_Article->update_article($data, $old_slug);
+            $this->M_Partner->update_partner($data, $old_slug);
         } else {
             $data = [
-                'id_category' => $this->input->post('article_category'),
-                'judul' => $article_title,
-                'headline' => trim($this->input->post('article_headline')),
-                'content' => trim($this->input->post('content')),
-                'author' => $user_id,
-                'photo' => $_FILES["article_photo"]["name"],
-                'publish_date' => $this->input->post('article_publish_date'),
+                'nama_partner' => $nama_partner,
                 'slug' => trim($slug),
                 'created_at' => $now,
                 'created_by' => $user_id,
             ];
-            $this->M_Article->add_article($data);
+            $this->M_Partner->add_partner($data);
         }
     }
 
     public function edit($id)
     {
         $data = [
-            'title' => 'Edit article',
-            'pages' => 'dashboard/pages/article/v_create',
-            'article' => $this->M_Article->detail_article($id),
-            'categories' => $this->M_Setting->category(),
+            'title' => 'Edit partner',
+            'pages' => 'dashboard/pages/partner/v_create',
+            'partner' => $this->M_Partner->detail_partner($id),
             'user' => $this->M_Auth->cek_user($this->session->userdata('username'))
         ];
 

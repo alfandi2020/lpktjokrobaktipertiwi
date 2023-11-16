@@ -171,6 +171,18 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/partner') ?>">
+                                        <i data-feather="book"></i>
+                                        <span>Partner</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/program') ?>">
+                                        <i data-feather="book"></i>
+                                        <span>Program</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/article') ?>">
                                         <i data-feather="book"></i>
                                         <span>Article</span>

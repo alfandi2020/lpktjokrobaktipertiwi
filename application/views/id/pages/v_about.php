@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 m-b30 our-story-thum">
-                        <img src="<?= base_url() ?>assets/asset_fr/images/about/pic6.jpg" class="radius-sm" alt="">
+                        <img src="<?= base_url() ?>assets/asset_fr/images/log.png" class="radius-sm" alt="">
                     </div>
                 </div>
             </div>
@@ -42,53 +42,38 @@
         <div class="section-full box-about-list">
             <div class="row spno">
                 <div class="col-lg-6 col-md-12">
-                    <img src="<?= base_url() ?>assets/asset_fr/images/about/pic3.jpg" alt="" class="img-cover" />
+                    <img src="<?= base_url() ?>assets/asset_fr/images/log2.png" alt="" class="img-cover" />
                 </div>
                 <div class="col-lg-6 col-md-12 bg-primary">
                     <div class="max-w700 m-auto p-tb50 p-lr20">
                         <div class="text-white">
-                            <h2>We're thriving and building <br />better products</h2>
+                            <h2>Program kami</h2>
                         </div>
-                        <div class="icon-bx-wraper m-b30 left">
-                            <div class="icon-md">
-                                <a href="javascript:void(0);" class="icon-cell text-white">
-                                    <i class="flaticon-factory"></i>
-                                </a>
+                        <?php
+                        foreach ($programs as $p) {
+                        ?>
+                            <div class="icon-bx-wraper m-b30 left">
+                                <div class="icon-md">
+                                    <a href="javascript:void(0);" class="icon-cell text-white">
+                                        <i class="flaticon-factory"></i>
+                                    </a>
+                                </div>
+                                <div class="icon-content">
+                                    <h4 class="dlab-tilte"><?= $p->nama_program ?></h4>
+                                    <p><?= $p->keterangan ?></p>
+                                    <a href="<?= base_url('program/detail/' . $p->slug) ?>" class="btn btn-primary">Lebih rinci...</a>
+                                </div>
                             </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Material Engineering</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                            </div>
-                        </div>
-                        <div class="icon-bx-wraper m-b30 left">
-                            <div class="icon-md">
-                                <a href="javascript:void(0);" class="icon-cell text-white">
-                                    <i class="flaticon-settings"></i>
-                                </a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Chemical Research</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                            </div>
-                        </div>
-                        <div class="icon-bx-wraper left">
-                            <div class="icon-md">
-                                <a href="javascript:void(0);" class="icon-cell text-white">
-                                    <i class="flaticon-worker"></i>
-                                </a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="dlab-tilte">Petroleum Engineering</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Abouts END -->
         <!-- Our Services -->
-        <div class="section-full bg-gray content-inner">
+        <!-- <div class="section-full bg-gray content-inner">
             <div class="container">
                 <div class="section-head text-center">
                     <h2 class="title"> Our Services</h2>
@@ -163,10 +148,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Our Services End -->
         <!-- About progress -->
-        <div class="section-full about-progress">
+        <!-- <div class="section-full about-progress">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-7 col-md-12 bg-white">
@@ -200,7 +185,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- About progress END -->
     </div>
 </div>

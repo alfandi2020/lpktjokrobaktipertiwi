@@ -73,6 +73,24 @@ class M_Setting extends CI_Model
         return $query;
     }
 
+    public function alamat()
+    {
+        $query = $this->db->where('kategori', 'alamat')->get('settings')->row_array();
+        return $query;
+    }
+
+    public function telepon()
+    {
+        $query = $this->db->where('kategori', 'telepon')->get('settings')->row_array();
+        return $query;
+    }
+
+    public function email()
+    {
+        $query = $this->db->where('kategori', 'email')->get('settings')->row_array();
+        return $query;
+    }
+
     public function update_visimisi($data_visi, $data_misi)
     {
         $this->db->where('kategori', 'visi');
@@ -82,10 +100,63 @@ class M_Setting extends CI_Model
         $this->db->update('settings', $data_misi);
 
         $this->session->set_flashdata('message_visimisi', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        Visi misi has been successfully updated.
+        Visi misi information has been successfully updated.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
+    }
+
+    public function update_contact($data_alamat, $data_telepon, $data_email)
+    {
+        $this->db->where('kategori', 'alamat');
+        $this->db->update('settings', $data_alamat);
+
+        $this->db->where('kategori', 'telepon');
+        $this->db->update('settings', $data_telepon);
+
+        $this->db->where('kategori', 'email');
+        $this->db->update('settings', $data_email);
+
+        $this->session->set_flashdata('message_contact', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Contact information has been successfully updated.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+        redirect("dash/settings");
+    }
+
+    public function category()
+    {
+        $query = $this->db->order_by('category_name', 'ASC')->get('article_category')->result();
+
+        return $query;
+    }
+
+    public function add_category($data)
+    {
+
+        $this->db->select('count(Id) as id');
+        $this->db->where('slug', $data["slug"]);
+        $query_check = $this->db->get('article_category')->row_array();
+
+        $hasil = $query_check["id"];
+
+        if ($hasil > 0) {
+            $this->session->set_flashdata('message_category', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			The category is already available.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>');
+            redirect('dash/settings');
+        } else {
+
+            $this->db->insert('article_category', $data);
+            $this->session->set_flashdata('message_category', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+				The category added successfully.
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>');
+            // After that you need to used redirect function instead of load view such as 
+            redirect("dash/settings");
+        }
     }
 }

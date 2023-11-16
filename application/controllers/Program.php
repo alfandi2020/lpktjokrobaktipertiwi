@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Article extends CI_Controller
+class Program extends CI_Controller
 {
 
     public function __construct()
@@ -12,8 +12,8 @@ class Article extends CI_Controller
         $this->load->helper('string');
         $this->load->helper('date');
         $this->load->model('M_Article');
-        $this->load->model('M_Setting');
         $this->load->model('M_Program');
+        $this->load->model('M_Setting');
         $this->load->model('M_Partner');
     }
 
@@ -22,13 +22,13 @@ class Article extends CI_Controller
         $config['base_url'] = base_url('article/index');
         // $config['page_query_string'] = TRUE;
         // $config['use_page_numbers'] = TRUE;
-        $config['total_rows'] = $this->M_Article->get_published_count();
-        $config['per_page'] = 10;
-        $config['num_link'] = 5;
+        $config['total_rows'] = $this->M_Program->get_published_count();
+        $config['per_page'] = 1;
+        $config['num_link'] = 2;
         $config['full_tag_open'] = '<div class="pagination-bx clearfix text-center"><ul class="pagination">';
         $config['full_tag_close'] = '</ul></div>';
-        $config['first_link'] = TRUE;
-        $config['last_link'] = TRUE;
+        $config['first_link'] = FALSE;
+        $config['last_link'] = FALSE;
         $config['first_tag_open'] = '<li class="previous">';
         $config['first_tag_close'] = '</li>';
         $config['prev_link'] = 'Prev';
@@ -43,17 +43,18 @@ class Article extends CI_Controller
         $config['cur_tag_close'] = '</a> </li>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
-        $config['display_pages'] = FALSE;
+        $config['display_pages'] = TRUE;
 
         $this->pagination->initialize($config);
 
-        $from = $this->uri->segment(3);
+        $from = $this->uri->segment(2);
         $limit = $config['per_page'];
 
         $data = [
-            'title' => 'Article',
-            'pages' => 'id/pages/v_article',
-            'articles' => $this->M_Article->list_bydate($limit, $from),
+            'title' => 'Program',
+            'pages' => 'id/pages/v_program',
+            // 'programs' => $this->M_Program->list_bydate($limit, $from),
+            'articles' => $this->M_Article->lists(),
             'programs' => $this->M_Program->lists(),
             'partners' => $this->M_Partner->lists(),
             'alamat' => $this->M_Setting->alamat(),
@@ -62,15 +63,16 @@ class Article extends CI_Controller
         ];
         $this->load->view('id/index', $data);
     }
+
     public function detail($id)
     {
         $data = [
-            'title' => 'Article',
-            'pages' => 'id/pages/v_article_detail',
+            'title' => 'Program',
+            'pages' => 'id/pages/v_program_detail',
+            'program' => $this->M_Program->detail_program($id),
             'articles' => $this->M_Article->lists(),
             'programs' => $this->M_Program->lists(),
             'partners' => $this->M_Partner->lists(),
-            'article' => $this->M_Article->detail_article($id),
             'alamat' => $this->M_Setting->alamat(),
             'telepon' => $this->M_Setting->telepon(),
             'email' => $this->M_Setting->email()

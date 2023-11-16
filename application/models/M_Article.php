@@ -20,6 +20,21 @@ class M_Article extends CI_Model
         return $query;
     }
 
+    public function list_bydate($limit, $from)
+    {
+        $query = $this->db->order_by('publish_date', 'DESC')->order_by('judul', 'ASC')->get('article', $limit, $from)->result();
+        return $query;
+    }
+
+    public function get_published_count()
+    {
+        $query = $this->db->order_by('publish_date', 'DESC')->get('article');
+
+        // print_r($query->num_rows());
+        // exit;
+        return $query->num_rows();
+    }
+
     public function add_article($data)
     {
         $this->db->select('count(Id) as id');
@@ -95,6 +110,12 @@ class M_Article extends CI_Model
     public function video()
     {
         $query = $this->db->where('Id', '1')->get('videotron')->row_array();
+        return $query;
+    }
+
+    public function author($id)
+    {
+        $query = $this->db->where('Id', $id)->get('user')->row_array();
         return $query;
     }
 
