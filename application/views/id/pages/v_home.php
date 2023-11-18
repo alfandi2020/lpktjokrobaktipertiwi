@@ -89,8 +89,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="about-content wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="section-head style2">
-                                <h2 class="title">Pendidikan</h2>
-                                <p>Memberikan <?= strtolower("EDUKASI DAN TRAINING KEPADA PARA PEMUDA INDONESIA DENGAN MEMBUKA DAN MELALUI TRAINING OVERSEAS KE NEGARA JEPANG, SEHINGGA PARA PEMUDA TSB DIHARAPKAN KETIKA PULANG NANTI MAMPU MEMBERIKAN KONTRIBUSI TERBAIK NYA UNTUK NEGARA INDONESIA.(DIHARAPKAN PADA SUATU HARI NANTI, DARI HASIL EDUKASI DAN TRAINING YANG DI DAPAT, PARA PEMUDA INDONESIA TERSEBUT JUGA MAMPU MEMBUAT LEMBAGA ATAU PROGRAM PENDIDIKAN SEJENIS).") ?>
+                                <h2 class="title"><?= $lang['training_title'] ?></h2>
+                                <p> <?= $lang['training_content'] ?>
                             </div>
                             <!-- <div class="m-b30">
 									<ul class="list-details">
@@ -109,7 +109,7 @@
 									</ul>
 								</div> -->
                             <div class="">
-                                <a href="portfolio-details.html" class="site-button btnhover20">Selengkapnya</a>
+                                <a href="<?= base_url('home/tentang') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?></a>
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="about-content wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="section-head style2 container">
-                                <h1 class="bold text-right wow fadeInRight"><b>KEGIATAN LPK TJOKRO BAKTI PERTIWI</b></h1>
+                                <h1 class="bold text-right wow fadeInRight"><b><?= $lang['lpk_activity_title_text'] ?></b></h1>
                                 <!-- <p class="col-xl-4">Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p> -->
                             </div>
                             <!-- <div class="m-b30">
@@ -242,41 +242,6 @@
                 </div>
             </div>
         </div> -->
-        <div class="section-full bg-white content-inner-2" id="program">
-            <div class="container">
-                <div class="section-head style2 text-center">
-                    <h2 class="title m-b10">PROGRAM</h2>
-                    <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-                </div>
-                <div class="row">
-                    <?php
-                    $duration = 2;
-                    $delay = 0.3;
-                    foreach ($programs as $p) {
-                    ?>
-                        <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
-                            <div class="icon-bx-wraper sr-iconbox style2">
-                                <div class=" m-b10">
-
-                                    <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" />
-                                </div>
-                                <div class="icon-content">
-                                    <h4 class="dlab-tilte">
-                                        <a href=""><?= $p->nama_program ?>
-                                        </a>
-                                    </h4>
-                                    <p><?= $p->keterangan ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                        $duration += 0.5;
-                        $delay += 0.3;
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
         <!-- <div class="section-full bg-gray content-inner">
             <div class="container">
                 <div class="section-head style2 text-center">

@@ -14,9 +14,9 @@ class M_Program extends CI_Model
         $this->load->database();
     }
 
-    public function lists()
+    public function lists($language)
     {
-        $query = $this->db->order_by('nama_program', 'ASC')->get('program')->result();
+        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, photo')->order_by('nama_program_' . $language, 'ASC')->get('program')->result();
         return $query;
     }
 

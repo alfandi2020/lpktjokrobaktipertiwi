@@ -14,9 +14,9 @@ class M_Article extends CI_Model
         $this->load->database();
     }
 
-    public function lists()
+    public function lists($language)
     {
-        $query = $this->db->order_by('judul', 'ASC')->get('article')->result();
+        $query = $this->db->select('judul_' . $language . ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug')->order_by('judul_' . $language, 'ASC')->get('article')->result();
         return $query;
     }
 

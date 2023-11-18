@@ -14,11 +14,11 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- FAVICONS ICON -->
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="images/log.png" />
+	<!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon" /> -->
+	<link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/asset_fr/images/log.png" />
 
 	<!-- PAGE TITLE HERE -->
-	<title><?= $title ?> - Yayasan Tjokro Persada Bakti Pertiwi</title>
+	<title><?= ($title == "Home") ? $lang['home_text'] : $title ?> - <?= $lang['nama_yayasan_text'] ?></title>
 
 	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,9 +55,9 @@
 					<div class="row d-flex justify-content-between">
 						<div class="dlab-topbar-left">
 							<ul>
-								<li><a href="about-1.html"><span class="flag-icon flag-icon-id flag-icon-squared"></span></a></li>
-								<li><a href="privacy-policy.html">English</a></li>
-								<li><a href="privacy-policy.html"><span class="flag-icon flag-icon-jp flag-icon-squared"></span></a></li>
+								<li><?= anchor('language/change/id', '<span class="flag-icon flag-icon-id">') ?></li>
+								<li><?= anchor('language/change/en', '<span class="flag-icon flag-icon-gb-eng">') ?></li>
+								<li><?= anchor('language/change/jp', '<span class="flag-icon flag-icon-jp">') ?></li>
 							</ul>
 						</div>
 						<div class="dlab-topbar-right topbar-social">
@@ -128,11 +128,11 @@
 							<?php
 							if (empty($this->session->userdata('username'))) {
 							?>
-								<a href="<?= base_url('auth') ?>" class="site-button radius-no">Masuk</a>
+								<a href="<?= base_url('auth') ?>" class="site-button radius-no"><?= $lang["login_text"] ?></a>
 							<?php
 							} else {
 							?>
-								<a href="<?= base_url('dashboard') ?>" class="site-button radius-no">Dashboard</a>
+								<a href="<?= base_url('dashboard') ?>" class="site-button radius-no"><?= $lang["dashboard_text"] ?></a>
 							<?php
 							}
 							?>
@@ -152,19 +152,19 @@
 							</div>
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="<?= base_url('home/tentang') ?>">Tentang</a>
+									<a href="#kegiatan"><?= $lang['activity_text'] ?></a>
 								</li>
 								<li>
-									<a href="#kegiatan">Kegiatan</a>
+									<a href="#program"><?= $lang['program_text'] ?></a>
 								</li>
 								<li>
-									<a href="#program">Program</a>
+									<a href="#artikel"><?= $lang['article_text'] ?></a>
 								</li>
 								<li>
-									<a href="#artikel">Artikel</a>
+									<a href="#kontak"><?= $lang['contact_text'] ?></a>
 								</li>
 								<li>
-									<a href="#kontak">Kontak</a>
+									<a href="<?= base_url('home/tentang') ?>"><?= $lang["about_text"] ?></a>
 								</li>
 							</ul>
 							<!-- <div class="dlab-social-icon">
@@ -185,59 +185,6 @@
 		<!-- Content -->
 
 		<?php if (isset($pages)) $this->load->view($pages) ?>
-		<div class="section-full bg-white content-inner-2" id="kegiatan">
-			<div class="container-fluid">
-				<div class="row align-items-center">
-					<div class="col-lg-4 col-md-6">
-						<div class="about-content wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-							<div class="section-head style2 container">
-								<h1 class="bold text-right wow fadeInRight"><b>KEGIATAN LPK TJOKRO BAKTI PERTIWI</b></h1>
-								<!-- <p class="col-xl-4">Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p> -->
-							</div>
-							<!-- <div class="m-b30">
-									<ul class="list-details">
-										<li>
-											<strong>Clients:</strong>
-											<span>Ethan Hunt</span>
-										</li>
-										<li>
-											<strong>Completion:</strong>
-											<span>February 5th, 2017</span>
-										</li>
-										<li>
-											<strong>Project Type:</strong>
-											<span>Villa, Residence</span>
-										</li>
-									</ul>
-								</div> -->
-							<!-- <div class="">
-									<a href="portfolio-details.html" class="site-button btnhover20">View Portfolio</a>
-								</div> -->
-						</div>
-					</div>
-					<div class="col-lg-8 col-md-6 p-lr0">
-						<div class="project-carousel-2 owl-carousel owl-btn-center-lr owl-btn-1 black  wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">
-							<div class="item">
-								<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-									<img height="900" src="<?= base_url() ?>assets/asset_fr/images/kegiatan1.png" alt="">
-								</div>
-							</div>
-							<div class="item">
-								<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-									<img height="200" src="<?= base_url() ?>assets/asset_fr/images/kegiatan2.png" alt="">
-								</div>
-							</div>
-							<div class="item">
-								<div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-									<img src="<?= base_url() ?>assets/asset_fr/images/kegiatan3.png" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
 		<!-- <div class="section-full bg-white content-inner-1 project-area  bg-img-fix" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg9.jpg); background-size: cover;">
             <div class="container">
                 <div class="section-head text-white style2 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
@@ -313,7 +260,7 @@
 		<div class="section-full bg-white content-inner-2" id="program">
 			<div class="container">
 				<div class="section-head style2 text-center">
-					<h2 class="title m-b10">PROGRAM</h2>
+					<h2 class="title m-b10"><?= $lang['program_text'] ?></h2>
 					<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
 				</div>
 				<div class="row">
@@ -348,7 +295,7 @@
 		<div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s" id="artikel">
 			<div class="container">
 				<div class="section-head style2 text-center">
-					<h2 class="title">Artikel</h2>
+					<h2 class="title"><?= $lang['article_text'] ?></h2>
 					<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
 				</div>
 
@@ -377,7 +324,7 @@
 												<p><?= $a->headline ?></p>
 											</div>
 											<div class="dlab-post-readmore">
-												<a href="<?= base_url('article/detail/' . $a->slug) ?>" title="READ MORE" rel="bookmark" class="site-button btnhover20">READ MORE</a>
+												<a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
 											</div>
 										</div>
 									</div>
@@ -393,7 +340,7 @@
 							<div class="col-lg-5"></div>
 							<div class="col-lg-2">
 
-								<a href="<?= base_url('article') ?>" class="site-button btnhover20">Selengkapnya...</a>
+								<a href="<?= base_url('article') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
 							</div>
 							<div class="col-lg-5"></div>
 						</div>
@@ -409,17 +356,17 @@
 					<div class="row">
 						<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
 							<div class="widget widget_services border-0">
-								<h5 class="footer-title text-white">MENU</h5>
+								<h5 class="footer-title text-white"><?= $lang['menu_text'] ?></h5>
 								<ul>
-									<li><a href="<?= base_url('home/tentang') ?>">Tentang</a></li>
-									<li><a href="<?= base_url('article') ?>">Berita</a></li>
+									<li><a href="<?= base_url('home/tentang') ?>"><?= $lang['about_text'] ?></a></li>
+									<li><a href="<?= base_url('article') ?>"><?= $lang['article_text'] ?></a></li>
 									<!-- <li><a href="blog-grid-2.html">Manajemen</a></li> -->
 								</ul>
 							</div>
 						</div>
 						<div class="col-md-3 col-7 col-xl-6 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_services border-0">
-								<h5 class="footer-title text-white">Maps</h5>
+								<h5 class="footer-title text-white"><?= $lang['maps_text'] ?></h5>
 								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								<!-- <ul>
 								<li><a href="help-desk.html">Help Desk </a></li>
@@ -432,19 +379,19 @@
 						</div>
 						<div class="col-md-6 col-xl-4 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_getintuch">
-								<h5 class="footer-title text-white ">Contact us</h5>
+								<h5 class="footer-title text-white "><?= $lang['contact_us_text'] ?></h5>
 								<ul>
 									<li>
 										<i class="ti-location-pin"></i>
-										<strong><?= $alamat['kategori'] ?></strong> <?= $alamat['content'] ?>
+										<strong><?= $alamat['judul_setting'] ?></strong> <?= $alamat['content'] ?>
 									</li>
 									<li>
 										<i class="ti-mobile"></i>
-										<strong><?= $telepon['kategori'] ?></strong>
+										<strong><?= $telepon['judul_setting'] ?></strong>
 										<?= $telepon['content'] ?>
 									<li>
 										<i class="ti-email"></i>
-										<strong><?= $email['kategori'] ?></strong> <?= $email['content'] ?>
+										<strong><?= $email['judul_setting'] ?></strong> <?= $email['content'] ?>
 									</li>
 								</ul>
 							</div>
@@ -472,7 +419,7 @@
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 text-left "> <span>Copyright © 2023 Fantecno Design DexignZone</span> </div>
+						<div class="col-md-6 col-sm-6 text-left "> <span><?= $lang['copyright_text'] ?> © 2023 Fantecno Design DexignZone</span> </div>
 						<!-- <div class="col-md-6 col-sm-6 text-right "> 
 						<div class="widget-link "> 
 							<ul>
