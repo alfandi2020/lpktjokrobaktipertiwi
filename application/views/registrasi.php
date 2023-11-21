@@ -144,7 +144,7 @@
         <!-- Product END -->
     </div>
     <!-- Shop Service info -->
-    <div class="section-full p-t50 p-b20 bg-primary text-white">
+    <!-- <div class="section-full p-t50 p-b20 bg-primary text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-4">
@@ -182,7 +182,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Shop Service info End -->
 </div>
 <script>
