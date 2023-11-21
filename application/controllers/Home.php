@@ -8,8 +8,9 @@ class Home extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form', 'url', 'language_helper', 'device_helper', 'date'));
+        $this->load->helper(array('form', 'url', 'language_helper'));
         $this->load->library('textlibrary');
+        $this->load->helper('date');
 
         $this->load->model('M_Article');
         $this->load->model('M_Setting');
