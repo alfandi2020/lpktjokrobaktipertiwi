@@ -19,9 +19,6 @@ class Home extends CI_Controller
 
     public function index()
     {
-        // $deviceType = detect_device_type();
-        // echo "Device Type: $deviceType";
-        // exit;
         $language = detect_language();
 
         $data = [

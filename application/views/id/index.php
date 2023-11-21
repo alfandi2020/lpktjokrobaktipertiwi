@@ -434,16 +434,16 @@
 		}); /*ready*/
 	</script>
 	<script>
-		$(document).ready(function() {
-			// Menggunakan JavaScript untuk mendeteksi lebar layar
-			var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		// $(document).ready(function() {
+		// 	// Menggunakan JavaScript untuk mendeteksi lebar layar
+		// 	var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-			// Mendeteksi jenis perangkat berdasarkan lebar layar
-			var deviceType = screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
+		// 	// Mendeteksi jenis perangkat berdasarkan lebar layar
+		// 	var deviceType = screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
 
-			// Menampilkan hasil deteksi perangkat
-			$('#deviceType').text('Device Type: ' + deviceType);
-		});
+		// 	// Menampilkan hasil deteksi perangkat
+		// 	$('#deviceType').text('Device Type: ' + deviceType);
+		// });
 	</script>
 	<script>
 		// $(document).ready(function() {
