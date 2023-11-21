@@ -16,7 +16,14 @@ class M_Program extends CI_Model
 
     public function lists($language)
     {
-        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, photo')->order_by('nama_program_' . $language, 'ASC')->get('program')->result();
+        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, photo, slug')->order_by('nama_program_' . $language, 'ASC')->get('program')->result();
+        return $query;
+    }
+
+    public function list_dashboard()
+    {
+        $query = $this->db->select('nama_program_id as nama_program, slug')->order_by('nama_program_id', 'ASC')->get('program')->result();
+
         return $query;
     }
 
@@ -71,9 +78,17 @@ class M_Program extends CI_Model
         }
     }
 
-    public function detail_program($id)
+    public function detail_program($id, $language)
     {
-        $query = $this->db->where('slug', $id)->get('program')->row_array();
+        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, content_' . $language . ' as content, slug, photo')->where('slug', $id)->get('program')->row_array();
+
+        return $query;
+    }
+
+    public function detail_program_edit($id)
+    {
+        $query = $this->db->select('nama_program_id, nama_program_en, nama_program_jp, keterangan_id, keterangan_en, keterangan_jp, content_id, content_en, content_jp, slug, photo')->where('slug', $id)->get('program')->row_array();
+
         return $query;
     }
 

@@ -38,6 +38,7 @@ $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERV
 |
 */
 $config['index_page'] = '';
+$config['environment'] = 'development';
 
 /*
 |--------------------------------------------------------------------------
@@ -288,6 +289,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |
 */
 $config['error_views_path'] = '';
+$config['error_reporting'] = E_ALL;
 
 /*
 |--------------------------------------------------------------------------

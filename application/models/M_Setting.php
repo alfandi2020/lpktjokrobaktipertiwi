@@ -12,7 +12,7 @@ class M_Setting extends CI_Model
 
     public function videotron()
     {
-        $query = $this->db->where('Id', '1')->get('settings')->row_array();
+        $query = $this->db->select('content_id as content')->where('Id', '1')->get('settings')->row_array();
         return $query;
     }
 
@@ -61,21 +61,21 @@ class M_Setting extends CI_Model
         }
     }
 
-    public function visi()
-    {
-        $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
-        return $query;
-    }
+    // public function visi()
+    // {
+    //     $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
+    //     return $query;
+    // }
 
-    public function misi()
-    {
-        $query = $this->db->where('kategori', 'misi')->get('settings')->row_array();
-        return $query;
-    }
+    // public function misi($language)
+    // {
+    //     $query = $this->db->select('judul_setting_' . $language . ' as judul_setting, content_id as content')->where('kategori', 'misi')->get('settings')->row_array();
+    //     return $query;
+    // }
 
     public function footer_section($language, $clause)
     {
-        $query = $this->db->select('judul_setting_' . $language . ' as judul_setting, content')->where('kategori', $clause)->get('settings')->row_array();
+        $query = $this->db->select('judul_setting_' . $language . ' as judul_setting, content_' . $language . ' as content')->where('kategori', $clause)->get('settings')->row_array();
         return $query;
     }
 

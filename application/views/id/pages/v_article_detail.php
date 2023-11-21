@@ -1,6 +1,15 @@
 <div class="page-content bg-white">
     <!-- inner page banner -->
-    <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(<?= base_url() ?>assets/images/articles/<?= $article['photo'] ?>);">
+    <?php
+    if ($article) {
+        $photo_url = base_url() . "assets/images/articles/" .  $article['photo'];
+        $id_author = $article["author"];
+    } else {
+        $photo_url = "";
+        $id_author = "";
+    }
+    ?>
+    <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(<?= $photo_url ?>);">
         <div class="container">
             <div class="dlab-bnr-inr-entry mt-5">
                 <h1 class="text-white mt-5">Article</h1>
@@ -18,37 +27,55 @@
     <!-- inner page banner END -->
     <!-- contact area -->
     <?php
-    $id_author = $article["author"];
 
     $author = $this->M_Article->author($id_author);
+
+    if ($article) {
     ?>
-    <div class="content-block">
-        <div class="container max-w900">
-            <!-- blog start -->
-            <div class="blog-post blog-single mt-5">
-                <div class="dlab-post-meta m-b20">
-                    <ul>
-                        <li class="post-date"> <strong><?= format_indo($article['publish_date']) ?></strong></span> </li>
-                        <li class="post-author"> Oleh <a href="javascript:void(0);"><?= $author['name'] ?></a> </li>
-                    </ul>
+        <div class="content-block">
+            <div class="container max-w900">
+                <!-- blog start -->
+                <div class="blog-post blog-single mt-5">
+                    <div class="dlab-post-meta m-b20">
+                        <ul>
+                            <li class="post-date"> <strong><?= format_indo($article['publish_date']) ?></strong></span> </li>
+                            <li class="post-author"> Oleh <a href="javascript:void(0);"><?= $author['name'] ?></a> </li>
+                        </ul>
+                    </div>
+                    <div class="dlab-post-title">
+                        <h4 class="post-title m-t0"><a href="blog-single.html"><?= $article['judul'] ?></a></h4>
+                    </div>
+                    <div class="dlab-post-media dlab-img-effect zoom-slow">
+                        <a href="blog-single.html">
+                            <img src="<?= base_url() ?>assets/images/articles/<?= $article['photo'] ?>" alt="">
+                        </a>
+                    </div>
+                    <div class="dlab-post-text">
+                        <blockquote><?= $article['headline'] ?></blockquote>
+                        <?= $article['content'] ?>
+                    </div>
+                    <div class="dlab-post-tags clear">
+                        <div class="post-tags"> <a href="javascript:void(0);">Child </a> <a href="javascript:void(0);">Eduction </a> <a href="javascript:void(0);">Money </a> <a href="javascript:void(0);">Resturent </a> </div>
+                    </div>
                 </div>
-                <div class="dlab-post-title">
-                    <h4 class="post-title m-t0"><a href="blog-single.html"><?= $article['judul'] ?></a></h4>
-                </div>
-                <div class="dlab-post-media dlab-img-effect zoom-slow">
-                    <a href="blog-single.html">
-                        <img src="<?= base_url() ?>assets/images/articles/<?= $article['photo'] ?>" alt="">
-                    </a>
-                </div>
-                <div class="dlab-post-text">
-                    <blockquote><?= $article['headline'] ?></blockquote>
-                    <?= $article['content'] ?>
-                </div>
-                <div class="dlab-post-tags clear">
-                    <div class="post-tags"> <a href="javascript:void(0);">Child </a> <a href="javascript:void(0);">Eduction </a> <a href="javascript:void(0);">Money </a> <a href="javascript:void(0);">Resturent </a> </div>
-                </div>
+                <!-- blog END -->
             </div>
-            <!-- blog END -->
         </div>
-    </div>
+    <?php
+    } else {
+    ?>
+        <div class="content-block">
+            <div class="container max-w900">
+                <!-- blog start -->
+                <div class="blog-post blog-single mt-5">
+                    <div class="dlab-post-text">
+                        <h1><?= $lang['not_found_text'] ?></h1>
+                    </div>
+                </div>
+                <!-- blog END -->
+            </div>
+        </div>
+    <?php
+    }
+    ?>
 </div>

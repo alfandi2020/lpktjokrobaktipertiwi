@@ -119,23 +119,23 @@
 						</div>
 						<!-- nav toggle button -->
 						<button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-							<!-- <span></span>
 							<span></span>
-							<span></span> -->
+							<span></span>
+							<span></span>
 						</button>
 						<!-- extra nav -->
 						<div class="extra-nav">
 							<?php
 							if (empty($this->session->userdata('username'))) {
-							?>
-								<a href="<?= base_url('auth') ?>" class="site-button radius-no"><?= $lang["login_text"] ?></a>
-							<?php
+								$url_auth = base_url('auth');
+								$url_text = $lang['login_text'];
 							} else {
-							?>
-								<a href="<?= base_url('dashboard') ?>" class="site-button radius-no"><?= $lang["dashboard_text"] ?></a>
+								$url_auth = base_url('dashboard');
+								$url_text = $lang['dashboard_text']; ?>
 							<?php
 							}
 							?>
+							<a href="<?= $url_auth ?>" class="site-button radius-no"><?= $url_text ?></a>
 						</div>
 						<!-- Quik search -->
 						<div class="dlab-quik-search ">
@@ -148,9 +148,12 @@
 						<!-- main nav -->
 						<div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
 							<div class="logo-header d-md-block d-lg-none">
-								<a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/asset_fr/images/logo-3.png" alt=""></a>
+								<a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt=""></a>
 							</div>
 							<ul class="nav navbar-nav">
+								<li>
+									<a href="<?= base_url('dash/program/register') ?>"><?= $lang['registration_text'] ?></a>
+								</li>
 								<li>
 									<a href="#kegiatan"><?= $lang['activity_text'] ?></a>
 								</li>
@@ -166,15 +169,55 @@
 								<li>
 									<a href="<?= base_url('home/tentang') ?>"><?= $lang["about_text"] ?></a>
 								</li>
+								<li id="authButton">
+									<a href="<?= $url_auth ?>"><?= $url_text ?></a>
+								</li>
 							</ul>
-							<!-- <div class="dlab-social-icon">
-							<ul>
-								<li><a class="site-button facebook circle-sm outline fab fa-facebook-f" href="javascript:void(0);"></a></li>
-								<li><a class="site-button twitter circle-sm outline fab fa-twitter" href="javascript:void(0);"></a></li>
-								<li><a class="site-button linkedin circle-sm outline fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-								<li><a class="site-button instagram circle-sm outline fab fa-instagram" href="javascript:void(0);"></a></li>
-							</ul>
-						</div>		 -->
+							<div class="dlab-social-icon">
+								<!-- <ul>
+									<li><a class="site-button facebook circle-sm outline fab fa-facebook-f" href="javascript:void(0);"></a></li>
+									<li><a class="site-button twitter circle-sm outline fab fa-twitter" href="javascript:void(0);"></a></li>
+									<li><a class="site-button linkedin circle-sm outline fab fa-linkedin-in" href="javascript:void(0);"></a></li>
+									<li><a class="site-button instagram circle-sm outline fab fa-instagram" href="javascript:void(0);"></a></li>
+								</ul> -->
+								<ul>
+									<li>
+										<a href="https://wa.me/628176877606" target="_blank" class="site-button whatsapp hover" title="Admin 1">
+											<i class="fa fa-whatsapp"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://wa.me/6285714243325" target="_blank" class="site-button whatsapp hover" title="Admin 2">
+											<i class="fa fa-whatsapp"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://wa.me/6281227640349" target="_blank" class="site-button whatsapp hover" title="Admin 3">
+											<i class="fa fa-whatsapp"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://wa.me/628119401954" target="_blank" class="site-button whatsapp hover" title="Admin 4">
+											<i class="fa fa-whatsapp"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.facebook.com/profile.php?id=61551065793688" class="site-button facebook hover" title="Facebook">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.instagram.com/lpktjokrobaktipertiwi/" class="site-button instagram hover" title="Instagram">
+											<i class="fab fa-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/@ytpbaktipertiwi9643" class="site-button youtube hover" title="Youtube">
+											<i class="fab fa-youtube"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -257,97 +300,6 @@
                 </div>
             </div>
         </div> -->
-		<div class="section-full bg-white content-inner-2" id="program">
-			<div class="container">
-				<div class="section-head style2 text-center">
-					<h2 class="title m-b10"><?= $lang['program_text'] ?></h2>
-					<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-				</div>
-				<div class="row">
-					<?php
-					$duration = 2;
-					$delay = 0.3;
-					foreach ($programs as $p) {
-					?>
-						<div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
-							<div class="icon-bx-wraper sr-iconbox style2">
-								<div class=" m-b10">
-
-									<img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" />
-								</div>
-								<div class="icon-content">
-									<h4 class="dlab-tilte">
-										<a href=""><?= $p->nama_program ?>
-										</a>
-									</h4>
-									<p><?= $p->keterangan ?></p>
-								</div>
-							</div>
-						</div>
-					<?php
-						$duration += 0.5;
-						$delay += 0.3;
-					}
-					?>
-				</div>
-			</div>
-		</div>
-		<div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s" id="artikel">
-			<div class="container">
-				<div class="section-head style2 text-center">
-					<h2 class="title"><?= $lang['article_text'] ?></h2>
-					<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-				</div>
-
-				<div class="section-full bg-gray content-inner">
-					<div class="container">
-						<div class="row">
-
-							<?php
-							$duration = 2;
-							$delay = 0.3;
-							foreach ($articles as $a) {
-							?>
-								<div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp h-100" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
-									<div class="blog-post blog-grid blog-rounded blog-effect1">
-										<div class="dlab-post-media dlab-img-effect rotate"> <a href="javascript:void(0);">
-												<img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="">
-											</a>
-										</div>
-										<div class="dlab-info p-a20 border-1">
-											<div class="dlab-post-title">
-												<h4 class="post-title">
-													<a href="<?= base_url('article/detail/' . $a->slug) ?>"><?= $a->judul ?></a>
-												</h4>
-											</div>
-											<div class="dlab-post-text">
-												<p><?= $a->headline ?></p>
-											</div>
-											<div class="dlab-post-readmore">
-												<a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							<?php
-								$duration += 0.5;
-								$delay += 0.3;
-							}
-							?>
-						</div>
-						<div class="row">
-							<div class="col-lg-5"></div>
-							<div class="col-lg-2">
-
-								<a href="<?= base_url('article') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
-							</div>
-							<div class="col-lg-5"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<!-- Content END -->
 		<!-- Footer -->
 		<footer class="site-footer" id="kontak">
@@ -480,6 +432,61 @@
 			dz_rev_slider_14();
 			$('.lazy').Lazy();
 		}); /*ready*/
+	</script>
+	<script>
+		$(document).ready(function() {
+			// Menggunakan JavaScript untuk mendeteksi lebar layar
+			var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+			// Mendeteksi jenis perangkat berdasarkan lebar layar
+			var deviceType = screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
+
+			// Menampilkan hasil deteksi perangkat
+			$('#deviceType').text('Device Type: ' + deviceType);
+		});
+	</script>
+	<script>
+		// $(document).ready(function() {
+		// 	function detectDeviceType() {
+		// 		var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		// 		var deviceType = screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
+		// 		$('#deviceType').text('Device Type: ' + deviceType);
+		// 	}
+
+		// 	// Panggil detectDeviceType saat halaman pertama dimuat
+		// 	detectDeviceType();
+
+		// 	// Tambahkan event listener untuk resize window
+		// 	$(window).on('resize', function() {
+		// 		// Panggil detectDeviceType saat ukuran layar berubah
+		// 		detectDeviceType();
+		// 	});
+		// });
+	</script>
+	<script>
+		$(document).ready(function() {
+			function detectDeviceType() {
+				var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				return screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
+			}
+
+			function updateMenuVisibility() {
+				var deviceType = detectDeviceType();
+				var testingItem = $('#authButton');
+
+				// Tampilkan elemen hanya jika perangkat dalam mode Mobile
+				testingItem.css('display', deviceType === 'Mobile' ? 'block' : 'none');
+			}
+
+			// Panggil updateMenuVisibility saat halaman pertama dimuat
+			updateMenuVisibility();
+
+			// Tambahkan event listener untuk resize window
+			$(window).on('resize', function() {
+				// Panggil updateMenuVisibility saat ukuran layar berubah
+				updateMenuVisibility();
+			});
+		});
 	</script>
 </body>
 

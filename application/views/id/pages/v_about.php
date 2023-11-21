@@ -1,14 +1,14 @@
 <div class="page-content bg-white">
     <!-- inner page banner -->
-    <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(images/banner/bnr3.jpg);">
+    <div class="dlab-bnr-inr overlay-black-middle bg-pt">
         <div class="container">
             <div class="dlab-bnr-inr-entry mt-5">
-                <h1 class="text-white mt-5">Tentang kami</h1>
+                <h1 class="text-white mt-5"><?= $lang['about_text'] ?></h1>
                 <!-- Breadcrumb row -->
                 <div class="breadcrumb-row">
-                    <ul class="list-inline">
-                        <li><a href="index.html">Beranda</a></li>
-                        <li>Tentang kami</li>
+                    <ul class="list-inline mt-4">
+                        <li><a href="index.html"><?= $lang['home_text'] ?></a></li>
+                        <li><?= $lang['about_text'] ?></li>
                     </ul>
                 </div>
                 <!-- Breadcrumb row END -->
@@ -24,10 +24,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12 m-b30">
                         <div class="our-story">
-                            <span>Visi dan Misi</span>
-                            <h2 class="title">Visi</h2>
+                            <span><?= $lang['visimisi_text'] ?></span>
+                            <h2 class="title"><?= $visi['judul_setting'] ?></h2>
                             <p><?= $visi['content'] ?></p>
-                            <h2 class="title">Misi</h2>
+                            <h2 class="title"><?= $misi['judul_setting'] ?></h2>
                             <p><?= $misi['content'] ?></p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                 <div class="col-lg-6 col-md-12 bg-primary">
                     <div class="max-w700 m-auto p-tb50 p-lr20">
                         <div class="text-white">
-                            <h2>Program kami</h2>
+                            <h2><?= $lang['programkami_text'] ?></h2>
                         </div>
                         <?php
                         foreach ($programs as $p) {
@@ -61,7 +61,7 @@
                                 <div class="icon-content">
                                     <h4 class="dlab-tilte"><?= $p->nama_program ?></h4>
                                     <p><?= $p->keterangan ?></p>
-                                    <a href="<?= base_url('program/detail/' . $p->slug) ?>" class="btn btn-primary">Lebih rinci...</a>
+                                    <a href="<?= base_url('program/detail/' . $p->slug) ?>" class="btn btn-primary"><?= $lang['detail_text'] ?>...</a>
                                 </div>
                             </div>
                         <?php

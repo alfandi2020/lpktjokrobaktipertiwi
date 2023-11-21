@@ -50,31 +50,42 @@ class Article extends CI_Controller
         $from = $this->uri->segment(3);
         $limit = $config['per_page'];
 
+        $language = detect_language();
+
         $data = [
             'title' => 'Article',
             'pages' => 'id/pages/v_article',
-            'articles' => $this->M_Article->list_bydate($limit, $from),
-            'programs' => $this->M_Program->lists(),
+            'articles' => $this->M_Article->list_bydate($limit, $from, $language),
+            'programs' => $this->M_Program->lists($language),
             'partners' => $this->M_Partner->lists(),
-            'alamat' => $this->M_Setting->alamat(),
-            'telepon' => $this->M_Setting->telepon(),
-            'email' => $this->M_Setting->email()
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $this->textlibrary->lang($language),
+            'language' => $language
         ];
         $this->load->view('id/index', $data);
     }
+
     public function detail($id)
     {
+        $language = detect_language();
+
         $data = [
             'title' => 'Article',
             'pages' => 'id/pages/v_article_detail',
-            'articles' => $this->M_Article->lists(),
-            'programs' => $this->M_Program->lists(),
-            'partners' => $this->M_Partner->lists(),
-            'article' => $this->M_Article->detail_article($id),
-            'alamat' => $this->M_Setting->alamat(),
-            'telepon' => $this->M_Setting->telepon(),
-            'email' => $this->M_Setting->email()
+            'article' => $this->M_Article->detail_article($id, $language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $this->textlibrary->lang($language),
+            'language' => $language
         ];
-        $this->load->view('id/index', $data);
+
+        if (!$data['article']) {
+            redirect('Custom404');
+        } else {
+            $this->load->view('id/index', $data);
+        }
     }
 }

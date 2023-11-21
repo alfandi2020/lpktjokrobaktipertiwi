@@ -6,6 +6,7 @@ class Language extends CI_Controller
     public function change($lang)
     {
         $this->session->set_userdata(array('language' => $lang));
-        redirect(base_url());
+
+        redirect($_SERVER['HTTP_REFERER']);
     }
 }

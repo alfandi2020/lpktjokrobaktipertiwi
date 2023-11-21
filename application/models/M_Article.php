@@ -20,9 +20,16 @@ class M_Article extends CI_Model
         return $query;
     }
 
-    public function list_bydate($limit, $from)
+    public function list_dashboard()
     {
-        $query = $this->db->order_by('publish_date', 'DESC')->order_by('judul', 'ASC')->get('article', $limit, $from)->result();
+        $query = $this->db->select('judul_id as judul, slug, author')->order_by('judul_id', 'ASC')->get('article')->result();
+
+        return $query;
+    }
+
+    public function list_bydate($limit, $from, $language)
+    {
+        $query = $this->db->select('judul_' . $language . ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug')->order_by('publish_date', 'DESC')->order_by('judul', 'ASC')->get('article', $limit, $from)->result();
         return $query;
     }
 
@@ -43,9 +50,6 @@ class M_Article extends CI_Model
 
         $hasil = $query_check["id"];
 
-        // print_r($hasil);
-        // exit;
-
         if ($hasil > 0) {
             $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			The article is already available.
@@ -54,44 +58,26 @@ class M_Article extends CI_Model
             redirect('dash/article/create');
         } else {
 
-            $config = array(
-                'upload_path' => 'assets/images/articles/',
-                'allowed_types' => "gif|jpg|png|jpeg|JPEG|JPG|PNG|GIF",
-                'overwrite' => TRUE,
-                'max_size' => "99999999999",
-                'max_height' => "800",
-                'max_width' => "1500",
-                'file_name' => $data["photo"]
-            );
-
-            // var_dump($config);exit;
-            $this->load->library('upload', $config);
-
-            if (!$this->upload->do_upload('article_photo')) {
-                $error = array('error' => $this->upload->display_errors());
-
-                $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-				Error message: ' . $this->upload->display_errors() . '.
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>');
-                // After that you need to used redirect function instead of load view such as 
-                redirect("dash/article/create", $error);
-            } else {
-
-                $this->db->insert('article', $data);
-                $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            $this->db->insert('article', $data);
+            $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 				The article inserted successfully.
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
-                // After that you need to used redirect function instead of load view such as 
-                redirect("dash/article/create");
-            }
+            // After that you need to used redirect function instead of load view such as 
+            redirect("dash/article/create");
         }
     }
 
-    public function detail_article($id)
+    public function detail_article($id, $language)
     {
-        $query = $this->db->where('slug', $id)->get('article')->row_array();
+        $query = $this->db->select('judul_' . $language . ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug')->where('slug', $id)->get('article')->row_array();
+        return $query;
+    }
+
+    public function detail_article_edit($id)
+    {
+        $query = $this->db->select('judul_id, judul_en, judul_jp, headline_id, headline_en, headline_jp, content_id, content_en, content_jp, slug, photo, publish_date, id_category')->where('slug', $id)->get('article')->row_array();
+
         return $query;
     }
 
@@ -104,7 +90,29 @@ class M_Article extends CI_Model
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
-        redirect("dash/article");
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
+    public function is_available($id)
+    {
+        $query = $this->db->select('photo')->where('slug', $id)->get('article')->row_array();
+
+        return $query;
+    }
+
+    public function update_photo($data, $slug)
+    {
+        $this->db->where('slug', $slug);
+        $this->db->update('article', $data);
+
+        $this->session->set_flashdata('message_photo', '<div class="alert alert-success fade show" role="alert">
+        The photo has been successfully modified.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function video()
@@ -145,7 +153,7 @@ class M_Article extends CI_Model
         return $query;
     }
 
-    public function check_qty($id)
+    public function is_availabel($id)
     {
         $this->db->select('menu_jual')->where('menu_id', $id);
         $query = $this->db->get('menu')->row_array();
@@ -178,50 +186,6 @@ class M_Article extends CI_Model
             redirect("dashboard/product");
         } else {
             echo "foto tidak ada";
-        }
-    }
-
-    public function update_photo($data, $menu_seo)
-    {
-        $query = $this->db->where('menu_seo', $menu_seo)->get('v_menu')->row_array();
-
-        $foto = $query["menu_foto"];
-        $path = "assets/img/products/" . $foto;
-
-        // var_dump($path);exit;
-
-        if (file_exists($path)) {
-            unlink($path);
-        }
-
-        $config = array(
-            'upload_path' => 'assets/img/products/',
-            'allowed_types' => "gif|jpg|png|jpeg|JPEG|JPG|PNG|GIF",
-            'overwrite' => TRUE,
-            'max_size' => "99999999999",
-            'max_height' => "",
-            'max_width' => "",
-            'file_name' => $data["menu_foto"]
-        );
-
-        // var_dump($config);exit;
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload('product_photo')) {
-            $error = array('error' => $this->upload->display_errors());
-
-            $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-			The photo has not been uploaded yet.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>');
-            // After that you need to used redirect function instead of load view such as 
-            redirect("dashboard/product/edit/" . $menu_seo, $error);
-        } else {
-            $this->db->where('menu_seo', $menu_seo);
-            $this->db->update('menu', $data);
-            $this->session->set_flashdata('message_name', 'The photo has been successfully modified.');
-            // After that you need to used redirect function instead of load view such as 
-            redirect("dashboard/product/edit/" . $menu_seo);
         }
     }
 

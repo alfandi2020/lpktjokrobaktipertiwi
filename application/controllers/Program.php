@@ -50,32 +50,32 @@ class Program extends CI_Controller
         $from = $this->uri->segment(2);
         $limit = $config['per_page'];
 
+        $language = detect_language();
+
         $data = [
             'title' => 'Program',
             'pages' => 'id/pages/v_program',
-            // 'programs' => $this->M_Program->list_bydate($limit, $from),
-            'articles' => $this->M_Article->lists(),
-            'programs' => $this->M_Program->lists(),
-            'partners' => $this->M_Partner->lists(),
-            'alamat' => $this->M_Setting->alamat(),
-            'telepon' => $this->M_Setting->telepon(),
-            'email' => $this->M_Setting->email()
+            'programs' => $this->M_Program->list_bydate($limit, $from),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $this->textlibrary->lang($language),
         ];
         $this->load->view('id/index', $data);
     }
 
     public function detail($id)
     {
+        $language = detect_language();
+
         $data = [
             'title' => 'Program',
             'pages' => 'id/pages/v_program_detail',
-            'program' => $this->M_Program->detail_program($id),
-            'articles' => $this->M_Article->lists(),
-            'programs' => $this->M_Program->lists(),
-            'partners' => $this->M_Partner->lists(),
-            'alamat' => $this->M_Setting->alamat(),
-            'telepon' => $this->M_Setting->telepon(),
-            'email' => $this->M_Setting->email()
+            'program' => $this->M_Program->detail_program($id, $language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $this->textlibrary->lang($language),
         ];
         $this->load->view('id/index', $data);
     }

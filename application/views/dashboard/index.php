@@ -87,8 +87,8 @@
                 <div class="header-logo-wrapper col-auto p-0">
                     <div class="logo-wrapper">
                         <a href="<?= base_url() ?>">
-                            <img class="img-fluid for-light" src="<?= base_url() ?>assets/images/logo/logo.png" alt="">
-                            <img class="img-fluid for-dark" src="<?= base_url() ?>assets/images/logo/logo_dark.png" alt="">
+                            <img class="img-fluid-logo-dashboard for-light" src="<?= base_url() ?>assets/images/logo/logo.png" alt="">
+                            <img class="img-fluid-logo-dashboard for-dark" src="<?= base_url() ?>assets/images/logo/logo_dark.png" alt="">
                         </a>
                     </div>
                     <div class="toggle-sidebar">
@@ -127,8 +127,8 @@
                 <div>
                     <div class="logo-wrapper">
                         <a href="<?= base_url() ?>">
-                            <img class="img-fluid for-light" src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt="">
-                            <img class="img-fluid for-dark" src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt="">
+                            <img class="img-fluid-logo-dashboard for-light" src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt="">
+                            <img class="img-fluid-logo-dashboard for-dark" src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt="">
                         </a>
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="logo-icon-wrapper">
                         <a href="<?= base_url() ?>">
-                            <img class="img-fluid" src="<?= base_url() ?>assets/asset_fr/images/log.png" alt="">
+                            <img class="img-fluid-logo-dashboard" src="<?= base_url() ?>assets/asset_fr/images/log.png" alt="">
                         </a>
                     </div>
                     <nav class="sidebar-main">
@@ -183,7 +183,7 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/article') ?>">
+                                    <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/article') ?>">
                                         <i data-feather="book"></i>
                                         <span>Article</span>
                                     </a>
