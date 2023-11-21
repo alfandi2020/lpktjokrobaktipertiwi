@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-if (!function_exists('set_language')) {
+// if (!function_exists('set_language')) {
 
     function detect_language()
     {
@@ -18,4 +18,4 @@ if (!function_exists('set_language')) {
 
         return $language;
     }
-}
+// }
