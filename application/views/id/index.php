@@ -42,6 +42,8 @@
 	<!-- REVOLUTION SLIDER CSS -->
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/css/revolution.min.css">
 
+	<script src="<?= base_url() ?>assets/asset_fr/js/jquery.min.js"></script>
+
 </head>
 
 <body id="bg">
@@ -152,7 +154,7 @@
 							</div>
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="<?= base_url('dash/program/register') ?>"><?= $lang['registration_text'] ?></a>
+									<a href="<?= base_url('registrasi') ?>"><?= $lang['registration_text'] ?></a>
 								</li>
 								<li>
 									<a href="#kegiatan"><?= $lang['activity_text'] ?></a>
@@ -174,12 +176,6 @@
 								</li>
 							</ul>
 							<div class="dlab-social-icon">
-								<!-- <ul>
-									<li><a class="site-button facebook circle-sm outline fab fa-facebook-f" href="javascript:void(0);"></a></li>
-									<li><a class="site-button twitter circle-sm outline fab fa-twitter" href="javascript:void(0);"></a></li>
-									<li><a class="site-button linkedin circle-sm outline fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-									<li><a class="site-button instagram circle-sm outline fab fa-instagram" href="javascript:void(0);"></a></li>
-								</ul> -->
 								<ul>
 									<li>
 										<a href="https://wa.me/628176877606" target="_blank" class="site-button whatsapp hover" title="Admin 1">
@@ -225,82 +221,11 @@
 			<!-- main header END -->
 		</header>
 		<!-- header END -->
-		<!-- Content -->
 
+		<!-- Content -->
 		<?php if (isset($pages)) $this->load->view($pages) ?>
-		<!-- <div class="section-full bg-white content-inner-1 project-area  bg-img-fix" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg9.jpg); background-size: cover;">
-            <div class="container">
-                <div class="section-head text-white style2 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
-                    <h2 class="title m-b10">The Luxury Residence In Forest</h2>
-                    <p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache <br />fanny pack nostrud. Photo booth anim 8-bit hella, </p>
-                    <a href="contact-1.html" class="site-button btnhover20 m-r10 m-b10">Contact Us</a>
-                    <a href="portfolio-details.html" class="site-button btnhover20 m-b10">View Portfolio</a>
-                </div>
-                <div class="project-carousel-1 owl-carousel wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
-                    <div class="item">
-                        <div class="project-info-box">
-                            <div class="project-media">
-                                <img src="<?= base_url() ?>assets/asset_fr/images/our-services/construct/pic1.jpg" alt="" />
-                            </div>
-                            <div class="project-content">
-                                <ul class="list-details">
-                                    <li>
-                                        <strong>Clients:</strong>
-                                        <span>Ethan Hunt</span>
-                                    </li>
-                                    <li>
-                                        <strong>Completion:</strong>
-                                        <span>February 5th, 2017</span>
-                                    </li>
-                                    <li>
-                                        <strong>Project Type:</strong>
-                                        <span>Villa, Residence</span>
-                                    </li>
-                                    <li>
-                                        <strong>Architects:</strong>
-                                        <span>Logan Cee</span>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-details.html" class="site-button btnhover20 m-t10">View Portfolio</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="project-info-box">
-                            <div class="project-media">
-                                <img src="<?= base_url() ?>assets/asset_fr/images/our-services/construct/pic2.jpg" alt="" />
-                            </div>
-                            <div class="project-content">
-                                <ul class="list-details">
-                                    <li>
-                                        <strong>Clients:</strong>
-                                        <span>Ethan Hunt</span>
-                                    </li>
-                                    <li>
-                                        <strong>Completion:</strong>
-                                        <span>February 5th, 2017</span>
-                                    </li>
-                                    <li>
-                                        <strong>Project Type:</strong>
-                                        <span>Villa, Residence</span>
-                                    </li>
-                                    <li>
-                                        <strong>Architects:</strong>
-                                        <span>Logan Cee</span>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio-details.html" class="site-button btnhover20 m-t10">View Portfolio</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 		<!-- Content END -->
+
 		<!-- Footer -->
 		<footer class="site-footer" id="kontak">
 			<div class="footer-top" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg2.png); background-size: contain;">
@@ -310,9 +235,12 @@
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white"><?= $lang['menu_text'] ?></h5>
 								<ul>
-									<li><a href="<?= base_url('home/tentang') ?>"><?= $lang['about_text'] ?></a></li>
-									<li><a href="<?= base_url('article') ?>"><?= $lang['article_text'] ?></a></li>
-									<!-- <li><a href="blog-grid-2.html">Manajemen</a></li> -->
+									<li>
+										<a href="<?= base_url('home/tentang') ?>"><?= $lang['about_text'] ?></a>
+									</li>
+									<li>
+										<a href="<?= base_url('article') ?>"><?= $lang['article_text'] ?></a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -320,13 +248,6 @@
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white"><?= $lang['maps_text'] ?></h5>
 								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-								<!-- <ul>
-								<li><a href="help-desk.html">Help Desk </a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="contact-1.html">Contact</a></li>
-                                <li><a href="portfolio-details.html">Portfolio</a></li>
-                                <li><a href="team-1.html">Team</a></li>
-                            </ul> -->
 							</div>
 						</div>
 						<div class="col-md-6 col-xl-4 col-lg-3 col-sm-6 footer-col-4">
@@ -348,22 +269,6 @@
 								</ul>
 							</div>
 						</div>
-						<!-- <div class="col-md-12 col-xl-3 col-lg-4 col-sm-6 footer-col-4 ">
-                        <div class="widget">
-                            <h5 class="footer-title text-white">Subscribe To Our Newsletter</h5>
-                            <div class="subscribe-form m-b20">
-								<form class="dzSubscribe" action="script/mailchamp.php" method="post">
-									<div class="dzSubscribeMsg"></div>
-									<div class="input-group">
-										<input name="dzEmail" required="required"  class="form-control" placeholder="Your Email Id" type="email">
-										<span class="input-group-btn">
-											<button name="submit" value="Submit" type="submit" class="site-button btnhover20 radius-xl">Subscribe</button>
-										</span> 
-									</div>
-								</form>
-							</div>
-                        </div>
-                    </div> -->
 					</div>
 				</div>
 			</div>
@@ -371,16 +276,9 @@
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 text-left "> <span><?= $lang['copyright_text'] ?> © 2023 Fantecno Design DexignZone</span> </div>
-						<!-- <div class="col-md-6 col-sm-6 text-right "> 
-						<div class="widget-link "> 
-							<ul>
-								<li><a href="about-2.html"> About</a></li> 
-								<li><a href="help-desk.html"> Help Desk</a></li> 
-								<li><a href="privacy-policy.html"> Privacy Policy</a></li> 
-							</ul>
+						<div class="col-md-6 col-sm-6 text-left ">
+							<span><?= $lang['copyright_text'] ?> © 2023 Fantecno Design DexignZone</span>
 						</div>
-					</div> -->
 					</div>
 				</div>
 			</div>
@@ -391,7 +289,11 @@
 	</div>
 	<!-- JAVASCRIPT FILES ========================================= -->
 	<!-- JAVASCRIPT FILES ========================================= -->
-	<script src="<?= base_url() ?>assets/asset_fr/js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script> -->
 	<script src="<?= base_url() ?>assets/asset_fr/plugins/wow/wow.js"></script><!-- WOW JS -->
 
 	<script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP.MIN JS -->
@@ -432,36 +334,6 @@
 			dz_rev_slider_14();
 			$('.lazy').Lazy();
 		}); /*ready*/
-	</script>
-	<script>
-		// $(document).ready(function() {
-		// 	// Menggunakan JavaScript untuk mendeteksi lebar layar
-		// 	var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-		// 	// Mendeteksi jenis perangkat berdasarkan lebar layar
-		// 	var deviceType = screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
-
-		// 	// Menampilkan hasil deteksi perangkat
-		// 	$('#deviceType').text('Device Type: ' + deviceType);
-		// });
-	</script>
-	<script>
-		// $(document).ready(function() {
-		// 	function detectDeviceType() {
-		// 		var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		// 		var deviceType = screenWidth < 768 ? 'Mobile' : (screenWidth < 1024 ? 'Tablet' : 'Desktop');
-		// 		$('#deviceType').text('Device Type: ' + deviceType);
-		// 	}
-
-		// 	// Panggil detectDeviceType saat halaman pertama dimuat
-		// 	detectDeviceType();
-
-		// 	// Tambahkan event listener untuk resize window
-		// 	$(window).on('resize', function() {
-		// 		// Panggil detectDeviceType saat ukuran layar berubah
-		// 		detectDeviceType();
-		// 	});
-		// });
 	</script>
 	<script>
 		$(document).ready(function() {

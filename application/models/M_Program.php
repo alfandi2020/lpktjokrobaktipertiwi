@@ -22,7 +22,7 @@ class M_Program extends CI_Model
 
     public function list_dashboard()
     {
-        $query = $this->db->select('nama_program_id as nama_program, slug')->order_by('nama_program_id', 'ASC')->get('program')->result();
+        $query = $this->db->select('nama_program_id as nama_program, slug, nama_program_singkat_id')->order_by('nama_program_id', 'ASC')->get('program')->result();
 
         return $query;
     }
@@ -107,6 +107,19 @@ class M_Program extends CI_Model
     public function video()
     {
         $query = $this->db->where('Id', '1')->get('videotron')->row_array();
+        return $query;
+    }
+
+    public function max_number()
+    {
+        $query = $this->db->select('max(nomor_urut) as nomor_urut')->get('siswa')->row_array();
+        return $query;
+    }
+
+    public function tambah_siswa($data)
+    {
+        $query = $this->db->insert('siswa', $data);
+
         return $query;
     }
 }

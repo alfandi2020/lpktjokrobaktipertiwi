@@ -125,8 +125,4 @@ class Program extends CI_Controller
 
         $this->load->view('dashboard/index', $data);
     }
-
-    public function register()
-    {
-    }
 }

@@ -10,6 +10,7 @@ class Custom404 extends CI_Controller
 
         // load base_url
         $this->load->helper('url');
+        $this->load->library('textlibrary');
     }
 
     public function index()

@@ -136,7 +136,6 @@ class Article extends CI_Controller
                     'file_name' => $newPhotoFileName
                 );
 
-                // var_dump($config);exit;
                 $this->load->library('upload', $config);
 
                 if (!$this->upload->do_upload('article_photo')) {
