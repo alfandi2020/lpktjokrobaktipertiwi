@@ -6744,7 +6744,7 @@ body.modal-open .select2-container--open .select2-dropdown {
 
 .social-profile {
   text-align: center;
-  background-image: url(../images/dashboard-5/profile-bg.png);
+  /* background-image: url(../images/dashboard-5/profile-bg.png); */
   background-repeat: no-repeat;
   background-size: cover;
 }

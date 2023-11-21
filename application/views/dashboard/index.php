@@ -189,6 +189,12 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/student') ?>">
+                                        <i data-feather="book"></i>
+                                        <span>Data pendaftaran</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
                                         <i data-feather="settings"></i>
                                         <span>Settings</span>
