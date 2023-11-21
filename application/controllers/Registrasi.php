@@ -41,8 +41,8 @@ class Registrasi extends CI_Controller
         $this->form_validation->set_rules('student_age', ' Age ', 'required');
         $this->form_validation->set_rules('student_email', ' Email ', 'required');
         $this->form_validation->set_rules('student_phone', ' Phone ', 'required');
-        $this->form_validation->set_rules('student_last_edu', ' Pendidikan terakhir ', 'required');
-        $this->form_validation->set_rules('newLastEdu', ' Latest education ', 'required');
+        // $this->form_validation->set_rules('student_last_edu', ' Pendidikan terakhir ', 'required');
+        // $this->form_validation->set_rules('newLastEdu', ' Latest education ', 'required');
         $this->form_validation->set_rules('student_gender', ' Gender ', 'required');
         $this->form_validation->set_rules('student_birthplace', ' Birthplace ', 'required');
         $this->form_validation->set_rules('student_birthdate', ' Birthdate ', 'required');
