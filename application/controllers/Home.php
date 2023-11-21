@@ -20,7 +20,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $language = detect_language();
+        $language = $this->detect_language();
 
         $data = [
             'title' => 'Home',
@@ -42,7 +42,7 @@ class Home extends CI_Controller
     public function tentang()
     {
         // $device = detect_device();
-        $language = detect_language();
+        $language = $this->detect_language();
 
         $data = [
             'title' => 'Tentang',
@@ -58,5 +58,20 @@ class Home extends CI_Controller
         ];
 
         $this->load->view('id/index', $data);
+    }
+    function detect_language()
+    {
+        $CI = &get_instance();
+        $language = $CI->session->userdata('language');
+
+        // Jika tidak ada bahasa di session, gunakan bahasa default
+
+        if (!$language) {
+            $language = "id";
+        } else {
+            $language = $language;
+        }
+
+        return $language;
     }
 }
