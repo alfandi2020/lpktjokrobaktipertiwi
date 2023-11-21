@@ -9,7 +9,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->helper(array('form', 'url', 'language_helper'));
-        $this->load->library('TextLibrary');
+        $this->load->library('textlibrary');
         $this->load->helper('date');
 
         $this->load->model('M_Article');

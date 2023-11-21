@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class TextLibrary
+class Textlibrary
 {
     public function lang($language)
     {
