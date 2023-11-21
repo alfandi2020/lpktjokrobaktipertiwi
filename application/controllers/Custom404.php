@@ -14,12 +14,28 @@ class Custom404 extends CI_Controller
 
     public function index()
     {
-        $language = detect_language();
+        $language = $this->detect_language();
 
         $data = [
             'lang' => $this->textlibrary->lang($language),
         ];
         $this->output->set_status_header('404');
         $this->load->view('errors/html/error_404', $data);
+    }
+
+    function detect_language()
+    {
+        $CI = &get_instance();
+        $language = $CI->session->userdata('language');
+
+        // Jika tidak ada bahasa di session, gunakan bahasa default
+
+        if (!$language) {
+            $language = "id";
+        } else {
+            $language = $language;
+        }
+
+        return $language;
     }
 }

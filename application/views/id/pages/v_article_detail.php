@@ -45,7 +45,7 @@
                     <div class="dlab-post-title">
                         <h4 class="post-title m-t0"><a href="blog-single.html"><?= $article['judul'] ?></a></h4>
                     </div>
-                    <div class="dlab-post-media dlab-img-effect zoom-slow">
+                    <div class="dlab-post-media dlab-img-effect zoom-slow" style="height: auto">
                         <a href="blog-single.html">
                             <img src="<?= base_url() ?>assets/images/articles/<?= $article['photo'] ?>" alt="">
                         </a>

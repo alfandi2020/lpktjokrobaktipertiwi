@@ -7,6 +7,8 @@ class Program extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('textlibrary');
         $this->load->library('session');
         $this->load->library('pagination');
         $this->load->helper('string');
@@ -50,7 +52,7 @@ class Program extends CI_Controller
         $from = $this->uri->segment(2);
         $limit = $config['per_page'];
 
-        $language = detect_language();
+        $language = $this->detect_language();
 
         $data = [
             'title' => 'Program',
@@ -66,7 +68,7 @@ class Program extends CI_Controller
 
     public function detail($id)
     {
-        $language = detect_language();
+        $language = $this->detect_language();
 
         $data = [
             'title' => 'Program',
@@ -78,5 +80,21 @@ class Program extends CI_Controller
             'lang' => $this->textlibrary->lang($language),
         ];
         $this->load->view('id/index', $data);
+    }
+
+    function detect_language()
+    {
+        $CI = &get_instance();
+        $language = $CI->session->userdata('language');
+
+        // Jika tidak ada bahasa di session, gunakan bahasa default
+
+        if (!$language) {
+            $language = "id";
+        } else {
+            $language = $language;
+        }
+
+        return $language;
     }
 }

@@ -460,7 +460,7 @@
                             <div class="icon-bx-wraper sr-iconbox style2">
                                 <div class=" m-b10">
 
-                                    <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" />
+                                    <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" class="thumbnail" />
                                 </div>
                                 <div class="icon-content">
                                     <h4 class="dlab-tilte">
@@ -497,7 +497,7 @@
                             ?>
                                 <div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp h-100" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
                                     <div class="blog-post blog-grid blog-rounded blog-effect1">
-                                        <div class="dlab-post-media dlab-img-effect rotate"> <a href="javascript:void(0);">
+                                        <div class="dlab-post-media-thumbnail dlab-img-effect rotate"> <a href="javascript:void(0);">
                                                 <img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="">
                                             </a>
                                         </div>

@@ -165,7 +165,13 @@ p a {
 
 img {
     border-style: none;
-    /* height: auto; */
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+img.thumbnail {
+    border-style: none;
     height: 190px;
     max-width: 100%;
     vertical-align: middle;
@@ -12960,6 +12966,13 @@ ul[class*="list-"] {
 
 .dlab-media img,
 .dlab-post-media img {
+    width: 100%;
+    height: auto;
+    /* height: 190px; */
+}
+
+.dlab-media img,
+.dlab-post-media-thumbnail img {
     width: 100%;
     /* height: auto; */
     height: 190px;
