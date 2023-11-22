@@ -12,7 +12,7 @@ class M_Setting extends CI_Model
 
     public function videotron()
     {
-        $query = $this->db->select('content_id as content')->where('Id', '1')->get('settings')->row_array();
+        $query = $this->db->select('Id, content_id as content')->where('Id', '1')->get('settings')->row_array();
         return $query;
     }
 
@@ -61,11 +61,31 @@ class M_Setting extends CI_Model
         }
     }
 
-    // public function visi()
-    // {
-    //     $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
-    //     return $query;
-    // }
+    public function visi()
+    {
+        $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
+        return $query;
+    }
+    public function misi()
+    {
+        $query = $this->db->where('kategori', 'misi')->get('settings')->row_array();
+        return $query;
+    }
+    public function alamat()
+    {
+        $query = $this->db->where('kategori', 'alamat')->get('settings')->row_array();
+        return $query;
+    }
+    public function telepon()
+    {
+        $query = $this->db->where('kategori', 'telepon')->get('settings')->row_array();
+        return $query;
+    }
+    public function email()
+    {
+        $query = $this->db->where('kategori', 'email')->get('settings')->row_array();
+        return $query;
+    }
 
     // public function misi($language)
     // {

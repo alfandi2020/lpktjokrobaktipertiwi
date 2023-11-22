@@ -36,7 +36,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="visi" class="form-label">Visi</label>
-                                    <textarea name="visi" id="" cols="30" rows="5" class="form-control"><?= $visi['content'] ?></textarea>
+                                    <textarea name="visi" id="" cols="30" rows="5" class="form-control"><?= $visi['content_id'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="col">
                                 <div class="">
                                     <label for="misi" class="form-label">Misi</label>
-                                    <textarea name="misi" id="" cols="30" rows="6" class="form-control"><?= $misi['content'] ?></textarea>
+                                    <textarea name="misi" id="" cols="30" rows="6" class="form-control"><?= $misi['content_id'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    <textarea name="alamat" id="" cols="30" rows="5" class="form-control"><?= $alamat['content'] ?></textarea>
+                                    <textarea name="alamat" id="" cols="30" rows="5" class="form-control"><?= $alamat['content_id'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -168,8 +168,8 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="telepon" class="form-label">Telepon</label>
-                                    <input type="hidden" id="hiddenInput" name="telepon" value='<?= $telepon['content'] ?>' class="form-control input-air-primary">
-                                    <div id="input_telepon" style="min-height: 160px;"><?= $telepon['content'] ?></div>
+                                    <input type="hidden" id="hiddenInput" name="telepon" value='<?= $telepon['content_id'] ?>' class="form-control input-air-primary">
+                                    <div id="input_telepon" style="min-height: 160px;"><?= $telepon['content_id'] ?></div>
                                 </div>
                             </div>
                         </div>
@@ -177,9 +177,9 @@
                             <div class="col">
                                 <div class="">
                                     <label for="email" class="form-label">Email</label>
-                                    <!-- <textarea name="email" id="" cols="30" rows="6" class="form-control"><?= $email['content'] ?></textarea> -->
-                                    <input type="hidden" id="hiddenInput" name="email" value='<?= $email['content'] ?>' class="form-control input-air-primary">
-                                    <div id="input_email" style="min-height: 160px;"><?= $email['content'] ?></div>
+                                    <!-- <textarea name="email" id="" cols="30" rows="6" class="form-control"><?= $email['content_id'] ?></textarea> -->
+                                    <input type="hidden" id="hiddenInput" name="email" value='<?= $email['content_id'] ?>' class="form-control input-air-primary">
+                                    <div id="input_email" style="min-height: 160px;"><?= $email['content_id'] ?></div>
                                 </div>
                             </div>
                         </div>

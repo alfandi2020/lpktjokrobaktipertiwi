@@ -38,8 +38,10 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/responsive.css">
 
+    <!-- latest jquery-->
+    <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/datatables.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/sweetalert2.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/sweetalert2.css"> -->
 
 </head>
 
@@ -108,7 +110,7 @@
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
                                 <li>
-                                    <a href="<?= base_url('auth/logout') ?>">
+                                    <a data-href="<?= base_url('auth/logout') ?>" class="btn-logout">
                                         <i data-feather="log-out"> </i>
                                         <span>Keluar</span>
                                     </a>
@@ -212,7 +214,7 @@
                                     </ul>
                                 </li> -->
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('auth/logout') ?>">
+                                    <a class="sidebar-link sidebar-title link-nav btn-logout" data-href="<?= base_url('auth/logout') ?>">
                                         <i data-feather="log-out"> </i>
                                         <span>Logout</span>
                                     </a>
@@ -242,9 +244,9 @@
             </footer>
         </div>
     </div>
-    <!-- latest jquery-->
-    <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <!-- Bootstrap js-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- feather icon js-->
     <script src="<?= base_url() ?>assets/js/icons/feather-icon/feather.min.js"></script>
@@ -290,6 +292,27 @@
                 icon: "success",
             });
         }
+        $(document).ready(function() {
+            $(".btn-logout").on("click", function(e) {
+                e.preventDefault();
+                const href = $(this).data("href");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    cancelButtonText: "Cancel",
+                    confirmButtonText: "Logout",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirect or perform the desired action
+                        document.location.href = href;
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
