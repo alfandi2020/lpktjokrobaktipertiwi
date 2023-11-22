@@ -23,172 +23,180 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header pb-0 card-no-border">
-                    <h5>Visi Misi</h5>
+        <div class="col-sm-12 col-xxl-6">
+            <div class="card height-equal">
+                <div class="card-header">
+                    <h4>Settings</h4>
                 </div>
-                <form action="<?= base_url('dash/settings/update_visimisi') ?>" method="post" class="form theme-form dark-input">
-                    <div class="card-body">
+                <div class="card-body">
 
-                        <?= $this->session->flashdata('message_visimisi') ?>
-                        <div class="row">
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="visi" class="form-label">Visi</label>
-                                    <textarea name="visi" id="" cols="30" rows="5" class="form-control"><?= $visi['content_id'] ?></textarea>
-                                </div>
+                    <?= $this->session->flashdata('message_name') ?>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12">
+                            <div class="nav flex-column nav-pills nav-primary" id="ver-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="visi-tab" data-bs-toggle="pill" href="#visi" role="tab" aria-controls="visi" aria-selected="true">Visi misi</a>
+                                <a class="nav-link" id="videotron-tab" data-bs-toggle="pill" href="#videotron" role="tab" aria-controls="videotron" aria-selected="false">Videotron</a>
+                                <a class="nav-link" id="kategori-konten-tab" data-bs-toggle="pill" href="#kategori-konten" role="tab" aria-controls="kategori-konten" aria-selected="false">Kategori konten</a>
+                                <a class="nav-link" id="kontak-tab" data-bs-toggle="pill" href="#kontak" role="tab" aria-controls="kontak" aria-selected="false">Kontak</a>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="">
-                                    <label for="misi" class="form-label">Misi</label>
-                                    <textarea name="misi" id="" cols="30" rows="6" class="form-control"><?= $misi['content_id'] ?></textarea>
+                        <div class="col-md-8 col-xs-12">
+                            <div class="tab-content" id="ver-pills-tabContent">
+                                <div class="tab-pane fade show active" id="visi" role="tabpanel" aria-labelledby="visi-tab">
+                                    <form action="<?= base_url('dash/settings/update_visimisi') ?>" method="post" class="form theme-form dark-input">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="visi" class="form-label">Visi</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
+                                                        <textarea name="visi_id" id="" cols="30" rows="3" class="form-control"><?= $visi['content_id'] ?></textarea>
+                                                    </div>
+                                                    <div class="input-group mt-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-gb-eng"></i></span>
+                                                        <textarea name="visi_en" id="" cols="30" rows="3" class="form-control"><?= $visi['content_en'] ?></textarea>
+                                                    </div>
+                                                    <div class="input-group mt-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
+                                                        <textarea name="visi_jp" id="" cols="30" rows="3" class="form-control"><?= $visi['content_jp'] ?></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="">
+                                                    <label for="misi" class="form-label">Misi</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
+                                                        <textarea name="misi_id" id="" cols="30" rows="4" class="form-control"><?= $misi['content_id'] ?></textarea>
+                                                    </div>
+                                                    <div class="input-group mt-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-gb-eng"></i></span>
+                                                        <textarea name="misi_en" id="" cols="30" rows="4" class="form-control"><?= $misi['content_en'] ?></textarea>
+                                                    </div>
+                                                    <div class="input-group mt-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
+                                                        <textarea name="misi_jp" id="" cols="30" rows="4" class="form-control"><?= $misi['content_jp'] ?></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" text-end mt-5">
+                                            <button class="btn btn-primary me-3" type="submit">Update</button>
+                                            <input class="btn btn-light" type="reset" value="Cancel">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="videotron" role="tabpanel" aria-labelledby="videotron-tab">
+                                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/settings/update_videotron/' . $videotron['Id']) ?>" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="input_videotron">Videotron</label>
+                                                    <input type="file" class="form-control input-air-primary" id="input_videotron" name="input_videotron">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="">
+                                                    <video width="100%" height="100%" loop="true" autoplay="autoplay" muted>
+                                                        <source src="<?= base_url() ?>assets/asset_fr/video/<?= $videotron['content'] ?>" type="video/mp4" />
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-end mt-5">
+                                            <button class="btn btn-primary me-3" type="submit">Update</button>
+                                            <input class="btn btn-light" type="reset" value="Cancel">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="kategori-konten" role="tabpanel" aria-labelledby="kategori-konten-tab">
+                                    <form action="<?= base_url('dash/settings/add_category') ?>" method="post" class="form theme-form dark-input">
+                                        <div class="row">
+                                            <div class="col">
+                                                <!-- <div class=""> -->
+                                                <label for="category" class="form-label">Category</label>
+                                                <div class="input-group">
+                                                    <input class="form-control input-air-primary" type="text" placeholder="Article category" aria-label="Article category" aria-describedby="button-addon2" name="category_name">
+                                                    <button class="btn btn-primary" id="button-addon2" type="submit">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-5">
+                                            <div class="col">
+                                                <table class="table table-condensed">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Nama</th>
+                                                            <th>Act.</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                        $no = 1;
+                                                        foreach ($categories as $c) {
+                                                        ?>
+                                                            <tr>
+                                                                <td><?= $no++; ?>.</td>
+                                                                <td><?= $c->category_name ?></td>
+                                                                <td>
+                                                                    <button class="btn btn-primary btn-sm">
+                                                                        Edit
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="kontak" role="tabpanel" aria-labelledby="kontak-tab">
+                                    <form action="<?= base_url('dash/settings/update_contact') ?>" method="post" class="form theme-form dark-input">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="alamat" class="form-label">Alamat</label>
+                                                    <textarea name="alamat" id="" cols="30" rows="5" class="form-control"><?= $alamat['content_id'] ?></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="telepon" class="form-label">Telepon</label>
+                                                    <input type="hidden" id="hiddenInput" name="telepon" value='<?= $telepon['content_id'] ?>' class="form-control input-air-primary">
+                                                    <div id="input_telepon" style="min-height: 160px;"><?= $telepon['content_id'] ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input type="hidden" id="hiddenInput" name="email" value='<?= $email['content_id'] ?>' class="form-control input-air-primary">
+                                                    <div id="input_email" style="min-height: 160px;"><?= $email['content_id'] ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+                                        <div class="text-end mt-5">
+                                            <button class="btn btn-primary me-3" type="submit">Update</button>
+                                            <input class="btn btn-light" type="reset" value="Cancel">
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer text-end">
-                        <button class="btn btn-primary me-3" type="submit">Update</button>
-                        <input class="btn btn-light" type="reset" value="Cancel">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header pb-0 card-no-border">
-                    <h5>Videotron</h5>
                 </div>
-                <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/settings/update_videotron/' . $videotron['Id']) ?>" enctype="multipart/form-data">
-                    <div class="card-body">
-                        <?= $this->session->flashdata('message_name') ?>
-                        <div class="row">
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label class="form-label" for="input_videotron">Videotron</label>
-                                    <input type="file" class="form-control input-air-primary" id="input_videotron" name="input_videotron">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="">
-                                    <video width="100%" height="100%" loop="true" autoplay="autoplay" muted>
-                                        <source src="<?= base_url() ?>assets/asset_fr/video/<?= $videotron['content'] ?>" type="video/mp4" />
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer text-end">
-                        <button class="btn btn-primary me-3" type="submit">Update</button>
-                        <input class="btn btn-light" type="reset" value="Cancel">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header pb-0 card-no-border">
-                    <h5>Kategori konten</h5>
-                </div>
-                <form action="<?= base_url('dash/settings/add_category') ?>" method="post" class="form theme-form dark-input">
-                    <div class="card-body">
-
-                        <?= $this->session->flashdata('message_category') ?>
-                        <div class="row">
-                            <div class="col">
-                                <!-- <div class=""> -->
-                                <label for="category" class="form-label">Category</label>
-                                <div class="input-group">
-                                    <input class="form-control input-air-primary" type="text" placeholder="Article category" aria-label="Article category" aria-describedby="button-addon2" name="category_name">
-                                    <button class="btn btn-primary" id="button-addon2" type="submit">Submit</button>
-                                </div>
-                                <!-- <input type="text" class="form-control input-air-primary" name="category_name"> -->
-                                <!-- </div> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>Act.</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $no = 1;
-                                        foreach ($categories as $c) {
-                                        ?>
-                                            <tr>
-                                                <td><?= $no++; ?>.</td>
-                                                <td><?= $c->category_name ?></td>
-                                                <td>
-                                                    <button class="btn btn-primary btn-sm">
-                                                        Edit
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header pb-0 card-no-border">
-                    <h5>Kontak</h5>
-                </div>
-                <form action="<?= base_url('dash/settings/update_contact') ?>" method="post" class="form theme-form dark-input">
-                    <div class="card-body">
-
-                        <?= $this->session->flashdata('message_contact') ?>
-                        <div class="row">
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label">Alamat</label>
-                                    <textarea name="alamat" id="" cols="30" rows="5" class="form-control"><?= $alamat['content_id'] ?></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="telepon" class="form-label">Telepon</label>
-                                    <input type="hidden" id="hiddenInput" name="telepon" value='<?= $telepon['content_id'] ?>' class="form-control input-air-primary">
-                                    <div id="input_telepon" style="min-height: 160px;"><?= $telepon['content_id'] ?></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="">
-                                    <label for="email" class="form-label">Email</label>
-                                    <!-- <textarea name="email" id="" cols="30" rows="6" class="form-control"><?= $email['content_id'] ?></textarea> -->
-                                    <input type="hidden" id="hiddenInput" name="email" value='<?= $email['content_id'] ?>' class="form-control input-air-primary">
-                                    <div id="input_email" style="min-height: 160px;"><?= $email['content_id'] ?></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer text-end">
-                        <button class="btn btn-primary me-3" type="submit">Update</button>
-                        <input class="btn btn-light" type="reset" value="Cancel">
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -197,11 +205,11 @@
 
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
-    var quill = new Quill('#input_telepon', {
+    var quill_telepon = new Quill('#input_telepon', {
         theme: 'snow',
     });
-    quill.on('text-change', function(delta, oldDelta, source) {
-        document.querySelector("input[name='telepon']").value = quill.root.innerHTML;
+    quill_telepon.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='telepon']").value = quill_telepon.root.innerHTML;
     });
 
     document.getElementById('telepon').addEventListener('input', function() {
@@ -210,11 +218,11 @@
     });
 </script>
 <script>
-    var quill = new Quill('#input_email', {
+    var quill_email = new Quill('#input_email', {
         theme: 'snow',
     });
-    quill.on('text-change', function(delta, oldDelta, source) {
-        document.querySelector("input[name='email']").value = quill.root.innerHTML;
+    quill_email.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='email']").value = quill_email.root.innerHTML;
     });
 
     document.getElementById('email').addEventListener('input', function() {

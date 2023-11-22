@@ -33,11 +33,11 @@ class Settings extends CI_Controller
             'title' => 'Setting',
             'pages' => 'dashboard/pages/settings/v_settings',
             'videotron' => $this->M_Setting->videotron(),
-            'visi' => $this->M_Setting->visi(),
-            'misi' => $this->M_Setting->misi(),
-            'alamat' => $this->M_Setting->alamat(),
-            'telepon' => $this->M_Setting->telepon(),
-            'email' => $this->M_Setting->email(),
+            'visi' => $this->M_Setting->setting('visi'),
+            'misi' => $this->M_Setting->setting('misi'),
+            'alamat' => $this->M_Setting->setting('alamat'),
+            'telepon' => $this->M_Setting->setting('telepon'),
+            'email' => $this->M_Setting->setting('email'),
             'categories' => $this->M_Setting->category(),
             'user' => $this->M_Auth->cek_user($this->session->userdata('username'))
         ];
@@ -62,12 +62,16 @@ class Settings extends CI_Controller
         $now = date('Y-m-d H:i:s');
 
         $data_visi = array(
-            'content' => trim($this->input->post('visi')),
+            'content_id' => trim($this->input->post('visi_id')),
+            'content_en' => trim($this->input->post('visi_en')),
+            'content_jp' => trim($this->input->post('visi_jp')),
             'updated_at' => $now
         );
 
         $data_misi = array(
-            'content' => trim($this->input->post('misi')),
+            'content_id' => trim($this->input->post('misi_id')),
+            'content_en' => trim($this->input->post('misi_en')),
+            'content_jp' => trim($this->input->post('misi_jp')),
             'updated_at' => $now
         );
 
@@ -79,7 +83,7 @@ class Settings extends CI_Controller
         $now = date('Y-m-d H:i:s');
 
         $data_alamat = array(
-            'content' => trim($this->input->post('alamat')),
+            'content_id' => trim($this->input->post('alamat')),
             'updated_at' => $now
         );
 
@@ -87,7 +91,7 @@ class Settings extends CI_Controller
         $telepon_name = trim(preg_replace(["/<p>/", "/<\/p>/"], ["", "<br>"], $telepon));
 
         $data_telepon = array(
-            'content' => $telepon_name,
+            'content_id' => $telepon_name,
             'updated_at' => $now
         );
 
@@ -95,7 +99,7 @@ class Settings extends CI_Controller
         $email_name = trim(preg_replace(["/<p>/", "/<\/p>/"], ["", "<br>"], $email));
 
         $data_email = array(
-            'content' => $email_name,
+            'content_id' => $email_name,
             'updated_at' => $now
         );
 

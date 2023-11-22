@@ -43,7 +43,7 @@ class M_Setting extends CI_Model
         if (!$this->upload->do_upload('input_videotron')) {
             $error = array('error' => $this->upload->display_errors());
 
-            $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
 			Videotron has not been uploaded yet.
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
@@ -52,7 +52,7 @@ class M_Setting extends CI_Model
         } else {
             $this->db->where('Id', $id);
             $this->db->update('settings', $data);
-            $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
 			Videotron has been successfully updated.
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
@@ -66,32 +66,37 @@ class M_Setting extends CI_Model
         $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
         return $query;
     }
+
     public function misi()
     {
         $query = $this->db->where('kategori', 'misi')->get('settings')->row_array();
         return $query;
     }
+
     public function alamat()
     {
         $query = $this->db->where('kategori', 'alamat')->get('settings')->row_array();
         return $query;
     }
+
     public function telepon()
     {
         $query = $this->db->where('kategori', 'telepon')->get('settings')->row_array();
         return $query;
     }
+
     public function email()
     {
         $query = $this->db->where('kategori', 'email')->get('settings')->row_array();
         return $query;
     }
+    public function setting($clause)
+    {
+        $query = $this->db->where('kategori', $clause)->get('settings')->row_array();
+        return $query;
+    }
 
-    // public function misi($language)
-    // {
-    //     $query = $this->db->select('judul_setting_' . $language . ' as judul_setting, content_id as content')->where('kategori', 'misi')->get('settings')->row_array();
-    //     return $query;
-    // }
+
 
     public function footer_section($language, $clause)
     {
@@ -107,7 +112,7 @@ class M_Setting extends CI_Model
         $this->db->where('kategori', 'misi');
         $this->db->update('settings', $data_misi);
 
-        $this->session->set_flashdata('message_visimisi', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
         Visi misi information has been successfully updated.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
@@ -126,7 +131,7 @@ class M_Setting extends CI_Model
         $this->db->where('kategori', 'email');
         $this->db->update('settings', $data_email);
 
-        $this->session->set_flashdata('message_contact', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
         Contact information has been successfully updated.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
@@ -151,7 +156,7 @@ class M_Setting extends CI_Model
         $hasil = $query_check["id"];
 
         if ($hasil > 0) {
-            $this->session->set_flashdata('message_category', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            $this->session->set_flashdata('message_category', '<div class="alert alert-warning fade show" role="alert">
 			The category is already available.
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
@@ -159,7 +164,7 @@ class M_Setting extends CI_Model
         } else {
 
             $this->db->insert('article_category', $data);
-            $this->session->set_flashdata('message_category', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            $this->session->set_flashdata('message_category', '<div class="alert alert-success fade show" role="alert">
 				The category added successfully.
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
