@@ -37,6 +37,9 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
 	</style>
+	<script src="<?= base_url() ?>assets/asset_fr/js/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- REVOLUTION SLIDER CSS -->
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/plugins/revolution/revolution/css/revolution.min.css">
@@ -80,22 +83,41 @@ body, html {
   letter-spacing: 10px;
 }
 
-h3 {
+/* h3 {
   letter-spacing: 5px;
   text-transform: uppercase;
   font: 20px "Lato", sans-serif;
   color: #111;
-}
+} */
 </style>
 <body>
 <div class="bg">
 <div class="caption">
-    <a href="" class="col-xl-4 btn btn-square btn-warning btn-lg">Customers <i class="fa fa-angle-double-right"></i></a><br>
+    <button class="col-xl-4 btn btn-square btn-warning btn-lg btn-comming">Customers <i class="fa fa-angle-double-right"></i></button><br>
     <br>
     <a href="<?= base_url('home') ?>" class="col-xl-4 btn btn-square btn-primary btn-lg">LPK Tjokro Persada Bakti Pertiwi <i class="fa fa-angle-double-right"></i></a><br>
   </div>
 </div>
+
+<script>
+     $(".btn-comming").on("click", function(e) {
+            e.preventDefault();
+            // const form = $(this).parents("form");
+            Swal.fire({
+                title: "Comming Soon...!",
+                text: "LPK Tjokro Persada Bakti Pertiwi Customers..!",
+                icon: "info",
+                showCancelButton: false,
+                showSubmitButton: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Oke"
+                })
+        });
+    
+</script>
 </body>
+
 	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script> -->
 	<script src="<?= base_url() ?>assets/asset_fr/plugins/wow/wow.js"></script><!-- WOW JS -->
 
