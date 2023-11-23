@@ -38,7 +38,25 @@ class Home extends CI_Controller
 
         $this->load->view('id/index', $data);
     }
+    public function splash_screen()
+    {
+        $language = $this->detect_language();
 
+        $data = [
+            'title' => 'Home',
+            'pages' => 'id/pages/v_home',
+            'articles' => $this->M_Article->lists($language),
+            'programs' => $this->M_Program->lists($language),
+            'partners' => $this->M_Partner->lists(),
+            'videotron' => $this->M_Setting->videotron(),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $this->textlibrary->lang($language),
+            'language' => $language
+        ];
+        $this->load->view('id/splash',$data);
+    }
     public function tentang()
     {
         // $device = detect_device();
