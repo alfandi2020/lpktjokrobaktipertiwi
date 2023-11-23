@@ -17178,3 +17178,68 @@ input[type="radio"]+label:hover:before {
 .dlab-tabs.border-top .nav-tabs>li.active>a {
     border-color: var(--color-primary);
 }
+
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25d366;
+    width: 50px;
+    height: 50px;
+    /* Ubah height menjadi auto */
+    border-radius: 50px;
+    /* Ubah border-radius sesuai keinginan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-icon {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.additional-buttons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 50px;
+    /* Sesuaikan posisi bottom agar sejajar dengan whatsapp-container */
+    left: 10px;
+    width: 100px;
+    /* Sesuaikan posisi left agar sejajar dengan whatsapp-container */
+}
+
+.additional-icon {
+    color: #25d366;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.whatsapp-container:hover .additional-buttons {
+    display: flex
+        /* Tampilkan tombol tambahan saat hover pada whatsapp-container */
+}
+
+.whatsapp-container:hover {
+    background-color: #128c7e;
+
+    padding: 0 20px;
+}
+
+.additional-icon:hover {
+    color: #128c7e;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+/* Gaya tambahan untuk title */
+.additional-icon span {
+    color: #25d366;
+    font-size: 14px;
+    vertical-align: middle;
+}

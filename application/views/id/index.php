@@ -64,7 +64,7 @@
 						</div>
 						<div class="dlab-topbar-right topbar-social">
 							<ul>
-								<li>
+								<!-- <li>
 									<a href="https://wa.me/628176877606" target="_blank" class="site-button-link twitter hover" title="Admin 1">
 										<i class="fa fa-whatsapp"></i>
 									</a>
@@ -83,7 +83,7 @@
 									<a href="https://wa.me/628119401954" target="_blank" class="site-button-link twitter hover" title="Admin 4">
 										<i class="fa fa-whatsapp"></i>
 									</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="https://www.facebook.com/profile.php?id=61551065793688" class="site-button-link facebook hover" title="Facebook">
 										<i class="fab fa-facebook-f"></i>
@@ -285,7 +285,44 @@
 		</footer>
 		<!-- Footer END -->
 		<button class="scroltop style2 radius" type="button">
-			<i class="fas fa-arrow-up"></i></button>
+			<i class="fas fa-arrow-up"></i>
+		</button>
+		<!-- <a href="#" class="bt-buy-now theme-btn">
+			<i class="fa fa-whatsapp"></i>
+			<span>
+				<a href="https://wa.me/628176877606" target="_blank" class="site-button-link twitter hover" title="Admin 1">
+					<i class="fa fa-whatsapp"></i>
+				</a></span>
+		</a> -->
+		<!-- <div class="whatsapp-container">
+			<button class="whatsapp-icon" onclick="toggleAdditionalButtons()">
+				<i class="fa fa-whatsapp"></i>
+			</button>
+			<div class="additional-buttons" id="additionalButtons">
+				<a href="#" class="additional-icon">Admin 1</a>
+				<a href="#" class="additional-icon">Admin 2</a>
+				<a href="#" class="additional-icon">Admin 3</a>
+			</div>
+		</div> -->
+		<div class="whatsapp-container">
+			<a href="#" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
+				<i class="fa fa-whatsapp"></i>
+			</a>
+			<div class="additional-buttons">
+				<a href="https://wa.me/628176877606" class="additional-icon">
+					<i class="fa fa-whatsapp"></i><span> Admin 1</span>
+				</a>
+				<a href="https://wa.me/6285714243325" class="additional-icon">
+					<i class="fa fa-whatsapp"></i><span> Admin 2</span>
+				</a>
+				<a href="https://wa.me/6281227640349" class="additional-icon">
+					<i class="fa fa-whatsapp"></i><span> Admin 3</span>
+				</a>
+				<a href="https://wa.me/628119401954" class="additional-icon">
+					<i class="fa fa-whatsapp"></i><span> Admin 4</span>
+				</a>
+			</div>
+		</div>
 	</div>
 	<!-- JAVASCRIPT FILES ========================================= -->
 	<!-- JAVASCRIPT FILES ========================================= -->
@@ -334,6 +371,22 @@
 			dz_rev_slider_14();
 			$('.lazy').Lazy();
 		}); /*ready*/
+	</script>
+	<script>
+		// function toggleAdditionalButtons() {
+		// 	var additionalButtons = document.getElementById('additionalButtons');
+		// 	additionalButtons.style.display = (additionalButtons.style.display === 'none' || additionalButtons.style.display === '') ? 'block' : 'none';
+		// }
+	</script>
+	<script>
+		// Menampilkan atau menyembunyikan tombol-tombol tambahan saat hover
+		document.querySelector('.whatsapp-container').addEventListener('mouseenter', function() {
+			document.querySelector('.additional-buttons').style.display = 'flex';
+		});
+
+		document.querySelector('.whatsapp-container').addEventListener('mouseleave', function() {
+			document.querySelector('.additional-buttons').style.display = 'none';
+		});
 	</script>
 	<script>
 		$(document).ready(function() {

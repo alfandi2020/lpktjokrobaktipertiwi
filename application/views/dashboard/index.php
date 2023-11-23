@@ -165,7 +165,7 @@
                                     </div>
                                 </li>
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dashboard') ?>" class="active">
+                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dashboard') ?>" class="active">
                                         <svg class="stroke-icon">
                                             <use href="<?= base_url() ?>assets/svg/icon-sprite.svg#stroke-home"></use>
                                         </svg>
@@ -191,7 +191,7 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/student') ?>">
+                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/student') ?>">
                                         <i data-feather="book"></i>
                                         <span>Data pendaftaran</span>
                                     </a>
