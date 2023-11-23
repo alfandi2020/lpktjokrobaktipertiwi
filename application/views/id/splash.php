@@ -94,8 +94,9 @@ body, html {
 <div class="bg">
 <div class="caption">
     <button class="col-xl-4 btn btn-square btn-warning btn-lg btn-comming">Customers <i class="fa fa-angle-double-right"></i></button><br>
+    <!--<button class="col-xl-4 btn btn-square btn-warning btn-lg btn-comming">管理団体 <i class="fa fa-angle-double-right"></i></button><br>--> <!-- customer -->
     <br>
-    <a href="<?= base_url('home') ?>" class="col-xl-4 btn btn-square btn-primary btn-lg">LPK Tjokro Persada Bakti Pertiwi <i class="fa fa-angle-double-right"></i></a><br>
+    <a href="<?= base_url('home') ?>" class="col-xl-4 btn btn-square btn-primary btn-lg">LPK Tjokro Bakti Pertiwi <i class="fa fa-angle-double-right"></i></a><br>
   </div>
 </div>
 
