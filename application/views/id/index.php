@@ -156,24 +156,54 @@
 								<a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt=""></a>
 							</div>
 							<ul class="nav navbar-nav">
+							
+								<!-- <li>
+									<a href="#kegiatan"><?= $lang['activity_text'] ?></a>
+								</li> -->
+								<li>
+									<a href="<?= base_url('home') ?>">Home</a>
+								</li>
+								<li>
+									<a href="javascript:;">Profile<i class="fas fa-chevron-down"></i></a>
+									<ul class="sub-menu">
+										<li><a href="shop.html">VISI DAN MISI</a></li>
+										<li><a href="shop-sidebar.html">BIDANG USAHA</a></li>
+										<li><a href="shop-sidebar.html">LEIGALITAS KAMI</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:;">Layanan<i class="fas fa-chevron-down"></i></a>
+									<ul class="sub-menu">
+										<li><a href="shop.html">MAGANG DOMESTIK</a></li>
+										<li><a href="shop-sidebar.html">MAGANG JEPANG</a></li>
+										<li><a href="shop-sidebar.html">KELAS REGULER BAHASA JEPANG</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:;">Informasi<i class="fas fa-chevron-down"></i></a>
+									<ul class="sub-menu">
+										<li><a href="shop.html">Pendaftaran</a></li>
+										<li><a href="shop-sidebar.html">Lowongan</a></li>
+									</ul>
+								</li>
 								<li>
 									<a href="<?= base_url('registrasi') ?>"><?= $lang['registration_text'] ?></a>
 								</li>
-								<li>
-									<a href="#kegiatan"><?= $lang['activity_text'] ?></a>
-								</li>
-								<li>
+								<!-- <li>
 									<a href="#program"><?= $lang['program_text'] ?></a>
-								</li>
-								<li>
+								</li> -->
+								<!-- <li>
 									<a href="#artikel"><?= $lang['article_text'] ?></a>
+								</li> -->
+								<li>
+									<a href="#kontak">Tentang Kami</a>
 								</li>
 								<li>
 									<a href="#kontak"><?= $lang['contact_text'] ?></a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="<?= base_url('home/tentang') ?>"><?= $lang["about_text"] ?></a>
-								</li>
+								</li> -->
 								<li id="authButton">
 									<a href="<?= $url_auth ?>"><?= $url_text ?></a>
 								</li>
