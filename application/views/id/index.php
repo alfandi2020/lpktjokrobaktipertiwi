@@ -57,9 +57,12 @@
 					<div class="row d-flex justify-content-between">
 						<div class="dlab-topbar-left">
 							<ul>
-								<li><?= anchor('language/change/id', '<span class="flag-icon flag-icon-id">') ?></li>
+								<!-- <li><?= anchor('language/change/id', '<span class="flag-icon flag-icon-id">') ?></li>
 								<li><?= anchor('language/change/en', '<span class="flag-icon flag-icon-gb-eng">') ?></li>
-								<li><?= anchor('language/change/jp', '<span class="flag-icon flag-icon-jp">') ?></li>
+								<li><?= anchor('language/change/jp', '<span class="flag-icon flag-icon-jp">') ?></li> -->
+								<li><?= anchor('language/change/id', 'ID') ?></li>
+								<li><?= anchor('language/change/en', 'EN') ?></li>
+								<li><?= anchor('language/change/jp', '日本語') ?></li>
 							</ul>
 						</div>
 						<div class="dlab-topbar-right topbar-social">
