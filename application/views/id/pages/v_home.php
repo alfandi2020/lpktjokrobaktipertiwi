@@ -78,7 +78,7 @@
 				</div> -->
         <!-- Content Section End -->
         <!-- About Us -->
-        <div class="section-full bg-white content-inner-2 project-slider" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg11.jpg); background-repeat:no-repeat; background-position:right bottom;">
+        <!-- <div class="section-full bg-white content-inner-2 project-slider" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg11.jpg); background-repeat:no-repeat; background-position:right bottom;">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 p-lr0">
@@ -92,22 +92,6 @@
                                 <h2 class="title"><?= $lang['training_title'] ?></h2>
                                 <p> <?= $lang['training_content'] ?>
                             </div>
-                            <!-- <div class="m-b30">
-									<ul class="list-details">
-										<li>
-											<strong>Clients:</strong>
-											<span>Ethan Hunt</span>
-										</li>
-										<li>
-											<strong>Completion:</strong>
-											<span>February 5th, 2017</span>
-										</li>
-										<li>
-											<strong>Project Type:</strong>
-											<span>Villa, Residence</span>
-										</li>
-									</ul>
-								</div> -->
                             <div class="">
                                 <a href="<?= base_url('home/tentang') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?></a>
                             </div>
@@ -115,36 +99,106 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <br><br>
-        <div class="section-full bg-white content-inner-2" id="kegiatan">
+        <div class="section-full content-inner bg-white">
+            <div class="container">
+                <div class="section-head text-center">
+                    <h2 class="title"><?= $lang['program_text'] ?></h2>
+                    <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
+                </div>
+                <div class="row">
+                    <?php
+                    $duration = 2;
+                    $delay = 0.3;
+                    foreach ($programs as $p) {
+                    ?>
+                        <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+                            <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">
+                                <div class="icon-bx-sm bg-primary m-b20">
+                                    <span class="icon-cell">
+                                        <!-- <i class="flaticon-robot-arm"></i> -->
+                                        <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="400px" class="" />
+                                    </span>
+
+
+                                </div>
+                                <div class="icon-content p-l40">
+                                    <h5 class="dlab-tilte"><?= $p->nama_program ?></h5>
+                                    <p><?= $p->keterangan ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s" id="artikel">
+            <div class="container">
+                <div class="section-head style2 text-center">
+                    <h2 class="title"><?= $lang['article_text'] ?></h2>
+                    <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
+                </div>
+
+                <div class="section-full bg-gray content-inner">
+                    <div class="container">
+                        <div class="row">
+
+                            <?php
+                            $duration = 2;
+                            $delay = 0.3;
+                            foreach ($articles as $a) {
+                            ?>
+                                <div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp h-100" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
+                                    <div class="blog-post blog-grid blog-rounded blog-effect1">
+                                        <div class="dlab-post-media-thumbnail dlab-img-effect rotate"> <a href="javascript:void(0);">
+                                                <img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="dlab-info p-a20 border-1">
+                                            <div class="dlab-post-title">
+                                                <h4 class="post-title">
+                                                    <a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $a->judul ?>"><?= substr($a->judul, 0, 30) ?> ...</a>
+                                                </h4>
+                                            </div>
+                                            <div class="dlab-post-text">
+                                                <p><?= substr($a->headline, 0, 100) ?> ...</p>
+                                            </div>
+                                            <div class="dlab-post-readmore">
+                                                <a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php
+                                $duration += 0.5;
+                                $delay += 0.3;
+                            }
+                            ?>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5"></div>
+                            <div class="col-lg-2">
+
+                                <a href="<?= base_url('article') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
+                            </div>
+                            <div class="col-lg-5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="section-full bg-white content-inner-2" id="kegiatan">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-6">
                         <div class="about-content wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="section-head style2 container">
                                 <h1 class="bold text-right wow fadeInRight"><b><?= $lang['lpk_activity_title_text'] ?></b></h1>
-                                <!-- <p class="col-xl-4">Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p> -->
                             </div>
-                            <!-- <div class="m-b30">
-									<ul class="list-details">
-										<li>
-											<strong>Clients:</strong>
-											<span>Ethan Hunt</span>
-										</li>
-										<li>
-											<strong>Completion:</strong>
-											<span>February 5th, 2017</span>
-										</li>
-										<li>
-											<strong>Project Type:</strong>
-											<span>Villa, Residence</span>
-										</li>
-									</ul>
-								</div> -->
-                            <!-- <div class="">
-									<a href="portfolio-details.html" class="site-button btnhover20">View Portfolio</a>
-								</div> -->
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-6 p-lr0">
@@ -169,7 +223,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- <div class="section-full bg-white content-inner-1 project-area  bg-img-fix" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg9.jpg); background-size: cover;">
             <div class="container">
                 <div class="section-head text-white style2 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.6s">
@@ -479,62 +533,7 @@
                 </div>
             </div>
         </div>
-        <div class="section-full content-inner bg-gray wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s" id="artikel">
-            <div class="container">
-                <div class="section-head style2 text-center">
-                    <h2 class="title"><?= $lang['article_text'] ?></h2>
-                    <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-                </div>
-
-                <div class="section-full bg-gray content-inner">
-                    <div class="container">
-                        <div class="row">
-
-                            <?php
-                            $duration = 2;
-                            $delay = 0.3;
-                            foreach ($articles as $a) {
-                            ?>
-                                <div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp h-100" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
-                                    <div class="blog-post blog-grid blog-rounded blog-effect1">
-                                        <div class="dlab-post-media-thumbnail dlab-img-effect rotate"> <a href="javascript:void(0);">
-                                                <img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="dlab-info p-a20 border-1">
-                                            <div class="dlab-post-title">
-                                                <h4 class="post-title">
-                                                    <a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $a->judul ?>"><?= substr($a->judul, 0, 30) ?> ...</a>
-                                                </h4>
-                                            </div>
-                                            <div class="dlab-post-text">
-                                                <p><?= substr($a->headline, 0, 100) ?> ...</p>
-                                            </div>
-                                            <div class="dlab-post-readmore">
-                                                <a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <?php
-                                $duration += 0.5;
-                                $delay += 0.3;
-                            }
-                            ?>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-5"></div>
-                            <div class="col-lg-2">
-
-                                <a href="<?= base_url('article') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
-                            </div>
-                            <div class="col-lg-5"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
 
     </div>
     <!-- contact area END -->

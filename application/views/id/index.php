@@ -168,7 +168,7 @@
 									<ul class="sub-menu">
 										<li><a href="shop.html">VISI DAN MISI</a></li>
 										<li><a href="shop-sidebar.html">BIDANG USAHA</a></li>
-										<li><a href="shop-sidebar.html">LEIGALITAS KAMI</a></li>
+										<li><a href="shop-sidebar.html">LEGALITAS KAMI</a></li>
 									</ul>
 								</li>
 								<li>
@@ -196,7 +196,7 @@
 									<a href="#artikel"><?= $lang['article_text'] ?></a>
 								</li> -->
 								<li>
-									<a href="#kontak">Tentang Kami</a>
+									<a href="">Tentang Kami</a>
 								</li>
 								<li>
 									<a href="#kontak"><?= $lang['contact_text'] ?></a>
@@ -204,6 +204,9 @@
 								<!-- <li>
 									<a href="<?= base_url('home/tentang') ?>"><?= $lang["about_text"] ?></a>
 								</li> -->
+								<li>
+									<a href="<?= base_url('home') ?>">FAQ</a>
+								</li>
 								<li id="authButton">
 									<a href="<?= $url_auth ?>"><?= $url_text ?></a>
 								</li>
@@ -264,7 +267,7 @@
 			<div class="footer-top" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg2.png); background-size: contain;">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
+						<!-- <div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white"><?= $lang['menu_text'] ?></h5>
 								<ul>
@@ -276,7 +279,40 @@
 									</li>
 								</ul>
 							</div>
+						</div> -->
+						<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
+							<div class="widget widget_services border-0">
+								<h5 class="footer-title text-white">Media Sosial</h5>
+								<ul>
+									<li><a href="">
+											<i class="ti-facebook"></i>
+											<strong>LPK Yayasan</strong>
+										</a>
+									</li>
+									<li><a href="">
+											<i class="ti-instagram"></i>
+											<strong>LPK Yayasan</strong>
+										</a>
+									</li>
+									<li><a href="">
+											<i class="ti-youtube"></i>
+											<strong>LPK Yayasan</strong>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="widget widget_services border-0">
+								<h5 class="footer-title text-white">Traffic Website</h5>
+								<ul>
+									<li><a href="">
+											<i class="ti-user"></i>
+											<strong>Today : 1000</strong>
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
+						
 						<div class="col-md-3 col-7 col-xl-6 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white"><?= $lang['maps_text'] ?></h5>

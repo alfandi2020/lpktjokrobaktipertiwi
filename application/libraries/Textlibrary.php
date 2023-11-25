@@ -117,7 +117,7 @@ class Textlibrary
                 "activity_text" => "活動",
                 "program_text" => "プログラム",
                 "article_text" => "記事",
-                "contact_text" => "接触",
+                "contact_text" => "お問い合わせ",
                 "training_title" => "教育",
                 "training_content" => "インドネシアの青少年に日本への海外研修を開設し、教育訓練を提供し、青少年が帰国した際にインドネシアに最大限の貢献ができることを期待しています。 いつかインドネシアの若者も、彼らが受けた教育や訓練の成果をもとに、同様の教育機関やプログラムを立ち上げることができるようになることが期待されています。",
                 "detail_text" => "詳細",

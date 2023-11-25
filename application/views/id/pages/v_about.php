@@ -42,7 +42,7 @@
         <div class="section-full box-about-list">
             <div class="row spno">
                 <div class="col-lg-6 col-md-12">
-                    <img src="<?= base_url() ?>assets/asset_fr/images/log2.png" alt="" class="img-cover" />
+                    <img style="margin-left:100px;" src="<?= base_url() ?>assets/asset_fr/images/log2.png" alt="" />
                 </div>
                 <div class="col-lg-6 col-md-12 bg-primary">
                     <div class="max-w700 m-auto p-tb50 p-lr20">

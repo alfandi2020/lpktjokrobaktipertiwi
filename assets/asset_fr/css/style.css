@@ -166,7 +166,7 @@ p a {
 img {
     border-style: none;
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
     vertical-align: middle;
 }
 
@@ -12646,7 +12646,7 @@ ul[class*="list-"] {
 }
 
 .icon-bx-sm img {
-    height: 30px;
+    height: 55px;
 }
 
 .icon-bx-xs img {
