@@ -16,7 +16,7 @@ class M_Article extends CI_Model
 
     public function lists($language)
     {
-        $query = $this->db->select('judul_' . $language . ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug, id_category')->order_by('judul_' . $language, 'ASC')->get('article')->result();
+        $query = $this->db->select('judul_' . $language . ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug, id_category')->where_not_in('id_category', array(7, 8))->order_by('judul_' . $language, 'ASC')->get('article')->result();
         return $query;
     }
 

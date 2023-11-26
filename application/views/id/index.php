@@ -308,19 +308,19 @@
 								<h5 class="footer-title text-white"><?= $lang['social_media'] ?></h5>
 								<ul>
 									<li style="padding-left: 0px;">
-										<a href="#">
+										<a href="https://www.facebook.com/profile.php?id=61551065793688" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_facebook.png') ?>" alt="" style="width: 20px; height: 20px;">
 											<span>&nbsp;LPK Yayasan</span>
 										</a>
 									</li>
 									<li style="padding-left: 0px;">
-										<a href="#">
+										<a href="https://www.instagram.com/lpktjokrobaktipertiwi/" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_instagram.png') ?>" alt="" style="width: 20px; height: 20px;">
 											<span>&nbsp;LPK Yayasan</span>
 										</a>
 									</li>
 									<li style="padding-left: 0px;">
-										<a href="#">
+										<a href="https://www.youtube.com/@ytpbaktipertiwi9643" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_youtube.png') ?>" alt="" style="width: 20px; height: 20px;">
 											<span>&nbsp;LPK Yayasan</span>
 										</a>

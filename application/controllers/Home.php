@@ -166,6 +166,7 @@ class Home extends CI_Controller
         $data = [
             'title' => $lang['loker_text'],
             'pages' => 'id/pages/v_article',
+            'programs' => $this->M_Program->lists($language),
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
