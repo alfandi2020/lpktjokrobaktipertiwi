@@ -172,4 +172,27 @@ class M_Setting extends CI_Model
             redirect("dash/settings");
         }
     }
+
+    public function detail_category($id)
+    {
+        $query = $this->db->where('Id', $id)->get('article_category')->row_array();
+
+        return $query;
+    }
+
+    public function lang($language)
+    {
+        $result = $this->db
+            ->select('key_name, ' . $language)
+            ->get('language_data')
+            ->result_array();
+
+        $languageData = [];
+
+        foreach ($result as $row) {
+            $languageData[$row['key_name']] = $row[$language];
+        }
+
+        return $languageData;
+    }
 }

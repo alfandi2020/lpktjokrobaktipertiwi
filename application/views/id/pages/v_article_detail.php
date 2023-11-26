@@ -9,15 +9,15 @@
         $id_author = "";
     }
     ?>
-    <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(<?= $photo_url ?>);">
+    <div class="dlab-bnr-inr overlay-black-middle bg-pt">
         <div class="container">
             <div class="dlab-bnr-inr-entry mt-5">
-                <h1 class="text-white mt-5">Article</h1>
+                <!-- <h1 class="text-white"><?= $lang['article_text'] ?></h1> -->
                 <!-- Breadcrumb row -->
                 <div class="breadcrumb-row">
                     <ul class="list-inline">
-                        <li><a href="index.html">Home</a></li>
-                        <li>Article</li>
+                        <li><a href="index.html"><?= $lang['home_text'] ?></a></li>
+                        <li><?= $lang['article_text'] ?></li>
                     </ul>
                 </div>
                 <!-- Breadcrumb row END -->
@@ -38,8 +38,8 @@
                 <div class="blog-post blog-single mt-5">
                     <div class="dlab-post-meta m-b20">
                         <ul>
-                            <li class="post-date"> <strong><?= format_indo($article['publish_date']) ?></strong></span> </li>
-                            <li class="post-author"> Oleh <a href="javascript:void(0);"><?= $author['name'] ?></a> </li>
+                            <li class="post-date"> <strong><?= $lang['format_tanggal']($article['publish_date']) ?></strong></span> </li>
+                            <li class="post-author"> <?= $lang['by_text'] ?> <a href="javascript:void(0);"><?= $author['name'] ?></a> </li>
                         </ul>
                     </div>
                     <div class="dlab-post-title">
@@ -51,7 +51,7 @@
                         </a>
                     </div>
                     <div class="dlab-post-text">
-                        <blockquote><?= $article['headline'] ?></blockquote>
+                        <?= $article['headline'] ?>
                         <?= $article['content'] ?>
                     </div>
                     <div class="dlab-post-tags clear">

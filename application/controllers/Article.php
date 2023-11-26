@@ -7,16 +7,9 @@ class Article extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form', 'url', 'language_helper'));
-        $this->load->library('textlibrary');
-        $this->load->library('session');
-        $this->load->library('pagination');
-        $this->load->helper('string');
-        $this->load->helper('date');
-        $this->load->model('M_Article');
-        $this->load->model('M_Setting');
-        $this->load->model('M_Program');
-        $this->load->model('M_Partner');
+        $this->load->helper(array('form', 'url', 'language_helper', 'string', 'date'));
+        $this->load->library(array('textlibrary', 'session', 'pagination'));
+        $this->load->model(array('M_Article', 'M_Setting', 'M_Program', 'M_Partner'));
     }
 
     public function index()
@@ -53,9 +46,10 @@ class Article extends CI_Controller
         $limit = $config['per_page'];
 
         $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
 
         $data = [
-            'title' => 'Article',
+            'title' => $lang['article_text'],
             'pages' => 'id/pages/v_article',
             'articles' => $this->M_Article->list_bydate($limit, $from, $language),
             'programs' => $this->M_Program->lists($language),
@@ -63,24 +57,29 @@ class Article extends CI_Controller
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
-            'lang' => $this->textlibrary->lang($language),
+            'lang' => $lang,
             'language' => $language
         ];
+
+        // print_r($data);
+        // exit;
         $this->load->view('id/index', $data);
     }
 
     public function detail($id)
     {
         $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
 
         $data = [
-            'title' => 'Article',
+            'title' => $lang['article_text'],
             'pages' => 'id/pages/v_article_detail',
+            'programs' => $this->M_Program->lists($language),
             'article' => $this->M_Article->detail_article($id, $language),
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
-            'lang' => $this->textlibrary->lang($language),
+            'lang' => $lang,
             'language' => $language
         ];
 
@@ -97,7 +96,6 @@ class Article extends CI_Controller
         $language = $CI->session->userdata('language');
 
         // Jika tidak ada bahasa di session, gunakan bahasa default
-
         if (!$language) {
             $language = "id";
         } else {

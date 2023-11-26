@@ -169,13 +169,13 @@
                                         <svg class="stroke-icon">
                                             <use href="<?= base_url() ?>assets/svg/icon-sprite.svg#stroke-home"></use>
                                         </svg>
-                                        <span>Dashboard</span>
+                                        <span>Dasbor</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/partner') ?>">
                                         <i data-feather="book"></i>
-                                        <span>Partner</span>
+                                        <span>Mitra Kerja</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
@@ -187,7 +187,7 @@
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/article') ?>">
                                         <i data-feather="book"></i>
-                                        <span>Article</span>
+                                        <span>Konten</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
@@ -199,7 +199,7 @@
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
                                         <i data-feather="settings"></i>
-                                        <span>Settings</span>
+                                        <span>Pengaturan</span>
                                     </a>
                                 </li>
                                 <!-- <li class="sidebar-list">
@@ -216,7 +216,7 @@
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav btn-logout" data-href="<?= base_url('auth/logout') ?>">
                                         <i data-feather="log-out"> </i>
-                                        <span>Logout</span>
+                                        <span>Keluar</span>
                                     </a>
                                 </li>
                             </ul>

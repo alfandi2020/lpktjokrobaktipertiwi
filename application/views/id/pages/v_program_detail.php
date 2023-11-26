@@ -3,10 +3,10 @@
     <div class="dlab-bnr-inr overlay-black-middle bg-pt">
         <div class="container">
             <div class="dlab-bnr-inr-entry mt-5">
-                <h1 class="text-white mt-5"><?= $lang['program_text'] ?></h1>
+                <!-- <h1 class="text-white mt-5"><?= $lang['program_text'] ?></h1> -->
                 <!-- Breadcrumb row -->
                 <div class="breadcrumb-row">
-                    <ul class="list-inline mt-4">
+                    <ul class="list-inline">
                         <li><a href="index.html"><?= $lang['home_text'] ?></a></li>
                         <li><?= $lang['program_text'] ?></li>
                     </ul>
@@ -28,7 +28,10 @@
                     <img src="<?= base_url() ?>assets/images/programs/<?= $program['photo'] ?>" alt="">
                 </div>
                 <div class="dlab-post-text">
-                    <blockquote><?= $program['keterangan'] ?></blockquote>
+                    <?= $program['keterangan'] ?>
+                </div>
+                <div class="dlab-post-text">
+
                     <?= $program['content'] ?>
                 </div>
                 <div class="dlab-post-tags clear">

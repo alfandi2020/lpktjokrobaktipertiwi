@@ -41,6 +41,7 @@
                                 <tr>
                                     <th>Num.</th>
                                     <th>Judul</th>
+                                    <th>Category</th>
                                     <th>Author</th>
                                     <th>Action</th>
                                 </tr>
@@ -49,11 +50,17 @@
                                 <?php
                                 $no = 1;
                                 foreach ($articles as $a) {
+                                    $id_author = $a->author;
+                                    $id_category = $a->id_category;
+
+                                    $author = $this->M_Article->author($id_author);
+                                    $category = $this->M_Setting->detail_category($id_category);
                                 ?>
                                     <tr>
                                         <td><?= $no++ ?>.</td>
-                                        <td><?= $a->judul ?></td>
-                                        <td><?= $a->author ?></td>
+                                        <td><?= substr($a->judul, 0, 50) ?></td>
+                                        <td><?= $category['category_name'] ?></td>
+                                        <td><?= $author['name'] ?></td>
                                         <td>
                                             <a href="<?= base_url('dash/article/edit/' . $a->slug) ?>" class="btn btn-primary btn-sm">Edit</a>
                                             <!-- <button class="btn btn-success sweet-8" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-8']);">Login successfully</button> -->

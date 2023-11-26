@@ -10,25 +10,25 @@ class Registrasi extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('M_Setting');
+        $this->load->model(array('M_Setting', 'M_Program', 'M_Article'));
         $this->load->helper(array('form', 'url', 'language_helper'));
-        $this->load->library('textlibrary');
-        $this->load->model('M_Program');
-        $this->load->library('form_validation');
-        $this->load->library('Mailer');
+        $this->load->library(array('textlibrary', 'form_validation', 'Mailer', 'pagination'));
+        $this->load->helper('date');
     }
+
     function index()
     {
         $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
 
         $data = [
-            'title' => 'Home',
+            'title' => $lang['home_text'],
             'pages' => 'registrasi',
-            'programs' => $this->M_Program->list_dashboard(),
+            'programs' => $this->M_Program->lists($language),
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
-            'lang' => $this->textlibrary->lang($language),
+            'lang' => $lang,
             'language' => $language
         ];
 
@@ -167,7 +167,7 @@ class Registrasi extends CI_Controller
                 ];
 
                 $language = $this->detect_language();
-                $lang = $this->textlibrary->lang($language);
+                $lang = $this->M_Setting->lang($language);
 
                 $this->M_Program->tambah_siswa($data);
 
@@ -184,6 +184,58 @@ class Registrasi extends CI_Controller
             }
         }
     }
+
+    function informasi()
+    {
+        $config['base_url'] = base_url('registrasi/informasi');
+        // $config['page_query_string'] = TRUE;
+        // $config['use_page_numbers'] = TRUE;
+        $config['total_rows'] = $this->M_Article->get_published_count();
+        $config['per_page'] = 10;
+        $config['num_link'] = 5;
+        $config['full_tag_open'] = '<div class="pagination-bx clearfix text-center"><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></div>';
+        $config['first_link'] = TRUE;
+        $config['last_link'] = TRUE;
+        $config['first_tag_open'] = '<li class="previous">';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = 'Prev';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = 'Next';
+        $config['next_tag_open'] = '<li class="next">';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] =  '<li> <a href="javascript:void(0);" class="active">';
+        $config['cur_tag_close'] = '</a> </li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['display_pages'] = FALSE;
+
+        $this->pagination->initialize($config);
+
+        $from = $this->uri->segment(3);
+        $limit = $config['per_page'];
+
+        $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
+
+        $data = [
+            'title' => $lang['reg_info'],
+            'pages' => 'id/pages/registrasi/v_info',
+            'informations' => $this->M_Article->article_with_clause($limit, $from, $language, '7'),
+            'programs' => $this->M_Program->lists($language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $lang,
+            'language' => $language
+        ];
+
+        $this->load->view('id/index', $data);
+    }
+
     function getRomawi($bln)
     {
         switch ($bln) {

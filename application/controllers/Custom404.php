@@ -10,15 +10,17 @@ class Custom404 extends CI_Controller
 
         // load base_url
         $this->load->helper('url');
+        $this->load->model('M_Setting');
         $this->load->library('textlibrary');
     }
 
     public function index()
     {
         $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
 
         $data = [
-            'lang' => $this->textlibrary->lang($language),
+            'lang' => $lang,
         ];
         $this->output->set_status_header('404');
         $this->load->view('errors/html/error_404', $data);

@@ -18,7 +18,7 @@
 	<link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/asset_fr/images/log.png" />
 
 	<!-- PAGE TITLE HERE -->
-	<title><?= ($title == "Home") ? $lang['home_text'] : $title ?> - <?= $lang['nama_yayasan_text'] ?></title>
+	<title><?= $title ?> - <?= $lang['nama_yayasan_text'] ?></title>
 
 	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -156,56 +156,79 @@
 								<a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/asset_fr/images/logo_gandeng.png" alt=""></a>
 							</div>
 							<ul class="nav navbar-nav">
-							
+								<li>
+									<a href="<?= base_url('home') ?>"><?= $lang['home_text'] ?></a>
+								</li>
+								<li>
+									<a href="javascript:;"><?= $lang['profile'] ?><i class="fas fa-chevron-down"></i></a>
+									<ul class="sub-menu">
+										<li>
+											<a href="<?= base_url('home/visi_misi') ?>"><?= strtoupper($lang['visi_misi']) ?></a>
+										</li>
+										<li>
+											<a href="<?= base_url('program') ?>"><?= strtoupper($lang['program_text']) ?></a>
+										</li>
+										<li>
+											<a href="<?= base_url('home/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<?= $lang['services'] ?>
+										<i class="fas fa-chevron-down"></i>
+									</a>
+									<ul class="sub-menu">
+										<?php
+										foreach ($programs as $pr) {
+										?>
+											<li>
+												<a href="<?= base_url('program/detail/') . $pr->slug ?>"><?= $pr->nama_program ?></a>
+											</li>
+										<?php
+										}
+										?>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<?= $lang['information'] ?>
+										<i class="fas fa-chevron-down"></i></a>
+									<ul class="sub-menu">
+										<li>
+											<a href="<?= base_url('registrasi/informasi') ?>"><?= $lang['registration_text'] ?></a>
+										</li>
+										<li>
+											<a href="<?= base_url('home/job_vacancy') ?>"><?= $lang['loker_text'] ?></a>
+										</li>
+										<li>
+											<a href="<?= base_url('article') ?>"><?= $lang['article_text'] ?></a>
+										</li>
+									</ul>
+								</li>
 								<!-- <li>
-									<a href="#kegiatan"><?= $lang['activity_text'] ?></a>
-								</li> -->
-								<li>
-									<a href="<?= base_url('home') ?>">Home</a>
-								</li>
-								<li>
-									<a href="javascript:;">Profile<i class="fas fa-chevron-down"></i></a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">VISI DAN MISI</a></li>
-										<li><a href="shop-sidebar.html">BIDANG USAHA</a></li>
-										<li><a href="shop-sidebar.html">LEGALITAS KAMI</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="javascript:;">Layanan<i class="fas fa-chevron-down"></i></a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">MAGANG DOMESTIK</a></li>
-										<li><a href="shop-sidebar.html">MAGANG JEPANG</a></li>
-										<li><a href="shop-sidebar.html">KELAS REGULER BAHASA JEPANG</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="javascript:;">Informasi<i class="fas fa-chevron-down"></i></a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Pendaftaran</a></li>
-										<li><a href="shop-sidebar.html">Lowongan</a></li>
-									</ul>
-								</li>
-								<li>
 									<a href="<?= base_url('registrasi') ?>"><?= $lang['registration_text'] ?></a>
-								</li>
+								</li> -->
 								<!-- <li>
 									<a href="#program"><?= $lang['program_text'] ?></a>
 								</li> -->
 								<!-- <li>
 									<a href="#artikel"><?= $lang['article_text'] ?></a>
 								</li> -->
-								<li>
+								<!-- <li>
 									<a href="">Tentang Kami</a>
-								</li>
+								</li> -->
 								<li>
-									<a href="#kontak"><?= $lang['contact_text'] ?></a>
+									<a href="<?= base_url('home/contact') ?>"><?= $lang['contact_text'] ?></a>
 								</li>
 								<!-- <li>
 									<a href="<?= base_url('home/tentang') ?>"><?= $lang["about_text"] ?></a>
 								</li> -->
 								<li>
-									<a href="<?= base_url('home') ?>">FAQ</a>
+									<a href="<?= base_url('registrasi') ?>"><?= $lang['registration_text'] ?></a>
+								</li>
+								<li>
+									<a href="<?= base_url('home/faq') ?>">FAQ</a>
 								</li>
 								<li id="authButton">
 									<a href="<?= $url_auth ?>"><?= $url_text ?></a>
@@ -281,22 +304,25 @@
 							</div>
 						</div> -->
 						<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
-							<div class="widget widget_services border-0">
-								<h5 class="footer-title text-white">Media Sosial</h5>
+							<div class="widget widget_getintuch border-0">
+								<h5 class="footer-title text-white"><?= $lang['social_media'] ?></h5>
 								<ul>
-									<li><a href="">
-											<i class="ti-facebook"></i>
-											<strong>LPK Yayasan</strong>
+									<li style="padding-left: 0px;">
+										<a href="#">
+											<img src="<?= base_url('assets/images/logo/logo_facebook.png') ?>" alt="" style="width: 20px; height: 20px;">
+											<span>&nbsp;LPK Yayasan</span>
 										</a>
 									</li>
-									<li><a href="">
-											<i class="ti-instagram"></i>
-											<strong>LPK Yayasan</strong>
+									<li style="padding-left: 0px;">
+										<a href="#">
+											<img src="<?= base_url('assets/images/logo/logo_instagram.png') ?>" alt="" style="width: 20px; height: 20px;">
+											<span>&nbsp;LPK Yayasan</span>
 										</a>
 									</li>
-									<li><a href="">
-											<i class="ti-youtube"></i>
-											<strong>LPK Yayasan</strong>
+									<li style="padding-left: 0px;">
+										<a href="#">
+											<img src="<?= base_url('assets/images/logo/logo_youtube.png') ?>" alt="" style="width: 20px; height: 20px;">
+											<span>&nbsp;LPK Yayasan</span>
 										</a>
 									</li>
 								</ul>
@@ -304,7 +330,8 @@
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white">Traffic Website</h5>
 								<ul>
-									<li><a href="">
+									<li>
+										<a href="">
 											<i class="ti-user"></i>
 											<strong>Today : 1000</strong>
 										</a>
@@ -312,11 +339,15 @@
 								</ul>
 							</div>
 						</div>
-						
+
 						<div class="col-md-3 col-7 col-xl-6 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white"><?= $lang['maps_text'] ?></h5>
-								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+								<div class="responsive-iframe">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
+								</div>
+
 							</div>
 						</div>
 						<div class="col-md-6 col-xl-4 col-lg-3 col-sm-6 footer-col-4">
@@ -356,23 +387,6 @@
 		<button class="scroltop style2 radius" type="button">
 			<i class="fas fa-arrow-up"></i>
 		</button>
-		<!-- <a href="#" class="bt-buy-now theme-btn">
-			<i class="fa fa-whatsapp"></i>
-			<span>
-				<a href="https://wa.me/628176877606" target="_blank" class="site-button-link twitter hover" title="Admin 1">
-					<i class="fa fa-whatsapp"></i>
-				</a></span>
-		</a> -->
-		<!-- <div class="whatsapp-container">
-			<button class="whatsapp-icon" onclick="toggleAdditionalButtons()">
-				<i class="fa fa-whatsapp"></i>
-			</button>
-			<div class="additional-buttons" id="additionalButtons">
-				<a href="#" class="additional-icon">Admin 1</a>
-				<a href="#" class="additional-icon">Admin 2</a>
-				<a href="#" class="additional-icon">Admin 3</a>
-			</div>
-		</div> -->
 		<div class="whatsapp-container">
 			<a href="#" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
 				<i class="fa fa-whatsapp"></i>

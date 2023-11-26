@@ -3,14 +3,12 @@
     <div class="dlab-bnr-inr overlay-black-middle bg-pt">
         <div class="container">
             <div class="dlab-bnr-inr-entry mt-5">
-                <!-- <h1 class="text-white"><?= $lang['article_text'] ?></h1> -->
+                <!-- <h1 class="text-white"><?= $lang['reg_info'] ?></h1> -->
                 <!-- Breadcrumb row -->
                 <div class="breadcrumb-row">
                     <ul class="list-inline">
-                        <li>
-                            <a href="<?= base_url() ?>"><?= $lang['home_text'] ?></a>
-                        </li>
-                        <li><?= $lang['article_text'] ?></li>
+                        <li><a href="index.html"><?= $lang['home_text'] ?></a></li>
+                        <li><?= $lang['reg_info'] ?></li>
                     </ul>
                 </div>
                 <!-- Breadcrumb row END -->
@@ -21,23 +19,22 @@
     <!-- contact area -->
     <div class="content-area">
         <div class="container">
-            <!-- Artikel -->
+            <!-- Blog half image -->
             <?php
-
-            if (!$articles) {
+            if (!$informations) {
             ?>
                 <h3>Content not yet available</h3>
                 <?php
             } else {
-                foreach ($articles as $a) {
+                foreach ($informations as $a) {
                     $id_author = $a->author;
 
                     $author = $this->M_Article->author($id_author); ?>
-
                     <div class="blog-post blog-md clearfix">
                         <div class="dlab-post-media dlab-img-effect zoom-slow">
-                            <a href="<?= base_url('article/detail/' . $a->slug) ?>"><img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt=""></a>
-
+                            <a href="<?= base_url('article/detail/' . $a->slug) ?>">
+                                <img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" style="height: 200px;" alt="">
+                            </a>
                         </div>
                         <div class="dlab-post-info">
                             <div class="dlab-post-meta">
@@ -63,19 +60,8 @@
                 }
             }
             ?>
-            <!-- Artikel END -->
+            <!-- Blog half image END -->
             <!-- Pagination  -->
-            <!-- <div class="pagination-bx clearfix text-center">
-                <ul class="pagination">
-                    <li class="previous"><a href="javascript:void(0);"><i class="ti-arrow-left"></i> Prev</a></li>
-                    <li class="active"><a href="javascript:void(0);">1</a></li>
-                    <li>
-                        <a href="javascript:void(0);">2</a></li>
-                    <li>
-                        <a href="javascript:void(0);">3</a></li>
-                    <li class="next"><a href="javascript:void(0);">Next <i class="ti-arrow-right"></i></a></li>
-                </ul>
-            </div> -->
             <?= $this->pagination->create_links(); ?>
             <!-- Pagination END -->
         </div>

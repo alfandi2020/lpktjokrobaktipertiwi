@@ -166,7 +166,7 @@ p a {
 img {
     border-style: none;
     height: auto;
-    max-width: 70%;
+    max-width: 100%;
     vertical-align: middle;
 }
 
@@ -17242,4 +17242,20 @@ input[type="radio"]+label:hover:before {
     color: #25d366;
     font-size: 14px;
     vertical-align: middle;
+}
+
+.responsive-iframe {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio, bisa disesuaikan sesuai kebutuhan */
+    position: relative;
+}
+
+.responsive-iframe iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
