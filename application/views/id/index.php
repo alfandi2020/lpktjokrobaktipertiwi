@@ -7,10 +7,10 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
 	<meta name="robots" content="" />
-	<meta name="description" content="Industry - Factory & Industrial HTML Template" />
-	<meta property="og:title" content="Industry - Factory & Industrial HTML Template" />
-	<meta property="og:description" content="Industry - Factory & Industrial HTML Template" />
-	<meta property="og:image" content="https://industry.dexignzone.com/xhtml/social-image.png" />
+	<meta name="description" content="LPK Tjokro Bakti Pertiwi" />
+	<meta property="og:title" content="LPK Tjokro Bakti Pertiwi" />
+	<meta property="og:description" content="LPK Tjokro Bakti Pertiwi" />
+	<meta property="og:image" content="https://lpktjokrobaktipertiwi.id" />
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- FAVICONS ICON -->
