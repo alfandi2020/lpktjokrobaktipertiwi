@@ -171,9 +171,9 @@
 										<li>
 											<a href="<?= base_url('home/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
 										</li>
-										<li>
+										<!-- <li>
 											<a href="<?= base_url('home/facility') ?>"><?= strtoupper($lang['facility']) ?></a>
-										</li>
+										</li> -->
 									</ul>
 								</li>
 								<li>
