@@ -19,7 +19,7 @@ class Article extends CI_Controller
 
             $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 			You have to login first.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('auth');
         } else {
@@ -80,7 +80,7 @@ class Article extends CI_Controller
 
         if ($this->form_validation->run() ===  FALSE) {
             $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
-            ' . trim(preg_replace(["/<p>/", "/<\/p>/"], ["", ""], validation_errors())) . '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            ' . trim(preg_replace(["/<p>/", "/<\/p>/"], ["", ""], validation_errors())) . '<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
             </div>');
 
             $this->session->set_flashdata('article_title_id', set_value('article_title_id'));
@@ -143,7 +143,7 @@ class Article extends CI_Controller
 
                     $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
                     Error message: ' . $this->upload->display_errors() . '.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
                     </div>');
 
                     $this->session->set_flashdata('article_title_id', set_value('article_title_id'));
@@ -239,7 +239,7 @@ class Article extends CI_Controller
 
             $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
             Error message: ' . $this->upload->display_errors() . '.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
             </div>');
 
             // After that you need to used redirect function instead of load view such as 

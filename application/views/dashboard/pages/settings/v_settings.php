@@ -38,6 +38,7 @@
                                 <a class="nav-link" id="videotron-tab" data-bs-toggle="pill" href="#videotron" role="tab" aria-controls="videotron" aria-selected="false">Videotron</a>
                                 <a class="nav-link" id="kategori-konten-tab" data-bs-toggle="pill" href="#kategori-konten" role="tab" aria-controls="kategori-konten" aria-selected="false">Kategori konten</a>
                                 <a class="nav-link" id="kontak-tab" data-bs-toggle="pill" href="#kontak" role="tab" aria-controls="kontak" aria-selected="false">Kontak</a>
+                                <a class="nav-link" id="chat-tab" data-bs-toggle="pill" href="#chat" role="tab" aria-controls="chat" aria-selected="false">Chat</a>
                             </div>
                         </div>
                         <div class="col-md-8 col-xs-12">
@@ -193,11 +194,104 @@
                                         </div>
                                     </form>
                                 </div>
+                                <div class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                                    <div class="row">
+                                        <div class="col">
+                                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#tambah_sosmed">Tambah</button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No.</th>
+                                                        <th>Icon</th>
+                                                        <th>Nama</th>
+                                                        <th>Url</th>
+                                                        <!-- <th>Act.</th> -->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    $no = 1;
+                                                    foreach ($contact as $c) {
+                                                    ?>
+                                                        <tr>
+                                                            <td><?= $no++; ?>.</td>
+                                                            <td><?= $c->name ?></td>
+                                                            <td><?= $c->contact_name ?></td>
+                                                            <td><?= $c->url . $c->contact_id ?></td>
+                                                            <!-- <td>
+                                                                <button class="btn btn-primary btn-sm">
+                                                                    Edit
+                                                                </button>
+                                                            </td> -->
+                                                        </tr>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="tambah_sosmed" tabindex="-1" role="dialog" aria-labelledby="tambah_sosmed" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambah_sosmedLongTitle">Tambah Contact</h5>
+                <button class="btn-close py-0" type="button" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?= base_url('dash/settings/add_contact') ?>" method="post" class="form theme-form dark-input">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <!-- <div class=""> -->
+                            <label for="category" class="form-label">Nama kontak</label>
+                            <div class="input-group">
+                                <input class="form-control input-air-primary" type="text" placeholder="Misal: Admin 1" aria-label="Nama kontak" aria-describedby="button-addon2" name="contact_name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <!-- <div class=""> -->
+                            <label for="category" class="form-label">Sosial media</label>
+                            <div class="input-group">
+                                <select name="sosmed_category" id="sosmed_category" class="form-control input-air-primary digits" required>
+                                    <option value="">--Pilih sosmed</option>
+                                    <?php
+                                    foreach ($social as $s) {
+                                    ?>
+                                        <option value="<?= $s->Id ?>"><?= $s->name ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label for="contact_id" class="form-label">Kontak ID</label>
+                            <input type="text" class="form-control input-air-primary" name="contact_id" placeholder="Nomor whatsapp atau username line" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

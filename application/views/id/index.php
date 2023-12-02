@@ -171,6 +171,9 @@
 										<li>
 											<a href="<?= base_url('home/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
 										</li>
+										<li>
+											<a href="<?= base_url('home/facility') ?>"><?= strtoupper($lang['facility']) ?></a>
+										</li>
 									</ul>
 								</li>
 								<li>
@@ -328,15 +331,15 @@
 								</ul>
 							</div>
 							<div class="widget widget_services border-0">
-								<h5 class="footer-title text-white">Traffic Website</h5>
-								<ul>
-									<li>
-										<a href="">
-											<i class="ti-user"></i>
-											<strong>Today : 1000</strong>
-										</a>
-									</li>
-								</ul>
+								<h5 class="footer-title text-white"><?= $lang['web_traffic'] ?></h5>
+								<p>
+									<i class="ti-user"></i><span>&nbsp;</span>
+									<?php
+									$this->load->model('M_Visitor');
+									$visitor_count = $this->M_Visitor->getTotalVisitors();
+									?>
+									<strong> <?= $visitor_count . ' ' . $lang['visitor'] ?></strong>
+								</p>
 							</div>
 						</div>
 
@@ -392,18 +395,17 @@
 				<i class="fa fa-whatsapp"></i>
 			</a>
 			<div class="additional-buttons">
-				<a href="https://wa.me/628176877606" class="additional-icon">
-					<i class="fa fa-whatsapp"></i><span> Admin 1</span>
-				</a>
-				<a href="https://wa.me/6285714243325" class="additional-icon">
-					<i class="fa fa-whatsapp"></i><span> Admin 2</span>
-				</a>
-				<a href="https://wa.me/6281227640349" class="additional-icon">
-					<i class="fa fa-whatsapp"></i><span> Admin 3</span>
-				</a>
-				<a href="https://wa.me/628119401954" class="additional-icon">
-					<i class="fa fa-whatsapp"></i><span> Admin 4</span>
-				</a>
+				<?php
+				$social = $this->M_Setting->chat();
+
+				foreach ($social as $s) {
+				?>
+					<a href="<?= $s->url . $s->contact_id ?>" class="additional-icon">
+						<i class="<?= $s->icon ?>"></i><span> <?= $s->contact_name ?></span>
+					</a>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>

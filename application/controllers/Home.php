@@ -11,7 +11,7 @@ class Home extends CI_Controller
         $this->load->helper(array('form', 'url', 'language_helper'));
         $this->load->library(array('textlibrary', 'pagination'));
         $this->load->helper('date');
-        $this->load->model(array('M_Article', 'M_Setting', 'M_Program', 'M_Partner'));
+        $this->load->model(array('M_Article', 'M_Setting', 'M_Program', 'M_Partner', 'M_Visitor'));
         // $this->load->model('M_Article');
         // $this->load->model('M_Setting');
         // $this->load->model('M_Program');
@@ -34,7 +34,8 @@ class Home extends CI_Controller
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
             'lang' => $lang,
-            'language' => $language
+            'facilities' => $this->M_Setting->facility($language),
+            'language' => $language,
         ];
 
         $this->load->view('id/index', $data);

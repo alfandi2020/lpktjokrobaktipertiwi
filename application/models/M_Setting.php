@@ -45,7 +45,7 @@ class M_Setting extends CI_Model
 
             $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
 			Videotron has not been uploaded yet.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 			</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/settings/", $error);
@@ -54,7 +54,7 @@ class M_Setting extends CI_Model
             $this->db->update('settings', $data);
             $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
 			Videotron has been successfully updated.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 			</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/settings");
@@ -114,7 +114,7 @@ class M_Setting extends CI_Model
 
         $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
         Visi misi information has been successfully updated.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
@@ -133,7 +133,7 @@ class M_Setting extends CI_Model
 
         $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
         Contact information has been successfully updated.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
@@ -156,17 +156,17 @@ class M_Setting extends CI_Model
         $hasil = $query_check["id"];
 
         if ($hasil > 0) {
-            $this->session->set_flashdata('message_category', '<div class="alert alert-warning fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-warning fade show" role="alert">
 			The category is already available.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('dash/settings');
         } else {
 
             $this->db->insert('article_category', $data);
-            $this->session->set_flashdata('message_category', '<div class="alert alert-success fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
 				The category added successfully.
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 				</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/settings");
@@ -194,5 +194,65 @@ class M_Setting extends CI_Model
         }
 
         return $languageData;
+    }
+
+    public function chat()
+    {
+        $query = $this->db->from('contact a')->join('social_media b', 'b.Id = a.id_sosmed_category')->get()->result();
+
+        return $query;
+    }
+
+    public function social_media()
+    {
+        $query = $this->db->get('social_media')->result();
+
+        return $query;
+    }
+
+    public function add_contact($data)
+    {
+
+        $this->db->select('count(Id) as id');
+        $this->db->where('slug', $data["slug"]);
+        $query_check = $this->db->get('contact')->row_array();
+
+        $hasil = $query_check["id"];
+
+        if ($hasil > 0) {
+            $this->session->set_flashdata('message_name', '<div class="alert alert-warning fade show" role="alert">
+			The contact is already available.
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			</div>');
+            redirect('dash/settings');
+        } else {
+
+            $this->db->insert('contact', $data);
+            $this->session->set_flashdata('message_name', '
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+				The contact added successfully.
+				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+				</div>');
+
+            // After that you need to used redirect function instead of load view such as 
+            redirect("dash/settings");
+        }
+    }
+
+    public function detail_contact($id)
+    {
+        $query = $this->db->where('Id', $id)->get('contact')->row_array();
+
+        return $query;
+    }
+
+    public function facility($language)
+    {
+        $result = $this->db
+            ->select('key_name, icon, ' . $language)
+            ->get('facility')
+            ->result();
+
+        return $result;
     }
 }

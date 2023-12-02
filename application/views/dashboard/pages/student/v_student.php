@@ -94,7 +94,7 @@
                         </div>
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Download </button>
-                            <button class="btn btn-light" type="submit" data-bs-dismiss="modal">Batal </button>
+                            <button class="btn btn-light" type="submit" data-dismiss="modal">Batal </button>
                         </div>
                     </form>
                 </div>

@@ -67,6 +67,39 @@
         </div>
     </div>
     <!-- Latest blog END -->
+
+    <div class="content-block">
+        <!-- Our Services -->
+        <div class="section-full content-inner bg-white">
+            <div class="container">
+                <div class="section-head text-center">
+                    <h2 class="title"><?= $lang['facility'] ?></h2>
+                    <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
+                </div>
+                <div class="row">
+                    <?php
+                    foreach ($facilities as $f) {
+                    ?>
+                        <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+                            <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">
+                                <div class="icon-bx-sm bg-primary m-b20">
+                                    <span class="icon-cell">
+                                        <i class="<?= $f->icon ?>"></i>
+                                    </span>
+                                </div>
+                                <div class="icon-content p-l40">
+                                    <h5 class="dlab-tilte"><?= $f->$language ?></h5>
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing sed diam nibh euismod..</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="section-full dlab-we-find bg-img-fix p-t20 p-b20 bg-white wow fadeIn mt-5 mb-5" data-wow-duration="2s" data-wow-delay="0.6s">
         <div class="container">
             <div class="section-head text-center">

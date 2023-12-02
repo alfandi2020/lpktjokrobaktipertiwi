@@ -56,7 +56,7 @@ class Registrasi extends CI_Controller
         $this->form_validation->set_rules('student_program', ' Program ', 'required');
 
         if ($this->form_validation->run() === FALSE) {
-            $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-bs-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> ' . trim(preg_replace(["/<p>/", "/<\/p>/"], ["", ""], validation_errors())) . ' </div>');
+            $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> ' . trim(preg_replace(["/<p>/", "/<\/p>/"], ["", ""], validation_errors())) . ' </div>');
 
             $this->session->set_flashdata('student_name', set_value('student_name'));
             $this->session->set_flashdata('student_age', set_value('student_age'));
@@ -114,7 +114,7 @@ class Registrasi extends CI_Controller
             $this->load->library('upload', $config);
 
             if (!$this->upload->do_upload('student_cv')) {
-                $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-bs-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> ' . $this->upload->display_errors() . ' </div>');
+                $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> ' . $this->upload->display_errors() . ' </div>');
 
                 $this->session->set_flashdata('student_name', set_value('student_name'));
                 $this->session->set_flashdata('student_age', set_value('student_age'));
@@ -175,9 +175,9 @@ class Registrasi extends CI_Controller
                 $send_mail = $this->send_email($data);
 
                 if ($send_mail) {
-                    $this->session->set_flashdata('message_name', '<div class="alert alert-success"> <a href="javascript:void(0);" class="close ti-close" data-bs-dismiss="alert" aria-label="close"></a> <strong>' . $lang['success_text'] . '! - ' . $lang['email_success_txt'] . '</strong> </div>');
+                    $this->session->set_flashdata('message_name', '<div class="alert alert-success"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>' . $lang['success_text'] . '! - ' . $lang['email_success_txt'] . '</strong> </div>');
                 } else {
-                    $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-bs-dismiss="alert" aria-label="close"></a> <strong>' . $lang['failed_text'] . ' - ' . $lang['email_failed_txt'] . '</strong> </div>');
+                    $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>' . $lang['failed_text'] . ' - ' . $lang['email_failed_txt'] . '</strong> </div>');
                 }
 
                 redirect('registrasi');

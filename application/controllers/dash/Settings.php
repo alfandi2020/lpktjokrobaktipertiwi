@@ -17,7 +17,7 @@ class Settings extends CI_Controller
 
             $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 			You have to login first.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('auth');
         } else {
@@ -39,6 +39,8 @@ class Settings extends CI_Controller
             'telepon' => $this->M_Setting->setting('telepon'),
             'email' => $this->M_Setting->setting('email'),
             'categories' => $this->M_Setting->category(),
+            'contact' => $this->M_Setting->chat(),
+            'social' => $this->M_Setting->social_media(),
             'user' => $this->M_Auth->cek_user($this->session->userdata('username'))
         ];
         $this->load->view('dashboard/index', $data);
@@ -125,5 +127,28 @@ class Settings extends CI_Controller
             'created_by' => $user_id,
         ];
         $this->M_Setting->add_category($data);
+    }
+
+    public function add_contact()
+    {
+        $user_id = $this->session->userdata('user_id');
+
+        $contact_name = trim($this->input->post('contact_name'));
+
+        // pembuatan slug dari nama produk
+        $out = explode(" ", $contact_name);
+        $slug = preg_replace("/[^A-Za-z0-9\-]/", "", strtolower(implode("-", $out)));
+
+        $now = date('Y-m-d H:i:s');
+
+        $data = [
+            'contact_name' => $contact_name,
+            'slug' => trim($slug),
+            'id_sosmed_category' => $this->input->post('sosmed_category'),
+            'contact_id' => $this->input->post('contact_id'),
+            'created_at' => $now,
+            'created_by' => $user_id,
+        ];
+        $this->M_Setting->add_contact($data);
     }
 }

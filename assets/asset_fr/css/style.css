@@ -17207,8 +17207,9 @@ input[type="radio"]+label:hover:before {
     position: absolute;
     bottom: 50px;
     /* Sesuaikan posisi bottom agar sejajar dengan whatsapp-container */
-    left: 10px;
-    width: 100px;
+    left: 5px;
+    /* padding-left: 10px; */
+    width: 150px;
     /* Sesuaikan posisi left agar sejajar dengan whatsapp-container */
 }
 
@@ -17234,7 +17235,8 @@ input[type="radio"]+label:hover:before {
 .additional-icon:hover {
     color: #128c7e;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 
 /* Gaya tambahan untuk title */

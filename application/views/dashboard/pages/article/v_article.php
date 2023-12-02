@@ -54,8 +54,7 @@
                                     $id_category = $a->id_category;
 
                                     $author = $this->M_Article->author($id_author);
-                                    $category = $this->M_Setting->detail_category($id_category);
-                                ?>
+                                    $category = $this->M_Setting->detail_category($id_category); ?>
                                     <tr>
                                         <td><?= $no++ ?>.</td>
                                         <td><?= substr($a->judul, 0, 50) ?></td>

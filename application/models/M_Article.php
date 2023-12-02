@@ -53,7 +53,7 @@ class M_Article extends CI_Model
         if ($hasil > 0) {
             $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			The content is already available.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('dash/article/create');
         } else {
@@ -61,7 +61,7 @@ class M_Article extends CI_Model
             $this->db->insert('article', $data);
             $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 				The content added successfully.
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 				</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/article/create");
@@ -87,7 +87,7 @@ class M_Article extends CI_Model
         $this->db->update('article', $data);
         $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         The article updated successfully.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
 
@@ -108,7 +108,7 @@ class M_Article extends CI_Model
 
         $this->session->set_flashdata('message_photo', '<div class="alert alert-success fade show" role="alert">
         The photo has been successfully modified.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
 
