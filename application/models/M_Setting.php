@@ -249,7 +249,7 @@ class M_Setting extends CI_Model
     public function facility($language)
     {
         $result = $this->db
-            ->select('key_name, icon, ' . $language)
+            ->select('key_name, icon, photo, ' . $language)
             ->get('facility')
             ->result();
 
