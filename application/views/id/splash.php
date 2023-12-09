@@ -93,7 +93,7 @@ body, html {
 <body>
 <div class="bg">
 <div class="caption">
-	<div class="row" style="margin-top:-200px;">
+<div class="row" style="margin-top:-200px;">
 		<div class="col">
 			<button class="col-xl-10 btn btn-square btn-danger btn-lg btn-comming">CUSTOMERS <i class="fa fa-angle-double-right"></i></button><br>
 		</div>
@@ -101,7 +101,18 @@ body, html {
 		<a href="<?= base_url('home') ?>" class="col-xl-10 btn btn-square btn-primary btn-lg">PEMAGANGAN <i class="fa fa-angle-double-right"></i></a><br>
 
 		</div>
+	</div> <br>
+<div class="row" style="margin-top:20;">
+		<div class="col">
+			<button class="col-xl-10 btn btn-square btn-danger btn-lg btn-comming">監理団体 <i class="fa fa-angle-double-right"></i></button><br>
+		</div>
+		<div class="col">
+		<a href="<?= base_url('home') ?>" class="col-xl-10 btn btn-square btn-primary btn-lg">技能実習 <i class="fa fa-angle-double-right"></i></a><br>
+
+		</div>
 	</div>
+	
+	
     <!--<button class="col-xl-4 btn btn-square btn-warning btn-lg btn-comming">管理団体 <i class="fa fa-angle-double-right"></i></button><br>--> <!-- customer -->
   </div>
 </div>
