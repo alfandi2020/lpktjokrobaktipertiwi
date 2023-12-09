@@ -103,7 +103,7 @@
 									</a>
 								</li> -->
 								<li>
-									<a href="https://www.youtube.com/@ytpbaktipertiwi9643" class="site-button-link youtube hover" title="Youtube">
+									<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" class="site-button-link youtube hover" title="Youtube">
 										<i class="fab fa-youtube"></i>
 									</a>
 								</li>
@@ -270,7 +270,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="https://www.youtube.com/@ytpbaktipertiwi9643" class="site-button youtube hover" title="Youtube">
+										<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" class="site-button youtube hover" title="Youtube">
 											<i class="fab fa-youtube"></i>
 										</a>
 									</li>
@@ -323,7 +323,7 @@
 										</a>
 									</li>
 									<li style="padding-left: 0px;">
-										<a href="https://www.youtube.com/@ytpbaktipertiwi9643" target="_blank">
+										<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_youtube.png') ?>" alt="" style="width: 20px; height: 20px;">
 											<span>&nbsp;LPK Yayasan</span>
 										</a>
