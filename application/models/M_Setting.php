@@ -34,7 +34,7 @@ class M_Setting extends CI_Model
             'max_size' => "",
             'max_height' => "",
             'max_width' => "",
-            'file_name' => $data["content"]
+            'file_name' => $data["content_id"]
         );
 
         // var_dump($config);exit;

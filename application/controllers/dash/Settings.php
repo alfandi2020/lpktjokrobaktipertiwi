@@ -51,10 +51,22 @@ class Settings extends CI_Controller
 
         $now = date('Y-m-d H:i:s');
 
+        // Mendapatkan extension
+        $video_name = "videotron";
+
+        $video = $_FILES['input_videotron']['name']; // Nama file 
+
+        // Mendapatkan extension
+        $pathInfo = pathinfo($video);
+        $extension = $pathInfo['extension']; // Extension file
+        $newVIdeoFileName = $video_name . '.' . $extension;
         $data = array(
-            'content_id' => $_FILES["input_videotron"]["name"],
+            'content_id' => $newVIdeoFileName,
             'updated_at' => $now
         );
+
+        // print_r($data);
+        // exit;
 
         $this->M_Setting->update_videotron($data, $id);
     }
