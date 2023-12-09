@@ -42,6 +42,11 @@
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
 
   </head>
+<style>
+  body{
+    background-color: red;
+  }
+</style>
   <body onload="startTime()">
     <!-- loader starts-->
     <div class="loader-wrapper">
