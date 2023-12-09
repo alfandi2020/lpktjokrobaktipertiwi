@@ -20,7 +20,7 @@ class M_Setting extends CI_Model
     {
         $query = $this->db->where('Id', $id)->get('settings')->row_array();
 
-        $videotron = $query["content"];
+        $videotron = $query["content_id"];
         $path = "assets/asset_fr/video/" . $videotron;
 
         if (file_exists($path)) {
