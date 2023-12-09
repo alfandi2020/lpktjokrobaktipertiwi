@@ -240,12 +240,12 @@
 							<div class="dlab-social-icon">
 								<ul>
 									<li>
-										<a href="https://wa.me/628176877606" target="_blank" class="site-button whatsapp hover" title="Admin 1">
+										<a href="https://wa.me/628176877606" target="_blank" class="site-button whatsapp hover" title="Hartono Yakub">
 											<i class="fa fa-whatsapp"></i>
 										</a>
 									</li>
 									<li>
-										<a href="https://wa.me/6285714243325" target="_blank" class="site-button whatsapp hover" title="Admin 2">
+										<a href="https://wa.me/6285714243325" target="_blank" class="site-button whatsapp hover" title="Syamsul Rofik">
 											<i class="fa fa-whatsapp"></i>
 										</a>
 									</li>
