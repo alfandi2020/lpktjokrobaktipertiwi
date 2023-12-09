@@ -17,7 +17,7 @@ class Textlibrary
                 "training_title" => "Pendidikan",
                 "training_content" => "Memberikan edukasi dan training kepada para pemuda indonesia dengan membuka dan melalui training overseas ke negara jepang, sehingga para pemuda tsb diharapkan ketika pulang nanti mampu memberikan kontribusi terbaik nya untuk negara indonesia. Diharapkan pada suatu hari nanti, dari hasil edukasi dan training yang di dapat, para pemuda indonesia tersebut juga mampu membuat lembaga atau program pendidikan sejenis.",
                 "detail_text" => "Selengkapnya",
-                "lpk_activity_title_text" => "KEGIATAN <br> LPK TJOKRO BAKTI PERTIWI",
+                "lpk_activity_title_text" => "KEGIATAN <br> LPK",
                 "menu_text" => "Menu",
                 "maps_text" => "Peta",
                 "contact_us_text" => "Hubungi kami",

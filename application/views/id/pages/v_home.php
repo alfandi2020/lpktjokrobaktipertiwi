@@ -198,6 +198,7 @@
                         <div class="about-content wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="section-head style2 container">
                                 <h1 class="bold text-right wow fadeInRight"><b><?= $lang['lpk_activity_title_text'] ?></b></h1>
+                                <!-- <h1 class="bold text-right wow fadeInRight"><b>KEGIATAN LPK</b></h1> -->
                                 <!-- <p class="col-xl-4">Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper metus in erat viverra, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada </p> -->
                             </div>
                             <!-- <div class="m-b30">
@@ -225,12 +226,12 @@
                         <div class="project-carousel-2 owl-carousel owl-btn-center-lr owl-btn-1 black  wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">
                             <div class="item">
                                 <div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-                                    <img height="900" src="<?= base_url() ?>assets/asset_fr/images/kegiatan1.png" alt="">
+                                    <img height="1200" src="<?= base_url() ?>assets/asset_fr/images/kegiatan1.png" alt="">
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="dlab-media dlab-img-overlay1 dlab-img-effect zoom">
-                                    <img height="200" src="<?= base_url() ?>assets/asset_fr/images/kegiatan2.png" alt="">
+                                    <img height="1200" src="<?= base_url() ?>assets/asset_fr/images/kegiatan2.png" alt="">
                                 </div>
                             </div>
                             <div class="item">
