@@ -209,7 +209,7 @@
                                                         <th>Icon</th>
                                                         <th>Nama</th>
                                                         <th>Url</th>
-                                                        <!-- <th>Act.</th> -->
+                                                        <th>Act.</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -222,11 +222,10 @@
                                                             <td><?= $c->name ?></td>
                                                             <td><?= $c->contact_name ?></td>
                                                             <td><?= $c->url . $c->contact_id ?></td>
-                                                            <!-- <td>
-                                                                <button class="btn btn-primary btn-sm">
-                                                                    Edit
-                                                                </button>
-                                                            </td> -->
+                                                            <td>
+                                                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#edit_sosmed">Tambah</button>
+
+                                                            </td>
                                                         </tr>
                                                     <?php
                                                     }
@@ -249,7 +248,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tambah_sosmedLongTitle">Tambah Contact</h5>
-                <button class="btn-close py-0" type="button" data-dismiss="modal" aria-label="Close"></button>
+                <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="<?= base_url('dash/settings/add_contact') ?>" method="post" class="form theme-form dark-input">
                 <div class="modal-body">
@@ -288,7 +287,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
                     <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
             </form>
