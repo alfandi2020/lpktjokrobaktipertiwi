@@ -313,20 +313,20 @@
 									<li style="padding-left: 0px;">
 										<a href="https://www.facebook.com/profile.php?id=61551065793688" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_facebook.png') ?>" alt="" style="width: 20px; height: 20px;">
-											<span>&nbsp;LPK Yayasan</span>
+											<span>&nbsp;LPK YTP</span>
 										</a>
 									</li>
 									<li style="padding-left: 0px;">
 										<a href="https://www.instagram.com/lpktjokrobaktipertiwi/" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_instagram.png') ?>" alt="" style="width: 20px; height: 20px;">
-											<span>&nbsp;LPK Yayasan</span>
+											<span>&nbsp;LPK YTP</span>
 										</a>
 									</li>
 									<li style="padding-left: 0px;">
 										<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_youtube.png') ?>" alt="" style="width: 20px; height: 20px;">
-											<span>&nbsp;LPK Yayasan</span>
-										</a>
+											<span>&nbsp;LPK YTP</span>
+											</a>
 									</li>
 								</ul>
 							</div>

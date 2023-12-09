@@ -131,8 +131,8 @@ class Article extends CI_Controller
                     'allowed_types' => "gif|jpg|png|jpeg|JPEG|JPG|PNG|GIF|WEBP",
                     'overwrite' => TRUE,
                     'max_size' => "99999999999",
-                    'max_height' => "800",
-                    'max_width' => "1500",
+                    'max_height' => "2000",
+                    'max_width' => "2500",
                     'file_name' => $newPhotoFileName
                 );
 
