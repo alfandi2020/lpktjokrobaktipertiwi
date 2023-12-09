@@ -52,7 +52,7 @@ class Settings extends CI_Controller
         $now = date('Y-m-d H:i:s');
 
         $data = array(
-            'content' => $_FILES["input_videotron"]["name"],
+            'content_id' => $_FILES["input_videotron"]["name"],
             'updated_at' => $now
         );
 
