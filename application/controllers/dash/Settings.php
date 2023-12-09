@@ -41,6 +41,7 @@ class Settings extends CI_Controller
             'categories' => $this->M_Setting->category(),
             'contact' => $this->M_Setting->chat(),
             'social' => $this->M_Setting->social_media(),
+            'legalitas' => $this->M_Setting->setting('legalitas'),
             'user' => $this->M_Auth->cek_user($this->session->userdata('username'))
         ];
         $this->load->view('dashboard/index', $data);
@@ -64,9 +65,6 @@ class Settings extends CI_Controller
             'content_id' => $newVIdeoFileName,
             'updated_at' => $now
         );
-
-        // print_r($data);
-        // exit;
 
         $this->M_Setting->update_videotron($data, $id);
     }
@@ -146,21 +144,59 @@ class Settings extends CI_Controller
         $user_id = $this->session->userdata('user_id');
 
         $contact_name = trim($this->input->post('contact_name'));
+        $sosmed_category = trim($this->input->post('sosmed_category'));
+        $sosmed = $this->M_Setting->detail_social_media($sosmed_category);
 
         // pembuatan slug dari nama produk
-        $out = explode(" ", $contact_name);
-        $slug = preg_replace("/[^A-Za-z0-9\-]/", "", strtolower(implode("-", $out)));
+        $out = explode(" ", $contact_name,);
+        $slug = preg_replace("/[^A-Za-z0-9\-]/", "", strtolower(implode("-", $out))) . '-' . strtolower($sosmed[0]->name);
 
         $now = date('Y-m-d H:i:s');
+        $old_slug = $this->uri->segment(4);
 
-        $data = [
-            'contact_name' => $contact_name,
-            'slug' => trim($slug),
-            'id_sosmed_category' => $this->input->post('sosmed_category'),
-            'contact_id' => $this->input->post('contact_id'),
-            'created_at' => $now,
-            'created_by' => $user_id,
-        ];
-        $this->M_Setting->add_contact($data);
+        if ($old_slug) {
+
+            $data = [
+                'contact_name' => $contact_name,
+                'slug' => trim($slug),
+                'id_sosmed_category' => $this->input->post('sosmed_category'),
+                'contact_id' => $this->input->post('contact_id'),
+                'updated_at' => $now,
+                'updated_by' => $user_id,
+            ];
+
+            $this->M_Setting->update_contact_chat($data, $old_slug);
+        } else {
+
+            $data = [
+                'contact_name' => $contact_name,
+                'slug' => trim($slug),
+                'id_sosmed_category' => $this->input->post('sosmed_category'),
+                'contact_id' => $this->input->post('contact_id'),
+                'created_at' => $now,
+                'created_by' => $user_id,
+            ];
+
+            $this->M_Setting->add_contact($data);
+        }
+    }
+
+    public function update_legalitas()
+    {
+        $now = date('Y-m-d H:i:s');
+
+        $data = array(
+            'content_id' => trim($this->input->post('legalitas_id')),
+            'content_en' => trim($this->input->post('legalitas_en')),
+            'content_jp' => trim($this->input->post('legalitas_jp')),
+            'updated_at' => $now
+        );
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+
+        $this->M_Setting->update_legalitas($data);
     }
 }

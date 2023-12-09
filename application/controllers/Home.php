@@ -208,11 +208,32 @@ class Home extends CI_Controller
         $data = [
             'title' => $lang['facility'],
             'pages' => 'id/pages/v_facility',
+            'programs' => $this->M_Program->lists($language),
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
             'lang' => $lang,
             'facilities' => $this->M_Setting->facility($language),
+            'language' => $language,
+        ];
+
+        $this->load->view('id/index', $data);
+    }
+
+    public function legality()
+    {
+        $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
+
+        $data = [
+            'title' => $lang['our_legality'],
+            'pages' => 'id/pages/v_legal',
+            'programs' => $this->M_Program->lists($language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $lang,
+            'legalitas' => $this->M_Setting->footer_section($language, 'legalitas'),
             'language' => $language,
         ];
 

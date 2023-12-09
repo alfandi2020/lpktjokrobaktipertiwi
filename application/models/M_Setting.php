@@ -61,42 +61,40 @@ class M_Setting extends CI_Model
         }
     }
 
-    public function visi()
-    {
-        $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
-        return $query;
-    }
+    // public function visi()
+    // {
+    //     $query = $this->db->where('kategori', 'visi')->get('settings')->row_array();
+    //     return $query;
+    // }
 
-    public function misi()
-    {
-        $query = $this->db->where('kategori', 'misi')->get('settings')->row_array();
-        return $query;
-    }
+    // public function misi()
+    // {
+    //     $query = $this->db->where('kategori', 'misi')->get('settings')->row_array();
+    //     return $query;
+    // }
 
-    public function alamat()
-    {
-        $query = $this->db->where('kategori', 'alamat')->get('settings')->row_array();
-        return $query;
-    }
+    // public function alamat()
+    // {
+    //     $query = $this->db->where('kategori', 'alamat')->get('settings')->row_array();
+    //     return $query;
+    // }
 
-    public function telepon()
-    {
-        $query = $this->db->where('kategori', 'telepon')->get('settings')->row_array();
-        return $query;
-    }
+    // public function telepon()
+    // {
+    //     $query = $this->db->where('kategori', 'telepon')->get('settings')->row_array();
+    //     return $query;
+    // }
 
-    public function email()
-    {
-        $query = $this->db->where('kategori', 'email')->get('settings')->row_array();
-        return $query;
-    }
+    // public function email()
+    // {
+    //     $query = $this->db->where('kategori', 'email')->get('settings')->row_array();
+    //     return $query;
+    // }
     public function setting($clause)
     {
         $query = $this->db->where('kategori', $clause)->get('settings')->row_array();
         return $query;
     }
-
-
 
     public function footer_section($language, $clause)
     {
@@ -210,9 +208,15 @@ class M_Setting extends CI_Model
         return $query;
     }
 
+    public function detail_social_media($id)
+    {
+        $query = $this->db->where('Id', $id)->get('social_media')->result();
+
+        return $query;
+    }
+
     public function add_contact($data)
     {
-
         $this->db->select('count(Id) as id');
         $this->db->where('slug', $data["slug"]);
         $query_check = $this->db->get('contact')->row_array();
@@ -239,6 +243,19 @@ class M_Setting extends CI_Model
         }
     }
 
+    public function update_contact_chat($data, $old_slug)
+    {
+        $this->db->where('slug', $old_slug);
+        $this->db->update('contact', $data);
+
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        Contact has been successfully updated.
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+        redirect("dash/settings");
+    }
+
     public function detail_contact($id)
     {
         $query = $this->db->where('Id', $id)->get('contact')->row_array();
@@ -254,5 +271,24 @@ class M_Setting extends CI_Model
             ->result();
 
         return $result;
+    }
+
+    public function legality()
+    {
+        $query = $this->db->where('kategori', 'legalitas')->get('settings')->row_array();
+        return $query;
+    }
+
+    public function update_legalitas($data)
+    {
+        $this->db->where('kategori', 'legalitas');
+        $this->db->update('settings', $data);
+
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        Legality information has been successfully updated.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+        redirect("dash/settings");
     }
 }

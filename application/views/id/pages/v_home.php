@@ -44,14 +44,12 @@
                     foreach ($programs as $p) {
                     ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+                            <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" class="" />
                             <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">
                                 <div class="icon-bx-sm bg-primary m-b20">
                                     <span class="icon-cell">
-                                        <!-- <i class="flaticon-robot-arm"></i> -->
-                                        <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" class="" />
+                                        <i class="flaticon-robot-arm"></i>
                                     </span>
-
-
                                 </div>
                                 <div class="icon-content p-l40">
                                     <h5 class="dlab-tilte"><?= $p->nama_program ?></h5>
@@ -80,7 +78,7 @@
                     <?php
                     foreach ($facilities as $f) {
                     ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+                        <div class="col-lg-4 col-md-6 col-sm-12 m-b30 mb-5 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
 
                             <img src="<?= base_url() ?>assets/asset_fr/images/<?= $f->photo ?>" alt="" />
                             <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">

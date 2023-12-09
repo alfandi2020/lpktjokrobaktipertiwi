@@ -24,11 +24,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12 m-b30">
                         <div class="our-story">
-                            <span><?= $lang['visimisi_text'] ?></span>
-                            <h2 class="title"><?= $visi['judul_setting'] ?></h2>
-                            <p><?= $visi['content'] ?></p>
-                            <h2 class="title"><?= $misi['judul_setting'] ?></h2>
-                            <p><?= $misi['content'] ?></p>
+                            <span><?= $lang['our_legality'] ?></span>
+                            <!-- <h2 class="title"><?= $legalitas['judul_setting'] ?></h2> -->
+                            <p><?= $legalitas['content'] ?></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 m-b30 our-story-thum">
