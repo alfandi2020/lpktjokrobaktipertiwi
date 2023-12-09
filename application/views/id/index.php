@@ -89,12 +89,12 @@
 								</li> -->
 								<li>
 									<a href="https://www.facebook.com/profile.php?id=61551065793688" class="site-button-link facebook hover" title="Facebook">
-										<i class="fab fa-facebook-f"></i>
+										<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_facebook.png" alt="" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 								<li>
 									<a href="https://www.instagram.com/lpktjokrobaktipertiwi/" class="site-button-link instagram hover" title="Instagram">
-										<i class="fab fa-instagram"></i>
+										<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_instagram.png" alt="" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 								<!-- <li>
@@ -104,7 +104,7 @@
 								</li> -->
 								<li>
 									<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" class="site-button-link youtube hover" title="Youtube">
-										<i class="fab fa-youtube"></i>
+									<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_youtube.png" alt="" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 							</ul>
@@ -171,9 +171,9 @@
 										<li>
 											<a href="<?= base_url('home/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
 										</li>
-										<!-- <li>
+										<li>
 											<a href="<?= base_url('home/facility') ?>"><?= strtoupper($lang['facility']) ?></a>
-										</li> -->
+										</li>
 									</ul>
 								</li>
 								<li>
