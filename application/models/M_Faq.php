@@ -31,13 +31,13 @@ class M_Faq extends CI_Model
         if ($hasil > 0) {
             $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			The faq is already available.
-			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('dash/faq/create');
         } else {
 
             $this->db->insert('faq', $data);
-            $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 				The faq added successfully.
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
@@ -57,11 +57,12 @@ class M_Faq extends CI_Model
     {
         $this->db->where('slug', $old_slug);
         $this->db->update('faq', $data);
-        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         The faq updated successfully.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
+
         // After that you need to used redirect function instead of load view such as 
-        redirect("dash/partner");
+        redirect("dash/faq");
     }
 }

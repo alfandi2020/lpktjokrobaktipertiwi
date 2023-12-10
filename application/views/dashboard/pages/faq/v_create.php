@@ -31,16 +31,52 @@
             <div class="col-sm-8">
                 <div class="card">
                     <div class="card-header pb-0 card-no-border">
-                        <h5>Edit partner</h5>
+                        <h5>Edit FAQ</h5>
                     </div>
-                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/partner/store/' . $partner['slug']) ?>">
+                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/faq/store/' . $faq['slug']) ?>">
                         <div class="card-body">
                             <?= $this->session->flashdata('message_name') ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
-                                        <label class="form-label" for="nama_partner">Nama partner</label>
-                                        <input class="form-control input-air-primary" id="nama_partner" name="nama_partner" type="text" placeholder="Enter name of partner" value="<?= $partner['nama_partner'] ?>">
+                                        <label class="form-label" for="pertanyaan">Pertanyaan</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
+                                            <input class="form-control " id="pertanyaan_id" name="pertanyaan_id" type="text" placeholder="Masukkan pertanyaan" value="<?= $faq['question_id'] ?>">
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-gb-eng"></i></span>
+                                            <input class="form-control " id="pertanyaan_en" name="pertanyaan_en" type="text" placeholder="Masukkan pertanyaan" value="<?= $faq['question_en'] ?>">
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
+                                            <input class="form-control " id="pertanyaan_jp" name="pertanyaan_jp" type="text" placeholder="Masukkan pertanyaan" value="<?= $faq['question_jp'] ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3">
+
+                                        <label class="form-label" for="jawaban">Jawaban</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
+                                            <input type="hidden" id="jawaban_id" name="jawaban_id" class="form-control" value='<?= $faq['answer_id'] ?>'>
+                                        </div>
+                                        <div id="input_jawaban_id" style="min-height: 160px;"><?= $faq['answer_id'] ?></div>
+
+                                        <div class="input-group mt-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-gb-eng"></i></span>
+                                            <input type="hidden" id="jawaban_en" name="jawaban_en" class="form-control" value='<?= $faq['answer_en'] ?>'>
+                                        </div>
+                                        <div id="input_jawaban_en" style="min-height: 160px;"><?= $faq['answer_en'] ?></div>
+
+                                        <div class="input-group mt-3">
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
+                                            <input type="hidden" id="jawaban_jp" name="jawaban_jp" class="form-control" value='<?= $faq['answer_jp'] ?>'>
+                                        </div>
+                                        <div id="input_jawaban_jp" style="min-height: 160px;"><?= $faq['answer_jp'] ?></div>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +122,7 @@
         <?php
         } else {
         ?>
-            <div class="col-sm-12">
+            <div class="col-sm-8">
                 <div class="card">
                     <div class="card-header pb-0 card-no-border">
                         <h5>Add new FAQ</h5>
@@ -131,7 +167,7 @@
                                         <div id="input_jawaban_en" style="min-height: 160px;"></div>
 
                                         <div class="input-group mt-3">
-                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
+                                            <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
                                             <input type="hidden" id="jawaban_jp" name="jawaban_jp" class="form-control">
                                         </div>
                                         <div id="input_jawaban_jp" style="min-height: 160px;"></div>

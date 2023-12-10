@@ -38,7 +38,7 @@ class M_Program extends CI_Model
         if ($hasil > 0) {
             $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			The program is already available.
-			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('dash/program/create');
         } else {
@@ -61,7 +61,7 @@ class M_Program extends CI_Model
 
                 $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 				Error message: ' . $this->upload->display_errors() . '.
-				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
                 // After that you need to used redirect function instead of load view such as 
                 redirect("dash/program/create", $error);
@@ -70,7 +70,7 @@ class M_Program extends CI_Model
                 $this->db->insert('program', $data);
                 $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 				The program inserted successfully.
-				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
                 // After that you need to used redirect function instead of load view such as 
                 redirect("dash/program/create");
@@ -98,7 +98,7 @@ class M_Program extends CI_Model
         $this->db->update('program', $data);
         $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         The program updated successfully.
-        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/program");

@@ -80,6 +80,11 @@ class Faq extends CI_Controller
                 'slug' => trim($slug),
             ];
 
+            // echo '<pre>';
+            // print_r($data);
+            // echo '</pre>';
+            // exit;
+
             $this->M_Faq->update_faq($data, $old_slug);
         } else {
             $data = [
@@ -93,11 +98,6 @@ class Faq extends CI_Controller
                 'created_at' => $now,
                 'created_by' => $user_id,
             ];
-
-            // echo '<pre>';
-            // print_r($data);
-            // echo '</pre>';
-            // exit;
             $this->M_Faq->add_faq($data);
         }
     }

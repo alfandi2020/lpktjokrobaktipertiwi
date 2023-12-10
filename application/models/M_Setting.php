@@ -43,18 +43,18 @@ class M_Setting extends CI_Model
         if (!$this->upload->do_upload('input_videotron')) {
             $error = array('error' => $this->upload->display_errors());
 
-            $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 			Videotron has not been uploaded yet.
-			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/settings/", $error);
         } else {
             $this->db->where('Id', $id);
             $this->db->update('settings', $data);
-            $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 			Videotron has been successfully updated.
-			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/settings");
@@ -110,9 +110,9 @@ class M_Setting extends CI_Model
         $this->db->where('kategori', 'misi');
         $this->db->update('settings', $data_misi);
 
-        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Visi misi information has been successfully updated.
-        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
@@ -129,9 +129,9 @@ class M_Setting extends CI_Model
         $this->db->where('kategori', 'email');
         $this->db->update('settings', $data_email);
 
-        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Contact information has been successfully updated.
-        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
@@ -154,17 +154,17 @@ class M_Setting extends CI_Model
         $hasil = $query_check["id"];
 
         if ($hasil > 0) {
-            $this->session->set_flashdata('message_name', '<div class="alert alert-warning fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			The category is already available.
-			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('dash/settings');
         } else {
 
             $this->db->insert('article_category', $data);
-            $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 				The category added successfully.
-				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
             // After that you need to used redirect function instead of load view such as 
             redirect("dash/settings");
@@ -224,18 +224,18 @@ class M_Setting extends CI_Model
         $hasil = $query_check["id"];
 
         if ($hasil > 0) {
-            $this->session->set_flashdata('message_name', '<div class="alert alert-warning fade show" role="alert">
+            $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			The contact is already available.
-			<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>');
             redirect('dash/settings');
         } else {
 
             $this->db->insert('contact', $data);
             $this->session->set_flashdata('message_name', '
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible alert-dismissible fade show" role="alert">
 				The contact added successfully.
-				<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
 
             // After that you need to used redirect function instead of load view such as 
@@ -248,9 +248,9 @@ class M_Setting extends CI_Model
         $this->db->where('slug', $old_slug);
         $this->db->update('contact', $data);
 
-        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Contact has been successfully updated.
-        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
@@ -284,7 +284,7 @@ class M_Setting extends CI_Model
         $this->db->where('kategori', 'legalitas');
         $this->db->update('settings', $data);
 
-        $this->session->set_flashdata('message_name', '<div class="alert alert-success fade show" role="alert">
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Legality information has been successfully updated.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
