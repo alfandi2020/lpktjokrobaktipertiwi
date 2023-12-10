@@ -291,4 +291,10 @@ class M_Setting extends CI_Model
         // After that you need to used redirect function instead of load view such as 
         redirect("dash/settings");
     }
+
+    public function faq($language)
+    {
+        $query = $this->db->select('question_' . $language . ' as question, answer_' . $language . ' as answer')->get('faq')->result();
+        return $query;
+    }
 }

@@ -198,6 +198,12 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/faq') ?>">
+                                        <i data-feather="settings"></i>
+                                        <span>FAQ</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
                                         <i data-feather="settings"></i>
                                         <span>Pengaturan</span>

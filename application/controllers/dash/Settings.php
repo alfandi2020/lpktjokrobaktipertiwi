@@ -183,19 +183,17 @@ class Settings extends CI_Controller
 
     public function update_legalitas()
     {
+
+        $user_id = $this->session->userdata('user_id');
         $now = date('Y-m-d H:i:s');
 
         $data = array(
             'content_id' => trim($this->input->post('legalitas_id')),
             'content_en' => trim($this->input->post('legalitas_en')),
             'content_jp' => trim($this->input->post('legalitas_jp')),
-            'updated_at' => $now
+            'updated_at' => $now,
+            'updated_by' => $user_id
         );
-
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-        // exit;
 
         $this->M_Setting->update_legalitas($data);
     }

@@ -104,7 +104,7 @@
 								</li> -->
 								<li>
 									<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" class="site-button-link youtube hover" title="Youtube">
-									<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_youtube.png" alt="" style="width: 20px; height: 20px;">
+										<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_youtube.png" alt="" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 							</ul>
@@ -183,6 +183,8 @@
 									</a>
 									<ul class="sub-menu">
 										<?php
+										$programs = $this->M_Program->lists($language);
+
 										foreach ($programs as $pr) {
 										?>
 											<li>
@@ -231,7 +233,7 @@
 									<a href="<?= base_url('registrasi') ?>"><?= $lang['registration_text'] ?></a>
 								</li>
 								<li>
-									<a href="<?= base_url('home/faq') ?>">FAQ</a>
+									<a href="<?= base_url('home/faq') ?>"><?= $lang['faq'] ?></a>
 								</li>
 								<li id="authButton">
 									<a href="<?= $url_auth ?>"><?= $url_text ?></a>
@@ -326,7 +328,7 @@
 										<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" target="_blank">
 											<img src="<?= base_url('assets/images/logo/logo_youtube.png') ?>" alt="" style="width: 20px; height: 20px;">
 											<span>&nbsp;LPK YTP</span>
-											</a>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -356,6 +358,12 @@
 						<div class="col-md-6 col-xl-4 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_getintuch">
 								<h5 class="footer-title text-white "><?= $lang['contact_us_text'] ?></h5>
+								<?php
+
+								$alamat = $this->M_Setting->footer_section($language, 'alamat');
+								$telepon = $this->M_Setting->footer_section($language, 'telepon');
+								$email = $this->M_Setting->footer_section($language, 'email');
+								?>
 								<ul>
 									<li>
 										<i class="ti-location-pin"></i>

@@ -74,10 +74,6 @@ class Home extends CI_Controller
             'pages' => 'id/pages/v_visi_misi',
             'visi' => $this->M_Setting->footer_section($language, 'visi'),
             'misi' => $this->M_Setting->footer_section($language, 'misi'),
-            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
-            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
-            'email' => $this->M_Setting->footer_section($language, 'email'),
-            'programs' => $this->M_Program->lists($language),
             'lang' => $lang,
             'language' => $language
         ];
@@ -117,10 +113,6 @@ class Home extends CI_Controller
             'title' => $lang['philosophy_text'],
             'pages' => 'id/pages/v_philosophy',
             'philosophy' => $this->M_Setting->footer_section($language, 'philosophy'),
-            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
-            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
-            'email' => $this->M_Setting->footer_section($language, 'email'),
-            'programs' => $this->M_Program->lists($language),
             'lang' => $lang,
             'language' => $language
         ];
@@ -187,13 +179,10 @@ class Home extends CI_Controller
         $lang = $this->M_Setting->lang($language);
 
         $data = [
-            'title' => 'FAQ',
+            'title' => $lang['faq'],
             'pages' => 'id/pages/v_faq',
-            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
-            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
-            'email' => $this->M_Setting->footer_section($language, 'email'),
-            'programs' => $this->M_Program->lists($language),
             'lang' => $lang,
+            'faq' => $this->M_Setting->faq($language),
             'language' => $language
         ];
 
@@ -228,10 +217,6 @@ class Home extends CI_Controller
         $data = [
             'title' => $lang['our_legality'],
             'pages' => 'id/pages/v_legal',
-            'programs' => $this->M_Program->lists($language),
-            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
-            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
-            'email' => $this->M_Setting->footer_section($language, 'email'),
             'lang' => $lang,
             'legalitas' => $this->M_Setting->footer_section($language, 'legalitas'),
             'language' => $language,
