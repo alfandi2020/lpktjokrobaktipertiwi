@@ -52,8 +52,10 @@
                                     </span>
                                 </div>
                                 <div class="icon-content p-l40">
-                                    <h5 class="dlab-tilte"><?= $p->nama_program ?></h5>
-                                    <p title="<?= $p->keterangan ?>"><?= substr($p->keterangan, 0, 100) ?>...</p>
+                                    <a href="<?= base_url('program/detail/') . $p->slug ?>">
+                                        <h5 class="dlab-tilte"><?= $p->nama_program ?></h5>
+                                    </a>
+                                        <p title="<?= $p->keterangan ?>"><?= substr($p->keterangan, 0, 100) ?>...</p>
                                 </div>
                             </div>
                         </div>
