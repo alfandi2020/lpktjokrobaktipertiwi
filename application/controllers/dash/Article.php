@@ -255,4 +255,23 @@ class Article extends CI_Controller
             $this->M_Article->update_photo($data, $slug);
         }
     }
+
+    public function delete()
+    {
+        $slug = $this->uri->segment(4);
+
+        $cek = $this->M_Article->is_available($slug);
+
+        $foto = $cek["photo"];
+
+        // print_r($foto);
+        // exit;
+        $path = "assets/images/articles/" . $foto;
+
+        if (file_exists($path)) {
+            unlink($path);
+        }
+
+        $this->M_Article->delete($slug);
+    }
 }

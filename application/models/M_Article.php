@@ -132,4 +132,18 @@ class M_Article extends CI_Model
         $query = $this->db->select('judul_' . $language .  ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug, id_category')->where('id_category', $clause)->order_by('judul_' . $language, 'ASC')->get('article', $limit, $from)->result();
         return $query;
     }
+
+    public function delete($slug)
+    {
+        $this->db->where('slug', $slug);
+        $this->db->delete('article');
+
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        The article has been successfully deleted.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
 }

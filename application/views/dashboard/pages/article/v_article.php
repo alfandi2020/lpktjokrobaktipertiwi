@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
 <div class="container-fluid">
     <div class="page-title">
         <div class="row">
@@ -61,8 +63,10 @@
                                         <td><?= $category['category_name'] ?></td>
                                         <td><?= $author['name'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('dash/article/edit/' . $a->slug) ?>" class="btn btn-primary btn-sm">Edit</a>
-                                            <!-- <button class="btn btn-success sweet-8" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-8']);">Login successfully</button> -->
+                                            <div class="btn-group">
+                                                <a href="<?= base_url('dash/article/edit/' . $a->slug) ?>" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="<?= base_url('dash/article/delete/' . $a->slug) ?>" class="btn btn-danger btn-sm btn-process" id="btnHapus">Hapus</a>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php
@@ -76,3 +80,26 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        $(".btn-process").on("click", function(e) {
+            e.preventDefault();
+            // const form = $(this).parents("form");
+
+            Swal.fire({
+                title: "Apakah anda yakin?",
+                text: "Pastikan lagi",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                cancelButtonText: "Batal",
+                confirmButtonText: "Hapus",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = document.getElementById('btnHapus').getAttribute('href');
+                };
+            });
+        });
+    });
+</script>
