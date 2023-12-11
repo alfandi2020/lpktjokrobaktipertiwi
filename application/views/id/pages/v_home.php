@@ -186,9 +186,9 @@
 										</li>
 									</ul>
 								</div> -->
-                            <div class="">
+                            <!-- <div class="">
                                 <a href="<?= base_url('home/tentang') ?>" class="site-button btnhover20"><?= $lang['detail_text'] ?></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
