@@ -25,6 +25,7 @@ class Program extends CI_Controller
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
             'lang' => $lang,
+            'language' => $language
         ];
         $this->load->view('id/index', $data);
     }
@@ -43,6 +44,7 @@ class Program extends CI_Controller
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
             'lang' => $lang,
+            'language' => $language
         ];
         $this->load->view('id/index', $data);
     }
