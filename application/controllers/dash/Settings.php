@@ -148,7 +148,7 @@ class Settings extends CI_Controller
         $sosmed = $this->M_Setting->detail_social_media($sosmed_category);
 
         // pembuatan slug dari nama produk
-        $out = explode(" ", $contact_name,);
+        $out = explode(" ", $contact_name);
         $slug = preg_replace("/[^A-Za-z0-9\-]/", "", strtolower(implode("-", $out))) . '-' . strtolower($sosmed[0]->name);
 
         $now = date('Y-m-d H:i:s');
