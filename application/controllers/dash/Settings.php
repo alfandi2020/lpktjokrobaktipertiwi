@@ -96,6 +96,8 @@ class Settings extends CI_Controller
 
         $data_alamat = array(
             'content_id' => trim($this->input->post('alamat')),
+            'content_en' => trim($this->input->post('alamat')),
+            'content_jp' => trim($this->input->post('alamat')),
             'updated_at' => $now
         );
 
@@ -104,6 +106,8 @@ class Settings extends CI_Controller
 
         $data_telepon = array(
             'content_id' => $telepon_name,
+            'content_en' => $telepon_name,
+            'content_jp' => $telepon_name,
             'updated_at' => $now
         );
 
@@ -112,6 +116,8 @@ class Settings extends CI_Controller
 
         $data_email = array(
             'content_id' => $email_name,
+            'content_en' => $email_name,
+            'content_jp' => $email_name,
             'updated_at' => $now
         );
 
