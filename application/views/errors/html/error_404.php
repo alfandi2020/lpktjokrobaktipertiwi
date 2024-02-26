@@ -55,7 +55,7 @@
 						<h2 class="error-head">Something went wrong !</h2>
 						<p class="font-16">We are sorry but it appears that the page you are looking for could not be found. We are working on it and we will get it fixed as soon as possible.</p>
 						<p class="font-16">You can go back to the Main Page by clicking the button.</p>
-						<a href="<?= $_SERVER['HTTP_REFERER'] ?>" class="site-button">Back to home</a>
+						<a href="<?= base_url() ?>" class="site-button">Back to home</a>
 					</div>
 				</div>
 			</div>

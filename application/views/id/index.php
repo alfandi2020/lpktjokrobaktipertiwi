@@ -51,15 +51,11 @@
 		<div id="loading-area"></div>
 		<!-- header -->
 		<header class="site-header mo-left header-transparent box-header header">
-			<!-- <header class="site-header mo-left header-transparent header"> -->
 			<div class="top-bar text-black">
 				<div class="container">
 					<div class="row d-flex justify-content-between">
 						<div class="dlab-topbar-left">
 							<ul>
-								<!-- <li><?= anchor('language/change/id', '<span class="flag-icon flag-icon-id">') ?></li>
-								<li><?= anchor('language/change/en', '<span class="flag-icon flag-icon-gb-eng">') ?></li>
-								<li><?= anchor('language/change/jp', '<span class="flag-icon flag-icon-jp">') ?></li> -->
 								<li><?= anchor('language/change/id', 'ID') ?></li>
 								<li><?= anchor('language/change/en', 'EN') ?></li>
 								<li><?= anchor('language/change/jp', '日本語') ?></li>
@@ -67,26 +63,6 @@
 						</div>
 						<div class="dlab-topbar-right topbar-social">
 							<ul>
-								<!-- <li>
-									<a href="https://wa.me/628176877606" target="_blank" class="site-button-link twitter hover" title="Admin 1">
-										<i class="fa fa-whatsapp"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://wa.me/6285714243325" target="_blank" class="site-button-link twitter hover" title="Admin 2">
-										<i class="fa fa-whatsapp"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://wa.me/6281227640349" target="_blank" class="site-button-link twitter hover" title="Admin 3">
-										<i class="fa fa-whatsapp"></i>
-									</a>
-								</li>
-								<li>
-									<a href="https://wa.me/628119401954" target="_blank" class="site-button-link twitter hover" title="Admin 4">
-										<i class="fa fa-whatsapp"></i>
-									</a>
-								</li> -->
 								<li>
 									<a href="https://www.facebook.com/profile.php?id=61551065793688" class="site-button-link facebook hover" title="Facebook">
 										<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_facebook.png" alt="" style="width: 20px; height: 20px;">
@@ -97,11 +73,6 @@
 										<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_instagram.png" alt="" style="width: 20px; height: 20px;">
 									</a>
 								</li>
-								<!-- <li>
-									<a href="#" class="site-button-link linkedin hover">
-										<i class="fab fa-linkedin-in"></i>
-									</a>
-								</li> -->
 								<li>
 									<a href="https://www.youtube.com/watch?v=4LqqBQxU-1Q" class="site-button-link youtube hover" title="Youtube">
 										<img src="https://lpktjokrobaktipertiwi.id/assets/images/logo/logo_youtube.png" alt="" style="width: 20px; height: 20px;">
@@ -295,19 +266,6 @@
 			<div class="footer-top" style="background-image:url(<?= base_url('assets/asset_fr/') ?>images/background/bg2.png); background-size: contain;">
 				<div class="container">
 					<div class="row">
-						<!-- <div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
-							<div class="widget widget_services border-0">
-								<h5 class="footer-title text-white"><?= $lang['menu_text'] ?></h5>
-								<ul>
-									<li>
-										<a href="<?= base_url('home/tentang') ?>"><?= $lang['about_text'] ?></a>
-									</li>
-									<li>
-										<a href="<?= base_url('article') ?>"><?= $lang['article_text'] ?></a>
-									</li>
-								</ul>
-							</div>
-						</div> -->
 						<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
 							<div class="widget widget_getintuch border-0">
 								<h5 class="footer-title text-white"><?= $lang['social_media'] ?></h5>
@@ -348,7 +306,6 @@
 						<div class="col-md-3 col-7 col-xl-6 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_services border-0">
 								<h5 class="footer-title text-white"><?= $lang['maps_text'] ?></h5>
-								<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" style="border:0;" height="250" width="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 								<div class="responsive-iframe">
 									<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.992596261016!2d106.9171448!3d-6.1978163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bc764820fcb%3A0x4cd956d7d19d7448!2sYAYASAN%20TJOKRO%20PERSADA%20BAKTI%20PERTIWI!5e0!3m2!1sid!2sid!4v1697767053806!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
 								</div>
@@ -418,12 +375,9 @@
 		</div>
 	</div>
 	<!-- JAVASCRIPT FILES ========================================= -->
-	<!-- JAVASCRIPT FILES ========================================= -->
 
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script> -->
 	<script src="<?= base_url() ?>assets/asset_fr/plugins/wow/wow.js"></script><!-- WOW JS -->
 
 	<script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP.MIN JS -->
@@ -464,12 +418,6 @@
 			dz_rev_slider_14();
 			$('.lazy').Lazy();
 		}); /*ready*/
-	</script>
-	<script>
-		// function toggleAdditionalButtons() {
-		// 	var additionalButtons = document.getElementById('additionalButtons');
-		// 	additionalButtons.style.display = (additionalButtons.style.display === 'none' || additionalButtons.style.display === '') ? 'block' : 'none';
-		// }
 	</script>
 	<script>
 		// Menampilkan atau menyembunyikan tombol-tombol tambahan saat hover
