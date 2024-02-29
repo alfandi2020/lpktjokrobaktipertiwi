@@ -8,14 +8,6 @@
         $photo_url = "";
         $id_author = "";
     }
-
-    if ($article['id_category'] == "9") {
-        $breadcrumb = $title;
-        $url_home = base_url('customer');
-    } else {
-        $breadcrumb = $lang['article_text'];
-        $url_home = base_url();
-    }
     ?>
     <div class="dlab-bnr-inr overlay-black-middle bg-pt">
         <div class="container">
@@ -24,8 +16,8 @@
                 <!-- Breadcrumb row -->
                 <div class="breadcrumb-row">
                     <ul class="list-inline">
-                        <li><a href="<?= $url_home ?>"><?= $lang['home_text'] ?></a></li>
-                        <li><?= $breadcrumb ?></li>
+                        <li><a href="index.html"><?= $lang['home_text'] ?></a></li>
+                        <li><?= $lang['article_text'] ?></li>
                     </ul>
                 </div>
                 <!-- Breadcrumb row END -->
@@ -55,20 +47,16 @@
                     </div>
                     <div class="dlab-post-media dlab-img-effect zoom-slow" style="height: auto">
                         <a href="blog-single.html">
-                            <img src="<?= base_url() ?>assets/images/articles/<?= $article['photo'] ?>" alt="" class="img-fluid">
+                            <img src="<?= base_url() ?>assets/images/articles/<?= $article['photo'] ?>" alt="">
                         </a>
                     </div>
                     <div class="dlab-post-text">
-                        <div class="mt-5">
-                            <h5><?= $article['headline'] ?></h5>
-                        </div>
-                        <div class="mt-3">
-                            <?= $article['content'] ?>
-                        </div>
+                        <?= $article['headline'] ?>
+                        <?= $article['content'] ?>
                     </div>
-                    <!-- <div class="dlab-post-tags clear">
+                    <div class="dlab-post-tags clear">
                         <div class="post-tags"> <a href="javascript:void(0);">Child </a> <a href="javascript:void(0);">Eduction </a> <a href="javascript:void(0);">Money </a> <a href="javascript:void(0);">Resturent </a> </div>
-                    </div> -->
+                    </div>
                 </div>
                 <!-- blog END -->
             </div>

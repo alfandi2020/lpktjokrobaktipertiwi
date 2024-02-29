@@ -33,6 +33,7 @@ class Settings extends CI_Controller
             'title' => 'Setting',
             'pages' => 'dashboard/pages/settings/v_settings',
             'videotron' => $this->M_Setting->videotron(),
+            'vw_customer' => $this->M_Setting->vw_customer(),
             'visi' => $this->M_Setting->setting('visi'),
             'misi' => $this->M_Setting->setting('misi'),
             'alamat' => $this->M_Setting->setting('alamat'),

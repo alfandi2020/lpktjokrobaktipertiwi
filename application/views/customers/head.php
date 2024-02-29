@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/style.css">
     <link class="skin" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/skin/skin-3.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/asset_fr/css/templete.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Font -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
@@ -52,7 +53,7 @@
         <header class="site-header mo-left header-transparent overlay header">
             <div class="top-bar">
                 <div class="container">
-                    <div class="row d-flex justify-content-between align-items-center">
+                    <div class="row d-flex justify-content-between align-items-center p-2">
                         <div class="dlab-topbar-left">
                             <ul>
                                 <li><?= anchor('language/change/id', 'ID') ?></li>
@@ -98,18 +99,18 @@
                             <span></span>
                         </button>
                         <!-- extra nav -->
-                        <div class="extra-nav">
+                        <!-- <div class="extra-nav">
                             <div class="extra-cell">
                                 <button id="quik-search-btn" type="button" class="site-button-link"><i class="la la-search"></i></button>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Quik search -->
-                        <div class="dlab-quik-search ">
+                        <!-- <div class="dlab-quik-search ">
                             <form action="#">
                                 <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
                                 <span id="quik-search-remove"><i class="ti-close"></i></span>
                             </form>
-                        </div>
+                        </div> -->
                         <!-- main nav -->
                         <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
                             <div class="logo-header d-md-block d-lg-none">
@@ -117,22 +118,63 @@
                             </div>
                             <ul class="nav navbar-nav">
                                 <li class="<?= ($this->uri->segment(1) == 'customer' && !$this->uri->segment(2)) ? 'active' : '' ?>">
-                                    <a href="<?= base_url('home') ?>"><?= $lang['home_text'] ?></a>
+                                    <a href="<?= base_url('customer') ?>"><?= $lang['home_text'] ?></a>
                                 </li>
                                 <li class="<?= ($this->uri->segment(2) == 'profile') ? 'active' : '' ?>">
-                                    <a href="<?= base_url('profile') ?>"><?= $lang['profile'] ?></a>
+
+                                    <a href="javascript:;"><?= $lang['profile'] ?><i class="fas fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="<?= base_url('home/visi_misi') ?>"><?= strtoupper($lang['visi_misi']) ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('program') ?>"><?= strtoupper($lang['program_text']) ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('home/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('home/facility') ?>"><?= strtoupper($lang['facility']) ?></a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="<?= ($this->uri->segment(2) == 'information') ? 'active' : '' ?>">
-                                    <a href="<?= base_url('information') ?>"><?= $lang['information'] ?></a>
-                                </li>
-                                <li class="<?= ($this->uri->segment(2) == 'news') ? 'active' : '' ?>">
-                                    <a href="<?= base_url('news') ?>"><?= $lang['news'] ?></a>
-                                </li>
-                                <li class="<?= ($this->uri->segment(2) == 'network') ? 'active' : '' ?>">
-                                    <a href="<?= base_url('network') ?>"><?= $lang['network'] ?></a>
+                                <li class="<?= ($this->uri->segment(2) == 'service') ? 'active' : '' ?>">
+                                    <a href="javascript:;">
+                                        <?= $lang['services'] ?>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <?php
+                                        $programs = $this->M_Program->lists($language);
+
+                                        foreach ($programs as $pr) {
+                                        ?>
+                                            <li>
+                                                <a href="<?= base_url('program/detail/') . $pr->slug ?>"><?= $pr->nama_program ?></a>
+                                            </li>
+                                        <?php
+                                        }
+                                        ?>
+                                    </ul>
                                 </li>
                                 <li class="<?= ($this->uri->segment(2) == 'contact') ? 'active' : '' ?>">
                                     <a href="<?= base_url('contact') ?>"><?= $lang['contact_text'] ?></a>
+                                </li>
+                                <li class="<?= ($this->uri->segment(2) == 'values') ? 'active' : '' ?>">
+                                    <a href="<?= base_url('customer/values') ?>"><?= $lang['values_text'] ?></a>
+                                </li>
+                                <li class="<?= ($this->uri->segment(2) == 'contact') ? 'active' : '' ?>">
+                                    <?php
+                                    if (empty($this->session->userdata('username'))) {
+                                        $url_auth = base_url('auth');
+                                        $url_text = $lang['login_text'];
+                                    } else {
+                                        $url_auth = base_url('dashboard');
+                                        $url_text = $lang['dashboard_text']; ?>
+                                    <?php
+                                    }
+                                    ?>
+                                    <a href="<?= $url_auth ?>" target="_blank"><?= $url_text ?></a>
                                 </li>
                             </ul>
                             <div class="dlab-social-icon">

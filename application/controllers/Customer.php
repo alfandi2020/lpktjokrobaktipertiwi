@@ -39,10 +39,31 @@ class Customer extends CI_Controller
         ];
 
         $this->load->view('customers/head', $data);
-        $this->load->view('customers/tes', $data);
+        $this->load->view('customers/v_home', $data);
         $this->load->view('customers/footer');
     }
 
+    public function values()
+    {
+        $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
+
+        $data = [
+            'title' => $lang['values_text'],
+            'articles' => $this->M_Article->lists($language),
+            'programs' => $this->M_Program->lists($language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $lang,
+            'language' => $language,
+            'article' => $this->M_Article->detail_article("keunggulan-lpk-yto", $language),
+        ];
+
+        $this->load->view('customers/head', $data);
+        $this->load->view('id/pages/v_article_detail', $data);
+        $this->load->view('customers/footer');
+    }
     function detect_language()
     {
         $CI = &get_instance();

@@ -40,6 +40,7 @@
                                 <a class="nav-link" id="kontak-tab" data-bs-toggle="pill" href="#kontak" role="tab" aria-controls="kontak" aria-selected="false">Kontak</a>
                                 <a class="nav-link" id="chat-tab" data-bs-toggle="pill" href="#chat" role="tab" aria-controls="chat" aria-selected="false">Chat</a>
                                 <a class="nav-link" id="legalitas-tab" data-bs-toggle="pill" href="#legalitas" role="tab" aria-controls="legalitas" aria-selected="false">Legalitas</a>
+                                <a class="nav-link" id="videotron-tab2" data-bs-toggle="pill" href="#videotron2" role="tab" aria-controls="videotron2" aria-selected="false">Video web customer</a>
                             </div>
                         </div>
                         <div class="col-md-8 col-xs-12">
@@ -313,6 +314,31 @@
                                             </div>
                                         </div>
                                         <div class=" text-end mt-5">
+                                            <button class="btn btn-primary me-3" type="submit">Update</button>
+                                            <input class="btn btn-light" type="reset" value="Cancel">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="videotron2" role="tabpanel" aria-labelledby="videotron-tab2">
+                                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/settings/update_videotron/' . $vw_customer['Id']) ?>" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="input_videotron">Video web customer</label>
+                                                    <input type="file" class="form-control input-air-primary" id="input_videotron" name="input_videotron">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="">
+                                                    <video width="100%" height="100%" loop="true" autoplay="autoplay" muted>
+                                                        <source src="<?= base_url() ?>assets/asset_fr/video/<?= $vw_customer['content'] ?>" type="video/mp4" />
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-end mt-5">
                                             <button class="btn btn-primary me-3" type="submit">Update</button>
                                             <input class="btn btn-light" type="reset" value="Cancel">
                                         </div>

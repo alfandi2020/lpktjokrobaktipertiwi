@@ -29,8 +29,24 @@ class M_Article extends CI_Model
 
     public function list_bydate($limit, $from, $language)
     {
-        $query = $this->db->select('judul_' . $language . ' as judul, headline_' . $language . ' as headline, content_' . $language . ' as content, photo, author, publish_date, slug, id_category')->where_not_in('id_category', '7')->order_by('publish_date', 'DESC')->order_by('judul', 'ASC')->get('article', $limit, $from)->result();
-        return $query;
+        $fields = array(
+            'judul_' . $language . ' as judul',
+            'headline_' . $language . ' as headline',
+            'content_' . $language . ' as content',
+            'photo',
+            'author',
+            'publish_date',
+            'slug',
+            'id_category'
+        );
+
+        return $this->db
+            ->select($fields)
+            ->where_not_in('id_category', array('7', '9'))
+            ->order_by('publish_date', 'DESC')
+            ->order_by('judul', 'ASC')
+            ->get('article', $limit, $from)
+            ->result();
     }
 
     public function get_published_count()
