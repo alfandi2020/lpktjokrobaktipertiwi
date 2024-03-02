@@ -42,6 +42,41 @@ class Customer extends CI_Controller
         $this->load->view('customers/v_home', $data);
         $this->load->view('customers/footer');
     }
+    public function visi_misi()
+    {
+        // $device = detect_device();
+        $language = $this->detect_language();
+
+        $lang = $this->M_Setting->lang($language);
+
+        $data = [
+            'title' => $lang['visi_misi'],
+            'pages' => 'id/pages/v_visi_misi',
+            'visi' => $this->M_Setting->footer_section($language, 'visi'),
+            'misi' => $this->M_Setting->footer_section($language, 'misi'),
+            'lang' => $lang,
+            'language' => $language
+        ];
+
+        $this->load->view('id/index', $data);
+    }
+    public function program()
+    {
+        $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
+
+        $data = [
+            'title' => $lang['program_text'],
+            'pages' => 'id/pages/v_program',
+            'programs' => $this->M_Program->lists($language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $lang,
+            'language' => $language
+        ];
+        $this->load->view('id/index', $data);
+    }
     public function contact()
     { // $device = detect_device();
         $language = $this->detect_language();
