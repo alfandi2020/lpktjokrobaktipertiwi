@@ -150,7 +150,7 @@
                                         foreach ($programs as $pr) {
                                         ?>
                                             <li>
-                                                <a href="<?= base_url('program/detail/') . $pr->slug ?>"><?= $pr->nama_program ?></a>
+                                                <a href="<?= base_url('program/detail/') . $pr->slug ?>"><?= strtoupper($pr->nama_program) ?></a>
                                             </li>
                                         <?php
                                         }

@@ -48,8 +48,8 @@ class M_Program extends CI_Model
                 'allowed_types' => "gif|jpg|png|jpeg|JPEG|JPG|PNG|GIF",
                 'overwrite' => TRUE,
                 'max_size' => "99999999999",
-                'max_height' => "800",
-                'max_width' => "1500",
+                'max_height' => "3000",
+                'max_width' => "2500",
                 'file_name' => $data["photo"]
             );
 
@@ -59,7 +59,7 @@ class M_Program extends CI_Model
             if (!$this->upload->do_upload('program_photo')) {
                 $error = array('error' => $this->upload->display_errors());
 
-                $this->session->set_flashdata('message_name', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
 				Error message: ' . $this->upload->display_errors() . '.
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>');
