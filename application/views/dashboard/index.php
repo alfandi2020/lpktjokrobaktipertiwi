@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/photoswipe.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/bootstrap.css">
@@ -207,6 +208,17 @@
                                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
                                         <i data-feather="settings"></i>
                                         <span>Pengaturan</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-main-title">
+                                    <div>
+                                        <h6 class="">Web customer</h6>
+                                    </div>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/gallery') ?>" class="active">
+                                        <i data-feather="image"></i>
+                                        <span>Galeri</span>
                                     </a>
                                 </li>
                                 <!-- <li class="sidebar-list">

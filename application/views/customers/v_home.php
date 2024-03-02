@@ -3,23 +3,24 @@
     .shape_2 {
         background-color: #00AFEF;
         color: white;
-    margin:10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    border: 1px solid;
-    border-radius: 10px;
-    overflow: hidden;
-    transform: rotate(45deg);
+        margin: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border: 1px solid;
+        border-radius: 10px;
+        overflow: hidden;
+        transform: rotate(45deg);
     }
+
     .shape_2 p {
-    transform: rotate(-45deg);
-    /* width: 61%; */
-    /* height: 61%; */
-    /* flex-shrink: 0; */
-    font-weight:bold;
+        transform: rotate(-45deg);
+        /* width: 61%; */
+        /* height: 61%; */
+        /* flex-shrink: 0; */
+        font-weight: bold;
     }
 </style>
 <div class="page-content bg-white">
@@ -42,41 +43,40 @@
 
     <!-- Facilities -->
     <div class="section-full content-inner bg-white">
-                    <div class="container-fluid">
-                        <div class="section-head style2 text-center">
-                            <h2 class="title"><?= $lang['facility'] ?></h2>
-                            <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-                        </div>
-                        <div class="blog-carousel owl-none owl-carousel">
-                            <?php foreach ($facilities as $f) { ?>
-                                    <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
-                                        <div class="blog-post post-style-2">
-                                            <div class="dlab-post-media dlab-img-effect">
-                                                <a href="blog-single.html"><img
-                                                        src="<?= base_url() ?>assets/asset_fr/images/<?= $f->photo ?>" alt=""></a>
-                                            </div>
-                                            <div class="dlab-post-info">
-                                                <div class="dlab-post-meta">
-                                                    <ul>
-                                                        <!-- <li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li> -->
-                                                        <!-- <li class="post-author"> By <a href="blog-single.html">demongo</a> </li> -->
-                                                    </ul>
-                                                </div>
-                                                <div class="dlab-post-title">
-                                                    <h3 style="font-weight: bold;" class="dlab-tilte">
-                                                        <a href="blog-single.html"><?= $f->$language ?></a>
-                                                    </h3>
-                                                </div>
-                                                <!-- <div class="dlab-post-readmore">
+        <div class="container-fluid">
+            <div class="section-head style2 text-center">
+                <h2 class="title"><?= $lang['facility'] ?></h2>
+                <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
+            </div>
+            <div class="blog-carousel owl-none owl-carousel">
+                <?php foreach ($facilities as $f) { ?>
+                    <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                        <div class="blog-post post-style-2">
+                            <div class="dlab-post-media dlab-img-effect">
+                                <a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/<?= $f->photo ?>" alt=""></a>
+                            </div>
+                            <div class="dlab-post-info">
+                                <div class="dlab-post-meta">
+                                    <ul>
+                                        <!-- <li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li> -->
+                                        <!-- <li class="post-author"> By <a href="blog-single.html">demongo</a> </li> -->
+                                    </ul>
+                                </div>
+                                <div class="dlab-post-title">
+                                    <h3 style="font-weight: bold;" class="dlab-tilte">
+                                        <a href="blog-single.html"><?= $f->$language ?></a>
+                                    </h3>
+                                </div>
+                                <!-- <div class="dlab-post-readmore">
                                                     <a href="<?= base_url() ?>" title="READ MORE" rel="bookmark"
                                                         class="site-button btnhover21">READ MORE</a>
                                                 </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
                             </div>
                         </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
     </div>
     <!-- <div class="content-block">
         <div class="section-full content-inner bg-white">
@@ -157,14 +157,14 @@
     <!---- flow --->
     <div class="content-block">
         <div class="section-full content-inner bg-white">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-10 text-center">
-                        <div class="section-head style2 text-center">
-                                <h2 class="title">Alur Program YTP</h2>
-                        </div>
-                        <h5>ALUR PROGRAM PEMAGANGAN KE JEPANG</h5>
-                        <img src="<?= base_url() ?>assets/asset_fr/flow1.png" alt="">
-                        <!-- <table>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <div class="section-head style2 text-center">
+                        <h2 class="title"><?= $lang['alur_program_title'] ?></h2>
+                    </div>
+                    <h5><?= $lang['alur_program_title_description'] ?></h5>
+                    <img src="<?= base_url() ?>assets/asset_fr/flow1.png" alt="">
+                    <!-- <table>
                             <thead>
                                 <th>Alur Proses</th>
                                 <th>Tempat Proses</th>
@@ -210,14 +210,14 @@
                             </tr>
                             
                         </table> -->
-                        <!-- <p>
+                    <!-- <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Itaque, repudiandae.
                         </p> -->
-                    </div>
                 </div>
-                <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-                    <!-- <div class="col mt-3">
+            </div>
+            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+                <!-- <div class="col mt-3">
                         <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="Foto 1" data-gallery="mygallery">
                             <img src="https://picsum.photos/id/300/400/533" alt="Foto 1" class="img-fluid w-100 rounded" />
                         </a>
@@ -247,8 +247,8 @@
                             <img src="https://picsum.photos/id/306/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
                         </a>
                     </div> -->
-                </div>
             </div>
+        </div>
     </div>
     <!-- Gallery -->
     <!-- <div class="content-block">
@@ -298,32 +298,33 @@
             </div>
         </div>
     </div> -->
-            <div class="section-full content-inner bg-white">
-				<div class="container-fluid">
-					<div class="section-head style2 text-center">
-						<h2 class="title">FOTO-FOTO OJT (DI INDONESIA DAN DI JEPANG)</h2>
-						<!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
-					</div>
-					<div class="blog-carousel owl-none owl-carousel">
-                        <?php for ($i = 0; $i < 4; $i++) { ?>
-                            <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-                                <div class="blog-post post-style-2">
-                                    <div class="dlab-post-media dlab-img-effect">
-                                        <a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/our-work/leather/pic1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="dlab-post-info">
-                                        <div class="dlab-post-meta">
-                                            <ul>
-                                                <!-- <li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li> -->
-                                                <!-- <li class="post-author"> By <a href="blog-single.html">demongo</a> </li> -->
-                                            </ul>
-                                        </div>
-                                        <div class="dlab-post-title">
-                                            <h4 class="post-title"><a href="blog-single.html">Kegiatan Unggulan</a></h4>
-                                        </div>
-                                        <div class="dlab-post-readmore">
-                                            <a href="<?= base_url() ?>" title="READ MORE" rel="bookmark" class="site-button btnhover21">READ MORE</a>
-                                            <!-- <button type="button" class="site-button btnhover21" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div class="section-full content-inner bg-white">
+        <div class="container-fluid">
+            <div class="section-head style2 text-center">
+                <h2 class="title"><?= $lang['foto_foto_ojt_text'] ?></h2>
+                <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
+            </div>
+            <div class="blog-carousel owl-none owl-carousel">
+                <?php
+                foreach ($galleries as $g) { ?>
+                    <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+                        <div class="blog-post post-style-2">
+                            <div class="dlab-post-media dlab-img-effect">
+                                <a href="blog-single.html"><img src="<?= base_url($g->url_foto) ?>" alt=""></a>
+                            </div>
+                            <div class="dlab-post-info">
+                                <div class="dlab-post-meta">
+                                    <ul>
+                                        <!-- <li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li> -->
+                                        <!-- <li class="post-author"> By <a href="blog-single.html">demongo</a> </li> -->
+                                    </ul>
+                                </div>
+                                <div class="dlab-post-title">
+                                    <h4 class="post-title"><a href="blog-single.html"><?= $g->title ?></a></h4>
+                                </div>
+                                <div class="dlab-post-readmore">
+                                    <a href="<?= base_url() ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover21"><?= $lang['detail_text'] ?></a>
+                                    <!-- <button type="button" class="site-button btnhover21" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             View
                                             </button>
                                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -343,56 +344,14 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                        <?php } ?>
-						<!-- <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
-							<div class="blog-post post-style-2">
-								<div class="dlab-post-media dlab-img-effect">
-									<a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/our-work/leather/pic2.jpg" alt=""></a>
-								</div>
-								<div class="dlab-post-info">
-									<div class="dlab-post-meta">
-										<ul>
-											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
-											<li class="post-author"> By <a href="blog-single.html">AARON</a> </li>
-										</ul>
-									</div>
-									<div class="dlab-post-title ">
-										<h4 class="post-title"><a href="blog-single.html">Seven Doubts You Should Clarify About</a></h4>
-									</div>
-									<div class="dlab-post-readmore">
-										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover21">READ MORE</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
-							<div class="blog-post post-style-2">
-								<div class="dlab-post-media dlab-img-effect"> 
-									<a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/our-work/leather/pic3.jpg" alt=""></a>
-								</div>
-								<div class="dlab-post-info">
-									<div class="dlab-post-meta">
-										<ul>
-											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
-											<li class="post-author"> By <a href="blog-single.html">VICTORIA</a> </li>
-										</ul>
-									</div>
-									<div class="dlab-post-title">
-										<h4 class="post-title"><a href="blog-single.html">Seven Outrageous Ideas Industry</a></h4>
-									</div>
-									<div class="dlab-post-readmore">
-										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover21">READ MORE</a>
-									</div>
-								</div>
-							</div>
-						</div> -->
-					</div>
-				</div>
-			</div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha512-YibiFIKqwi6sZFfPm5HNHQYemJwFbyyYHjrr3UT+VobMt/YBo1kBxgui5RWc4C3B4RJMYCdCAJkbXHt+irKfSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -130,7 +130,7 @@
                                             <a href="<?= base_url('customer/visi_misi') ?>"><?= strtoupper($lang['visi_misi']) ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url('program') ?>"><?= strtoupper($lang['program_text']) ?></a>
+                                            <a href="<?= base_url('customer/program') ?>"><?= strtoupper($lang['program_text']) ?></a>
                                         </li>
                                         <li>
                                             <a href="<?= base_url('customer/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
@@ -160,7 +160,7 @@
                                     </ul>
                                 </li>
                                 <li class="<?= ($this->uri->segment(2) == 'contact') ? 'active' : '' ?>">
-                                    <a href="<?= base_url('cust/id/contact') ?>"><?= $lang['contact_text'] ?></a>
+                                    <a href="<?= base_url('customer/contact') ?>"><?= $lang['contact_text'] ?></a>
                                 </li>
                                 <li class="<?= ($this->uri->segment(2) == 'values') ? 'active' : '' ?>">
                                     <a href="<?= base_url('customer/values') ?>"><?= $lang['values_text'] ?></a>
