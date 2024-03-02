@@ -170,21 +170,31 @@
                                 <th>Keterangan</th>
                             </thead>
                             <tr>
-                                <td><span class="site-button btnhover20">JOB ORDER</span><br><i style="color: black;" class="fas fa-arrow-down"></i></td>
+                                <td><span class="site-button btnhover20">JOB ORDER</span><br><i style="color: black;font-size:80px;" class="bi bi-arrow-down"></i></td>
                                 <td>YTP</td>
                                 <td>2 Minggu</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><span class="site-button btnhover20">INTERVIEW</span><br><i style="color: black;" class="fas fa-arrow-down"></i></td>
+                                <td><span class="site-button btnhover20">INTERVIEW</span><br><i style="color: black;font-size:80px;" class="bi bi-arrow-down"></i></td>
                                 <td>YTP</td>
                                 <td>1 Hari</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><span class="shape_2"><p>MCU</p></P></span><br><i style="color: black;" class="fas fa-arrow-down"></i></td>
+                                <td><span class="shape_2"><p>MCU</p></P></span><br><i style="color: black;font-size:80px;" class="bi bi-arrow-down"></i></td>
                                 <td>YTP & KLINIK</td>
-                                <td>1 Hari</td>
+                                <td>2 Minggu</td>
+                                <td></td>
+                            </tr>
+                             <tr>
+                                <td>
+                                    <span class="site-button btnhover20 col-5">PEMANTAPAN <br> BAHASA JEPANG</span> <br> <br>
+                                    <span class="site-button btnhover20 col-5">ON JOB <br> TRAINING</span><br><br>
+                                     <span class="site-button btnhover20 col-5">PENGURUSAN <br> DOKUMEN</span>
+                                </td>
+                                <td>YTP <br> MTG</td>
+                                <td>4 Bulan</td>
                                 <td></td>
                             </tr>
                             
