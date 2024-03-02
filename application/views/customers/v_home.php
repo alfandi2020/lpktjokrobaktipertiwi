@@ -162,7 +162,9 @@
                         <div class="section-head style2 text-center">
                                 <h2 class="title">Alur Program YTP</h2>
                         </div>
-                        <table>
+                        <h5>ALUR PROGRAM PEMAGANGAN KE JEPANG</h5>
+                        <img src="<?= base_url() ?>assets/asset_fr/flow1.png" alt="">
+                        <!-- <table>
                             <thead>
                                 <th>Alur Proses</th>
                                 <th>Tempat Proses</th>
@@ -170,19 +172,28 @@
                                 <th>Keterangan</th>
                             </thead>
                             <tr>
-                                <td><span class="site-button btnhover20">JOB ORDER</span><br><i style="color: black;font-size:80px;" class="bi bi-arrow-down"></i></td>
+                                <td><span class="site-button btnhover20">JOB ORDER</span><br><i style="color: black;font-size:40px;" class="fa-solid fa-arrow-down-long"></i></td>
                                 <td>YTP</td>
                                 <td>2 Minggu</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><span class="site-button btnhover20">INTERVIEW</span><br><i style="color: black;font-size:80px;" class="bi bi-arrow-down"></i></td>
+                                <td><span class="site-button btnhover20">INTERVIEW</span><br><i style="color: black;font-size:40px;" class="fa-solid fa-arrow-down-long"></i></td>
                                 <td>YTP</td>
                                 <td>1 Hari</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><span class="shape_2"><p>MCU</p></P></span><br><i style="color: black;font-size:80px;" class="bi bi-arrow-down"></i></td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-xl-3">
+                                             <span class="shape_2"><p>MCU</p></P></span><br><i style="color: black;font-size:50px;" class="fa-solid fa-arrow-down-long"></i>
+                                        </div>
+                                        <div class="col">
+                                            <i style="color: black;font-size:50px;" class="fa-solid fa-arrow-turn-down"></i>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>YTP & KLINIK</td>
                                 <td>2 Minggu</td>
                                 <td></td>
@@ -198,7 +209,7 @@
                                 <td></td>
                             </tr>
                             
-                        </table>
+                        </table> -->
                         <!-- <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Itaque, repudiandae.
