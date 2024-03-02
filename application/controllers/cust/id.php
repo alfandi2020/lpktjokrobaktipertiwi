@@ -39,6 +39,7 @@ class id extends CI_Controller
         $this->load->view('customers/tes',$data);
         $this->load->view('customers/footer');
     }
+    
     function detect_language()
     {
         $CI = &get_instance();

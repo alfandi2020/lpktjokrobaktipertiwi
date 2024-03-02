@@ -14,6 +14,10 @@ class M_Setting extends CI_Model
     {
         return $this->db->select('Id, content_id as content')->where('Id', '1')->get('settings')->row_array();
     }
+    public function videotron_customers()
+    {
+        return $this->db->select('Id, content_id as content')->where('Id', '1')->get('settings_customers')->row_array();
+    }
 
     public function vw_customer()
     {

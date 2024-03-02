@@ -97,7 +97,54 @@
         </div>
     </div>
     <!-- contact area END -->
-
+    <!---- flow --->
+    <div class="content-block">
+        <div class="section-full content-inner bg-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-10 text-center">
+                        <h2>Alur Program YTP</h2>
+                        <!-- <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Itaque, repudiandae.
+                        </p> -->
+                    </div>
+                </div>
+                <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+                    <!-- <div class="col mt-3">
+                        <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="Foto 1" data-gallery="mygallery">
+                            <img src="https://picsum.photos/id/300/400/533" alt="Foto 1" class="img-fluid w-100 rounded" />
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a href="https://picsum.photos/id/301/1200/768" data-toggle="lightbox" data-gallery="mygallery">
+                            <img src="https://picsum.photos/id/301/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a href="https://picsum.photos/id/302/1200/768" data-toggle="lightbox" data-gallery="mygallery">
+                            <img src="https://picsum.photos/id/302/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a href="https://picsum.photos/id/304/1200/768" data-toggle="lightbox" data-gallery="mygallery">
+                            <img src="https://picsum.photos/id/304/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a href="https://picsum.photos/id/305/1200/768" data-toggle="lightbox" data-gallery="mygallery">
+                            <img src="https://picsum.photos/id/305/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a href="https://picsum.photos/id/306/1200/768" data-toggle="lightbox" data-gallery="mygallery">
+                            <img src="https://picsum.photos/id/306/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Gallery -->
     <div class="content-block">
         <div class="section-full content-inner bg-white">

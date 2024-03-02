@@ -19,6 +19,11 @@ class M_Program extends CI_Model
         $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, photo, slug')->order_by('nama_program_' . $language, 'ASC')->get('program')->result();
         return $query;
     }
+    public function lists_customers($language)
+    {
+        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, photo, slug')->order_by('Id', 'ASC')->get('program_customers')->result();
+        return $query;
+    }
 
     public function list_dashboard()
     {

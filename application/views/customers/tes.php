@@ -98,7 +98,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-3">
-					<div class="card">
+					<!-- <div class="card">
 						<div class="card-header bg-info">
 							<h5 class="mt-2">Bagi pencari kerja</h5>
 						</div>
@@ -112,7 +112,7 @@
 								<a href="#" class="btn btn-primary w-100"><i class="fa fa-user"></i> Info Loker</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="card mt-3">
 						<div class="card-header bg-info">
 							<h5 class="mt-2">Hubungi kami</h5>

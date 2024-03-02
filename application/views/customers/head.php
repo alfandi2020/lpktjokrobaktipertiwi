@@ -125,16 +125,16 @@
                                     <a href="javascript:;"><?= $lang['profile'] ?><i class="fas fa-chevron-down"></i></a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="<?= base_url('home/visi_misi') ?>"><?= strtoupper($lang['visi_misi']) ?></a>
+                                            <a href="<?= base_url('customer/visi_misi') ?>"><?= strtoupper($lang['visi_misi']) ?></a>
                                         </li>
                                         <li>
                                             <a href="<?= base_url('program') ?>"><?= strtoupper($lang['program_text']) ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url('home/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
+                                            <a href="<?= base_url('customer/legality') ?>"><?= strtoupper($lang['our_legality']) ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url('home/facility') ?>"><?= strtoupper($lang['facility']) ?></a>
+                                            <a href="<?= base_url('customer/philosopy') ?>">PHILOSOPY</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -145,7 +145,7 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <?php
-                                        $programs = $this->M_Program->lists($language);
+                                        $programs = $this->M_Program->lists_customers($language);
 
                                         foreach ($programs as $pr) {
                                         ?>
@@ -158,7 +158,7 @@
                                     </ul>
                                 </li>
                                 <li class="<?= ($this->uri->segment(2) == 'contact') ? 'active' : '' ?>">
-                                    <a href="<?= base_url('contact') ?>"><?= $lang['contact_text'] ?></a>
+                                    <a href="<?= base_url('cust/id/contact') ?>"><?= $lang['contact_text'] ?></a>
                                 </li>
                                 <li class="<?= ($this->uri->segment(2) == 'values') ? 'active' : '' ?>">
                                     <a href="<?= base_url('customer/values') ?>"><?= $lang['values_text'] ?></a>
