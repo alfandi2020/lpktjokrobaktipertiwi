@@ -310,7 +310,7 @@
                     <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
                         <div class="blog-post post-style-2">
                             <div class="dlab-post-media dlab-img-effect">
-                                <a href="blog-single.html"><img src="<?= base_url($g->url_foto) ?>" alt=""></a>
+                                <a data-bs-toggle="collapse" href="#<?= $g->slug ?>" role="button" aria-expanded="false" aria-controls="<?= $g->slug ?>"><img src="<?= base_url($g->url_foto) ?>" alt=""></a>
                             </div>
                             <div class="dlab-post-info">
                                 <div class="dlab-post-meta">
@@ -320,10 +320,10 @@
                                     </ul>
                                 </div>
                                 <div class="dlab-post-title">
-                                    <h4 class="post-title"><a href="blog-single.html"><?= $g->title ?></a></h4>
+                                    <h4 class="post-title"><a data-bs-toggle="collapse" href="#<?= $g->slug ?>" role="button" aria-expanded="false" aria-controls="<?= $g->slug ?>"><?= $g->title ?></a></h4>
                                 </div>
                                 <div class="dlab-post-readmore">
-                                    <a href="<?= base_url() ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover21"><?= $lang['detail_text'] ?></a>
+                                    <a data-bs-toggle="collapse" href="#<?= $g->slug ?>" role="button" aria-expanded="false" aria-controls="<?= $g->slug ?>" class="btn btn-primary btn-sm"><?= $lang['detail_text'] ?></a>
                                     <!-- <button type="button" class="site-button btnhover21" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             View
                                             </button>
@@ -344,6 +344,11 @@
                                                     </div>
                                                 </div>
                                             </div> -->
+                                </div>
+                                <div class="collapse" id="<?= $g->slug ?>">
+                                    <div class="card card-body">
+                                        <?= $g->keterangan ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -126,20 +126,15 @@ class Customer extends CI_Controller
     public function philosopy()
     {
         $language = $this->detect_language();
-
         $lang = $this->M_Setting->lang($language);
 
         $data = [
-            'title' => $lang['contact_us_text'],
-            'visi' => $this->M_Setting->footer_section($language, 'visi'),
-            'misi' => $this->M_Setting->footer_section($language, 'misi'),
-            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
-            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
-            'email' => $this->M_Setting->footer_section($language, 'email'),
-            'programs' => $this->M_Program->lists($language),
+            'title' => $lang['philosophy_text'],
             'lang' => $lang,
-            'language' => $language
+            'philosophy' => $this->M_Setting->footer_section($language, 'philosophy'),
+            'language' => $language,
         ];
+
         $this->load->view('customers/head', $data);
         $this->load->view('customers/v_philosopy', $data);
         $this->load->view('customers/footer');

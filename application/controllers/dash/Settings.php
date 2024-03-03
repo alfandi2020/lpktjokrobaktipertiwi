@@ -39,6 +39,7 @@ class Settings extends CI_Controller
             'alamat' => $this->M_Setting->setting('alamat'),
             'telepon' => $this->M_Setting->setting('telepon'),
             'email' => $this->M_Setting->setting('email'),
+            'philosophy' => $this->M_Setting->setting('philosophy'),
             'categories' => $this->M_Setting->category(),
             'contact' => $this->M_Setting->chat(),
             'social' => $this->M_Setting->social_media(),
@@ -203,5 +204,28 @@ class Settings extends CI_Controller
         );
 
         $this->M_Setting->update_legalitas($data);
+    }
+
+    public function update_philosophy()
+    {
+        $user_id = $this->session->userdata('user_id');
+        $now = date('Y-m-d H:i:s');
+
+        $data = array(
+            'content_id' => trim($this->input->post('philosophy_id')),
+            'content_en' => trim($this->input->post('philosophy_en')),
+            'content_jp' => trim($this->input->post('philosophy_jp')),
+            'updated_at' => $now,
+            'updated_by' => $user_id
+        );
+
+        $this->M_Setting->update_philosophy($data);
+
+        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Philosophy has been successfully updated.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        // After that you need to used redirect function instead of load view such as 
+        redirect("dash/settings");
     }
 }

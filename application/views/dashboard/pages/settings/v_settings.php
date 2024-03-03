@@ -23,7 +23,7 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-xxl-6">
+        <div class="col-sm-12 col-xxl-12">
             <div class="card height-equal">
                 <div class="card-header">
                     <h4>Settings</h4>
@@ -41,6 +41,7 @@
                                 <a class="nav-link" id="chat-tab" data-bs-toggle="pill" href="#chat" role="tab" aria-controls="chat" aria-selected="false">Chat</a>
                                 <a class="nav-link" id="legalitas-tab" data-bs-toggle="pill" href="#legalitas" role="tab" aria-controls="legalitas" aria-selected="false">Legalitas</a>
                                 <a class="nav-link" id="videotron-tab2" data-bs-toggle="pill" href="#videotron2" role="tab" aria-controls="videotron2" aria-selected="false">Video web customer</a>
+                                <a class="nav-link" id="philosophy-tab" data-bs-toggle="pill" href="#philosophy" role="tab" aria-controls="philosophy" aria-selected="false">Filosofi</a>
                             </div>
                         </div>
                         <div class="col-md-8 col-xs-12">
@@ -344,6 +345,38 @@
                                         </div>
                                     </form>
                                 </div>
+                                <div class="tab-pane fade" id="philosophy" role="tabpanel" aria-labelledby="philosophy-tab">
+                                    <form action="<?= base_url('dash/settings/update_philosophy') ?>" method="post" class="form theme-form dark-input">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="visi" class="form-label">Filosofi</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
+                                                        <input type="hidden" id="philosophy_id" name="philosophy_id" value='<?= $philosophy['content_id'] ?>' class="form-control">
+                                                    </div>
+                                                    <div id="input_philosophy_id" style="min-height: 160px;"><?= $philosophy['content_id'] ?></div>
+
+                                                    <div class="input-group mt-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-gb-eng"></i></span>
+                                                        <input type="hidden" id="philosophy_en" name="philosophy_en" value='<?= $philosophy['content_en'] ?>' class="form-control">
+                                                    </div>
+                                                    <div id="input_philosophy_en" style="min-height: 160px;"><?= $philosophy['content_en'] ?></div>
+
+                                                    <div class="input-group mt-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
+                                                        <input type="hidden" id="philosophy_jp" name="philosophy_jp" value='<?= $philosophy['content_jp'] ?>' class="form-control">
+                                                    </div>
+                                                    <div id="input_philosophy_jp" style="min-height: 160px;"><?= $philosophy['content_jp'] ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" text-end">
+                                            <button class="btn btn-primary me-3" type="submit">Update</button>
+                                            <input class="btn btn-light" type="reset" value="Cancel">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -467,5 +500,42 @@
     document.getElementById('legalitas_jp').addEventListener('input', function() {
         var content = this.innerHTML;
         document.getElementById('legalitas_jp').value = content;
+    });
+</script>
+<script>
+    var quill_philosophy_id = new Quill('#input_philosophy_id', {
+        theme: 'snow',
+    });
+    quill_philosophy_id.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='philosophy_id']").value = quill_philosophy_id.root.innerHTML;
+    });
+
+    document.getElementById('philosophy_id').addEventListener('input', function() {
+        var content = this.innerHTML;
+        document.getElementById('philosophy_id').value = content;
+    });
+
+    var quill_philosophy_en = new Quill('#input_philosophy_en', {
+        theme: 'snow',
+    });
+    quill_philosophy_en.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='philosophy_en']").value = quill_philosophy_en.root.innerHTML;
+    });
+
+    document.getElementById('philosophy_en').addEventListener('input', function() {
+        var content = this.innerHTML;
+        document.getElementById('philosophy_en').value = content;
+    });
+
+    var quill_philosophy_jp = new Quill('#input_philosophy_jp', {
+        theme: 'snow',
+    });
+    quill_philosophy_jp.on('text-change', function(delta, oldDelta, source) {
+        document.querySelector("input[name='philosophy_jp']").value = quill_philosophy_jp.root.innerHTML;
+    });
+
+    document.getElementById('philosophy_jp').addEventListener('input', function() {
+        var content = this.innerHTML;
+        document.getElementById('philosophy_jp').value = content;
     });
 </script>

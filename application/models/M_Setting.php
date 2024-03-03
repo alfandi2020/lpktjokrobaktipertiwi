@@ -270,6 +270,12 @@ class M_Setting extends CI_Model
         redirect("dash/settings");
     }
 
+    public function update_philosophy($data)
+    {
+        $this->db->where('kategori', 'philosophy');
+        return $this->db->update('settings', $data);
+    }
+
     public function faq($language)
     {
         $query = $this->db->select('question_' . $language . ' as question, answer_' . $language . ' as answer')->get('faq')->result();
