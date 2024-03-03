@@ -141,7 +141,7 @@ class Customer extends CI_Controller
             'language' => $language
         ];
         $this->load->view('customers/head', $data);
-        $this->load->view('id/pages/v_philosopy', $data);
+        $this->load->view('customers/v_philosopy', $data);
         $this->load->view('customers/footer');
     }
 
