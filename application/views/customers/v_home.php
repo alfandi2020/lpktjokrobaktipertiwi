@@ -158,63 +158,44 @@
     <div class="content-block">
         <div class="section-full content-inner bg-white">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-10 text-center">
-                    <div class="section-head style2 text-center">
-                        <h2 class="title"><?= $lang['alur_program_title'] ?></h2>
-                    </div>
-                    <h5><?= $lang['alur_program_title_description'] ?></h5>
-                    <img src="<?= base_url() ?>assets/asset_fr/flow1.png" alt="">
-                    <!-- <table>
-                            <thead>
-                                <th>Alur Proses</th>
-                                <th>Tempat Proses</th>
-                                <th>Waktu</th>
-                                <th>Keterangan</th>
-                            </thead>
-                            <tr>
-                                <td><span class="site-button btnhover20">JOB ORDER</span><br><i style="color: black;font-size:40px;" class="fa-solid fa-arrow-down-long"></i></td>
-                                <td>YTP</td>
-                                <td>2 Minggu</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><span class="site-button btnhover20">INTERVIEW</span><br><i style="color: black;font-size:40px;" class="fa-solid fa-arrow-down-long"></i></td>
-                                <td>YTP</td>
-                                <td>1 Hari</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-xl-3">
-                                             <span class="shape_2"><p>MCU</p></P></span><br><i style="color: black;font-size:50px;" class="fa-solid fa-arrow-down-long"></i>
-                                        </div>
-                                        <div class="col">
-                                            <i style="color: black;font-size:50px;" class="fa-solid fa-arrow-turn-down"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>YTP & KLINIK</td>
-                                <td>2 Minggu</td>
-                                <td></td>
-                            </tr>
-                             <tr>
-                                <td>
-                                    <span class="site-button btnhover20 col-5">PEMANTAPAN <br> BAHASA JEPANG</span> <br> <br>
-                                    <span class="site-button btnhover20 col-5">ON JOB <br> TRAINING</span><br><br>
-                                     <span class="site-button btnhover20 col-5">PENGURUSAN <br> DOKUMEN</span>
-                                </td>
-                                <td>YTP <br> MTG</td>
-                                <td>4 Bulan</td>
-                                <td></td>
-                            </tr>
-                            
-                        </table> -->
-                    <!-- <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Itaque, repudiandae.
-                        </p> -->
+                <div class="section-head style2 text-center">
+                        <h2 class="title"><?= $lang['alur_program_title'] ?>
+                    </h2>
                 </div>
+                <div class="col-md-4 col-10 text-center">
+                    
+                    <h5><?= $lang['alur_program_title_description']  ?></h5>
+                    <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
+                        <?php
+                        if ($this->session->userdata('language') == "" || $this->session->userdata('language') == "id") {
+                        ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(ID).jpg" alt="">
+                        <?php } else if ($this->session->userdata('language') == "jp") { ?>
+                                    <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(JP).jpg" alt="">
+                        <?php } else if ($this->session->userdata('language') == "en") { ?> 
+                                    <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(EN).jpg" alt="">
+
+                            <?php } ?> 
+                    </div>
+                    
+                </div>
+                <div class="col-md-4 col-10 text-center">
+                    <h5><?= $lang['alur_program_title_description']  ?></h5>
+                    <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
+                        <?php
+                        if ($this->session->userdata('language') == "" || $this->session->userdata('language') == "id") {
+                        ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(ID).jpg" alt="">
+                        <?php } else if ($this->session->userdata('language') == "jp") { ?>
+                                    <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(JP).jpg" alt="">
+                        <?php } else if ($this->session->userdata('language') == "en") { ?> 
+                                    <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(EN).jpg" alt="">
+
+                            <?php } ?> 
+                    </div>
+                    
+                </div>
+
             </div>
             <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
                 <!-- <div class="col mt-3">
