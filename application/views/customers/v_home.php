@@ -159,41 +159,41 @@
         <div class="section-full content-inner bg-white">
             <div class="row justify-content-center">
                 <div class="section-head style2 text-center">
-                        <h2 class="title"><?= $lang['alur_program_title'] ?>
+                    <h2 class="title"><?= $lang['alur_program_title'] ?>
                     </h2>
                 </div>
                 <div class="col-md-4 col-10 text-center">
-                    
+
                     <h5><?= $lang['alur_program_title_description']  ?></h5>
                     <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
                         <?php
-                        if ($this->session->userdata('language') == "" || $this->session->userdata('language') == "id") {
+                        if ($language == "" || $language == "id") {
                         ?>
                             <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(ID).jpg" alt="">
-                        <?php } else if ($this->session->userdata('language') == "jp") { ?>
-                                    <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(JP).jpg" alt="">
-                        <?php } else if ($this->session->userdata('language') == "en") { ?> 
-                                    <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(EN).jpg" alt="">
+                        <?php } else if ($language == "jp") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(JP).jpg" alt="">
+                        <?php } else if ($language == "en") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(EN).jpg" alt="">
 
-                            <?php } ?> 
+                        <?php } ?>
                     </div>
-                    
+
                 </div>
                 <div class="col-md-4 col-10 text-center">
-                    <h5><?= $lang['alur_program_title_description']  ?></h5>
+                    <h5><?= $lang['alur_program_kemampuan_khusus']  ?></h5>
                     <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
                         <?php
-                        if ($this->session->userdata('language') == "" || $this->session->userdata('language') == "id") {
+                        if ($language == "" || $language == "id") {
                         ?>
                             <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(ID).jpg" alt="">
-                        <?php } else if ($this->session->userdata('language') == "jp") { ?>
-                                    <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(JP).jpg" alt="">
-                        <?php } else if ($this->session->userdata('language') == "en") { ?> 
-                                    <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(EN).jpg" alt="">
+                        <?php } else if ($language == "jp") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(JP).jpg" alt="">
+                        <?php } else if ($language == "en") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(EN).jpg" alt="">
 
-                            <?php } ?> 
+                        <?php } ?>
                     </div>
-                    
+
                 </div>
 
             </div>
