@@ -22,6 +22,7 @@ class Customer extends CI_Controller
             'title' => $lang['home_text'],
             'articles' => $this->M_Article->lists($language),
             'programs' => $this->M_Program->lists($language),
+            'services' => $this->M_Program->lists_customers($language),
             'partners' => $this->M_Partner->lists(),
             'galleries' => $this->M_Gallery->list_dashboard(),
             'videotron' => $this->M_Setting->videotron_customers(),
@@ -78,6 +79,28 @@ class Customer extends CI_Controller
 
         $this->load->view('customers/head', $data);
         $this->load->view('id/pages/v_program', $data);
+        $this->load->view('customers/footer');
+    }
+
+    public function program_detail($id)
+    {
+        $language = $this->detect_language();
+        $lang = $this->M_Setting->lang($language);
+
+        $data = [
+            'title' => $lang['program_text'],
+            'services' => $this->M_Program->lists_customers($language),
+            'program' => $this->M_Program->detail_program($id, $language),
+            'programs' => $this->M_Program->lists($language),
+            'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
+            'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
+            'email' => $this->M_Setting->footer_section($language, 'email'),
+            'lang' => $lang,
+            'language' => $language
+        ];
+
+        $this->load->view('customers/head', $data);
+        $this->load->view('id/pages/v_program_customer_detail', $data);
         $this->load->view('customers/footer');
     }
 

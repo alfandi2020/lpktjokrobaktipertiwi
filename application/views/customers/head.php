@@ -147,12 +147,11 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <?php
-                                        $programs = $this->M_Program->lists_customers($language);
-
-                                        foreach ($programs as $pr) {
+                                        $services = $this->M_Program->lists_customers($language);
+                                        foreach ($services as $pr) {
                                         ?>
                                             <li>
-                                                <a href="<?= base_url('program/detail/') . $pr->slug ?>"><?= strtoupper($pr->nama_program) ?></a>
+                                                <a href="<?= base_url('customer/program_detail/') . $pr->slug ?>"><?= strtoupper($pr->nama_program) ?></a>
                                             </li>
                                         <?php
                                         }

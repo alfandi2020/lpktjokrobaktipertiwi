@@ -125,7 +125,7 @@
                     <?php
                     $duration = 2;
                     $delay = 0.3;
-                    foreach ($programs as $p) {
+                    foreach ($services as $p) {
                     ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
                             <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" class="" />
@@ -136,13 +136,13 @@
                                     </span>
                                 </div>
                                 <div class="icon-content p-l40">
-                                    <a href="<?= base_url('program/detail/') . $p->slug ?>">
+                                    <a href="<?= base_url('customer/program_detail/') . $p->slug ?>">
                                         <h5 class="dlab-tilte"><?= $p->nama_program ?></h5>
                                     </a>
                                     <p title="<?= $p->keterangan ?>"><?= substr($p->keterangan, 0, 100) ?>...</p>
                                 </div>
                                 <div class="dlab-post-readmore">
-                                    <a href="<?= base_url('program/detail/' . $p->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
+                                    <a href="<?= base_url('customer/program_detail/' . $p->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button btnhover20"><?= $lang['detail_text'] ?>...</a>
                                 </div>
                             </div>
                         </div>

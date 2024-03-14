@@ -38,10 +38,6 @@ class Gallery extends CI_Controller
 
     public function store()
     {
-        // echo '<pre>';
-        // print_r($_POST);
-        // echo '</pre>';
-        // exit;
 
         $user_id = $this->session->userdata('user_id');
         $title = trim($this->input->post('gallery_title'));
