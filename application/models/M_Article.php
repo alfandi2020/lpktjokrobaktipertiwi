@@ -107,7 +107,7 @@ class M_Article extends CI_Model
         </div>');
         // After that you need to used redirect function instead of load view such as 
 
-        redirect($_SERVER['HTTP_REFERER']);
+        redirect('dash/article/edit/' . $data['slug']);
     }
 
     public function is_available($id)
