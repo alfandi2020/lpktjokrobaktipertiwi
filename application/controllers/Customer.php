@@ -177,7 +177,7 @@ class Customer extends CI_Controller
             'email' => $this->M_Setting->footer_section($language, 'email'),
             'lang' => $lang,
             'language' => $language,
-            'article' => $this->M_Article->detail_article("keunggulan-lpk-tjokro-bakti-pertiwi", $language),
+            'article' => $this->M_Article->values("keunggulan-lpk-tjokro-bakti-pertiwi", $language),
         ];
 
         $this->load->view('customers/head', $data);
