@@ -32,6 +32,7 @@ class Auth extends CI_Controller
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
+		$menu = $this->input->post('menu');
 
 
 		$user = $this->db->get_where('user', ['username' => $username])->row_array();
@@ -50,6 +51,7 @@ class Auth extends CI_Controller
 						'email' => $user['email'],
 						'role_id' => $user['role_id'],
 						'is_logged_in' => true,
+						'menu' => $menu,
 					];
 					$this->session->set_userdata($data);
 

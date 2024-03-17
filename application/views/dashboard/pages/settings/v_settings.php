@@ -35,12 +35,14 @@
                         <div class="col-md-4 col-xs-12">
                             <div class="nav flex-column nav-pills nav-primary" id="ver-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="visi-tab" data-bs-toggle="pill" href="#visi" role="tab" aria-controls="visi" aria-selected="true">Visi misi</a>
-                                <a class="nav-link" id="videotron-tab" data-bs-toggle="pill" href="#videotron" role="tab" aria-controls="videotron" aria-selected="false">Videotron</a>
+                                <?= ($this->session->userdata('menu') == 'magang') ? '<a class="nav-link" id="videotron-tab" data-bs-toggle="pill" href="#videotron" role="tab" aria-controls="videotron" aria-selected="false">Videotron</a>' : '' ?>
+
                                 <a class="nav-link" id="kategori-konten-tab" data-bs-toggle="pill" href="#kategori-konten" role="tab" aria-controls="kategori-konten" aria-selected="false">Kategori konten</a>
                                 <a class="nav-link" id="kontak-tab" data-bs-toggle="pill" href="#kontak" role="tab" aria-controls="kontak" aria-selected="false">Kontak</a>
                                 <a class="nav-link" id="chat-tab" data-bs-toggle="pill" href="#chat" role="tab" aria-controls="chat" aria-selected="false">Chat</a>
                                 <a class="nav-link" id="legalitas-tab" data-bs-toggle="pill" href="#legalitas" role="tab" aria-controls="legalitas" aria-selected="false">Legalitas</a>
-                                <a class="nav-link" id="videotron-tab2" data-bs-toggle="pill" href="#videotron2" role="tab" aria-controls="videotron2" aria-selected="false">Video web customer</a>
+
+                                <?= ($this->session->userdata('menu') == 'customer') ? ' <a class="nav-link" id="videotron-tab2" data-bs-toggle="pill" href="#videotron2" role="tab" aria-controls="videotron2" aria-selected="false">Video web customer</a>' : '' ?>
                                 <a class="nav-link" id="philosophy-tab" data-bs-toggle="pill" href="#philosophy" role="tab" aria-controls="philosophy" aria-selected="false">Filosofi</a>
                             </div>
                         </div>

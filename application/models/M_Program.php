@@ -83,9 +83,9 @@ class M_Program extends CI_Model
         }
     }
 
-    public function detail_program($id, $language)
+    public function detail_program($id, $language, $table)
     {
-        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, content_' . $language . ' as content, slug, photo')->where('slug', $id)->get('program')->row_array();
+        $query = $this->db->select('nama_program_' . $language . ' as nama_program, keterangan_' . $language . ' as keterangan, content_' . $language . ' as content, slug, photo')->where('slug', $id)->get($table)->row_array();
 
         return $query;
     }

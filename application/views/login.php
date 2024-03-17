@@ -53,6 +53,13 @@
                 <h4>LPK Tjokro Bakti Pertiwi</h4>
                 <p>Silahkan masukan username & password</p>
                 <div class="form-group">
+                  <label for="" class="col-from-label">Menu</label>
+                  <select name="menu" id="menu" class="form-select">
+                    <option value="magang">Magang</option>
+                    <option value="customer">Customer</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label class="col-form-label">Username</label>
                   <input class="form-control" value="<?= set_value('username'); ?>" name="username" required type="text" required="" placeholder="username">
                 </div>

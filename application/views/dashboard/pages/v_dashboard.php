@@ -2,7 +2,7 @@
     <div class="page-title">
         <div class="row">
             <div class="col-6">
-                <h4>Dashboard </h4>
+                <h4>Dashboard <?= $this->session->userdata('menu') ?></h4>
             </div>
             <div class="col-6">
                 <ol class="breadcrumb">

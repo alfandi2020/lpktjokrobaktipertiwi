@@ -87,10 +87,12 @@ class Customer extends CI_Controller
         $language = $this->detect_language();
         $lang = $this->M_Setting->lang($language);
 
+        $table = "program_customers";
+
         $data = [
             'title' => $lang['program_text'],
             'services' => $this->M_Program->lists_customers($language),
-            'program' => $this->M_Program->detail_program($id, $language),
+            'program' => $this->M_Program->detail_program($id, $language, $table),
             'programs' => $this->M_Program->lists($language),
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),

@@ -161,77 +161,107 @@
                                         <i class="fa fa-angle-right ps-2" aria-hidden="true"></i>
                                     </div>
                                 </li>
-                                <li class="sidebar-main-title">
-                                    <div>
-                                        <h6 class="lan-1">General</h6>
-                                    </div>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dashboard') ?>" class="active">
-                                        <svg class="stroke-icon">
-                                            <use href="<?= base_url() ?>assets/svg/icon-sprite.svg#stroke-home"></use>
-                                        </svg>
-                                        <span>Dasbor</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/partner') ?>">
-                                        <i data-feather="book"></i>
-                                        <span>Mitra Kerja</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/program') ?>">
-                                        <i data-feather="book"></i>
-                                        <span>Program</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/article') ?>">
-                                        <i data-feather="book"></i>
-                                        <span>Konten</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/student') ?>">
-                                        <i data-feather="book"></i>
-                                        <span>Data pendaftaran</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/faq') ?>">
-                                        <i data-feather="settings"></i>
-                                        <span>FAQ</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
-                                        <i data-feather="settings"></i>
-                                        <span>Pengaturan</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-main-title">
-                                    <div>
-                                        <h6 class="">Web customer</h6>
-                                    </div>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/gallery') ?>" class="active">
-                                        <i data-feather="image"></i>
-                                        <span>Galeri</span>
-                                    </a>
-                                </li>
-                                <!-- <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title <?php if ($this->uri->segment(2) == 'settings') echo 'active' ?>" href="#">
-                                        <i data-feather="settings"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="<?= base_url('dash/settings') ?>" class="<?php if ($this->uri->segment(3) == 'videotron') echo 'active' ?>">Videotron</a>
-                                        </li>
-                                    </ul>
-                                </li> -->
+                                <?php
+                                if ($this->session->userdata('menu') == 'magang') {
+                                ?>
+                                    <li class="sidebar-main-title">
+                                        <div>
+                                            <h6 class="lan-1">General</h6>
+                                        </div>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dashboard') ?>" class="active">
+                                            <svg class="stroke-icon">
+                                                <use href="<?= base_url() ?>assets/svg/icon-sprite.svg#stroke-home"></use>
+                                            </svg>
+                                            <span>Dasbor</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/partner') ?>">
+                                            <i data-feather="book"></i>
+                                            <span>Mitra Kerja</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/program') ?>">
+                                            <i data-feather="book"></i>
+                                            <span>Program</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/article') ?>">
+                                            <i data-feather="book"></i>
+                                            <span>Konten</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/student') ?>">
+                                            <i data-feather="book"></i>
+                                            <span>Data pendaftaran</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/faq') ?>">
+                                            <i data-feather="settings"></i>
+                                            <span>FAQ</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
+                                            <i data-feather="settings"></i>
+                                            <span>Pengaturan</span>
+                                        </a>
+                                    </li>
+                                <?php
+                                } ?>
+                                <?php
+                                if ($this->session->userdata('menu') == 'customer') {
+                                ?>
+                                    <li class="sidebar-main-title">
+                                        <div>
+                                            <h6 class="">Dashboard</h6>
+                                        </div>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dashboard') ?>" class="active">
+                                            <svg class="stroke-icon">
+                                                <use href="<?= base_url() ?>assets/svg/icon-sprite.svg#stroke-home"></use>
+                                            </svg>
+                                            <span>Dasbor</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav active" href="<?= base_url('dash/article') ?>">
+                                            <i data-feather="book"></i>
+                                            <span>Konten</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/gallery') ?>" class="active">
+                                            <i data-feather="image"></i>
+                                            <span>Galeri</span>
+                                        </a>
+                                    </li>
+                                    <!-- <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title <?php if ($this->uri->segment(2) == 'settings') echo 'active' ?>" href="#">
+                                            <i data-feather="settings"></i>
+                                            <span>Settings</span>
+                                        </a>
+                                        <ul class="sidebar-submenu">
+                                            <li>
+                                                <a href="<?= base_url('dash/settings') ?>" class="<?php if ($this->uri->segment(3) == 'videotron') echo 'active' ?>">Videotron</a>
+                                            </li>
+                                        </ul>
+                                    </li> -->
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/settings') ?>">
+                                            <i data-feather="settings"></i>
+                                            <span>Pengaturan</span>
+                                        </a>
+                                    </li>
+                                <?php
+                                } ?>
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav btn-logout" data-href="<?= base_url('auth/logout') ?>">
                                         <i data-feather="log-out"> </i>
