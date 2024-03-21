@@ -122,7 +122,7 @@
                                         <?php
                                         foreach ($programs as $p) {
                                         ?>
-                                            <option <?= ($this->session->flashdata('student_program') == $p->nama_program_singkat_id) ? "selected" : "" ?> value="<?= $p->nama_program_singkat_id ?>"><?= $p->nama_program_singkat_id ?></option>
+                                            <option <?= ($this->session->flashdata('student_program') == $p->nama_program) ? "selected" : "" ?> value="<?= $p->nama_program ?>"><?= $p->nama_program ?></option>
                                         <?php
                                         }
                                         ?>
