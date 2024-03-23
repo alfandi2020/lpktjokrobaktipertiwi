@@ -111,7 +111,6 @@
 </div>
 </div>
 <!-- JAVASCRIPT FILES ========================================= -->
-<script src="<?= base_url() ?>assets/asset_fr/js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
 <script src="<?= base_url() ?>assets/asset_fr/plugins/wow/wow.js"></script><!-- WOW JS -->
 <script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP.MIN JS -->
 <script src="<?= base_url() ?>assets/asset_fr/plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->

@@ -22,6 +22,177 @@
         /* flex-shrink: 0; */
         font-weight: bold;
     }
+
+    .full {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .full .content {
+        background-color: rgba(0, 0, 0, 0.75) !important;
+        height: 100%;
+        width: 100%;
+        display: grid;
+    }
+
+    .full .content img {
+        left: 50%;
+        transform: translate3d(0, 0, 0);
+        animation: zoomin 1s ease;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .byebye {
+        opacity: 0;
+    }
+
+    .byebye:hover {
+        transform: scale(0.2) !important;
+    }
+
+    .gallery {
+        display: grid;
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: 8px;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        border-radius: 2px;
+        /* box-shadow: 0 0 16px #333; */
+        transition: all 1.5s ease;
+    }
+
+    .gallery img:hover {
+        box-shadow: 0 0 15px #333;
+    }
+
+    .gallery .content {
+        padding: 4px;
+    }
+
+    .gallery .gallery-item {
+        transition: grid-row-start 300ms linear;
+        transition: transform 300ms ease;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+    .gallery .gallery-item:hover {
+        transform: scale(1.025);
+    }
+
+    @media (max-width: 600px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        }
+    }
+
+    @media (max-width: 400px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        }
+    }
+
+    @-moz-keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    @-webkit-keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    @-o-keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
 </style>
 <div class="page-content bg-white">
     <!-- Slider -->
@@ -232,109 +403,97 @@
         </div>
     </div>
     <!-- Gallery -->
-    <!-- <div class="content-block">
-        <div class="section-full content-inner bg-white">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-10 text-center">
-                        <h2>Galeri foto</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Itaque, repudiandae.
-                        </p>
-                    </div>
-                </div>
-                <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="Foto 1" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/300/400/533" alt="Foto 1" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/301/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/301/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/302/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/302/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/304/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/304/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/305/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/305/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/306/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/306/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="section-full content-inner bg-white">
         <div class="container-fluid">
             <div class="section-head style2 text-center">
                 <h2 class="title"><?= $lang['foto_foto_ojt_text'] ?></h2>
                 <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
             </div>
-            <div class="blog-carousel owl-none owl-carousel">
+            <div class="gallery" id="gallery">
+
                 <?php
-                foreach ($galleries as $g) { ?>
-                    <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-                        <div class="blog-post post-style-2">
-                            <div class="dlab-post-media dlab-img-effect">
-                                <a data-bs-toggle="collapse" href="#<?= $g->slug ?>" role="button" aria-expanded="false" aria-controls="<?= $g->slug ?>"><img src="<?= base_url($g->url_foto) ?>" alt=""></a>
-                            </div>
-                            <div class="dlab-post-info">
-                                <div class="dlab-post-meta">
-                                    <ul>
-                                        <!-- <li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li> -->
-                                        <!-- <li class="post-author"> By <a href="blog-single.html">demongo</a> </li> -->
-                                    </ul>
-                                </div>
-                                <div class="dlab-post-title">
-                                    <h4 class="post-title"><a data-bs-toggle="collapse" href="#<?= $g->slug ?>" role="button" aria-expanded="false" aria-controls="<?= $g->slug ?>"><?= $g->title ?></a></h4>
-                                </div>
-                                <div class="dlab-post-readmore">
-                                    <a data-bs-toggle="collapse" href="#<?= $g->slug ?>" role="button" aria-expanded="false" aria-controls="<?= $g->slug ?>" class="btn btn-primary btn-sm"><?= $lang['detail_text'] ?></a>
-                                    <!-- <button type="button" class="site-button btnhover21" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            View
-                                            </button>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            ...
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                </div>
-                                <div class="collapse" id="<?= $g->slug ?>">
-                                    <div class="card card-body">
-                                        <?= $g->keterangan ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                foreach ($galleries as $g) {
+                ?>
+                    <div class="col-12">
+                        <div class="content"><img src="<?= base_url($g->url_foto) ?>" alt=""></div>
                     </div>
-                <?php } ?>
+                <?php
+                } ?>
+                <!-- <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,care" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,substance" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,choose" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,past" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,lamp" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,yet" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,eight" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,crew" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,event" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,instrument" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,practical" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,pass" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,bigger" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,number" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,feature" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,line" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,railroad" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,pride" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,too" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,bottle" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,base" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,cell" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,bag" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <div class="content"><img src="https://source.unsplash.com/random/?tech,card" alt=""></div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -346,5 +505,41 @@
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
         $(this).ekkoLightbox();
+    });
+
+    var gallery = document.querySelector('#gallery');
+    var getVal = function(elem, style) {
+        return parseInt(window.getComputedStyle(elem).getPropertyValue(style));
+    };
+    var getHeight = function(item) {
+        return item.querySelector('.content').getBoundingClientRect().height;
+    };
+    var resizeAll = function() {
+        var altura = getVal(gallery, 'grid-auto-rows');
+        var gap = getVal(gallery, 'grid-row-gap');
+        gallery.querySelectorAll('.gallery-item').forEach(function(item) {
+            var el = item;
+            el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+        });
+    };
+    gallery.querySelectorAll('img').forEach(function(item) {
+        item.classList.add('byebye');
+        if (item.complete) {
+            console.log(item.src);
+        } else {
+            item.addEventListener('load', function() {
+                var altura = getVal(gallery, 'grid-auto-rows');
+                var gap = getVal(gallery, 'grid-row-gap');
+                var gitem = item.parentElement.parentElement;
+                gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+                item.classList.remove('byebye');
+            });
+        }
+    });
+    window.addEventListener('resize', resizeAll);
+    gallery.querySelectorAll('.gallery-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            item.classList.toggle('full');
+        });
     });
 </script>
