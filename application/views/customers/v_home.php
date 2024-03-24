@@ -249,39 +249,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="content-block">
-        <div class="section-full content-inner bg-white">
-            <div class="container">
-                <div class="section-head text-center">
-                    <h2 class="title"><?= $lang['facility'] ?></h2>
-                </div>
-                <div class="row">
-                    <?php
-                    foreach ($facilities as $f) {
-                    ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12 m-b30 mb-5 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
-
-                            <img src="<?= base_url() ?>assets/asset_fr/images/<?= $f->photo ?>" alt="" />
-                            <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">
-                                <div class="icon-bx-sm bg-primary m-b20">
-                                    <span class="icon-cell">
-                                        <i class="<?= $f->icon ?>"></i>
-                                    </span>
-                                </div>
-                                <div class="icon-content p-l40">
-                                    <h5 class="dlab-tilte">
-                                        <?= $f->$language ?>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Programs -->
     <div class="content-block">
@@ -324,11 +291,12 @@
             </div>
         </div>
     </div>
-    <!-- contact area END -->
+    <!-- Program END -->
+
     <!---- flow --->
     <div class="content-block">
         <div class="section-full content-inner bg-white">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-5">
                 <div class="section-head style2 text-center">
                     <h2 class="title"><?= $lang['alur_program_title'] ?>
                     </h2>
@@ -348,7 +316,6 @@
 
                         <?php } ?>
                     </div>
-
                 </div>
                 <div class="col-md-4 col-10 text-center">
                     <h5><?= $lang['alur_program_kemampuan_khusus']  ?></h5>
@@ -364,50 +331,70 @@
 
                         <?php } ?>
                     </div>
-
                 </div>
 
             </div>
-            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
-                <!-- <div class="col mt-3">
-                        <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="Foto 1" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/300/400/533" alt="Foto 1" class="img-fluid w-100 rounded" />
-                        </a>
+            <div class="row justify-content-center">
+
+                <div class="col-md-4 col-10 text-center">
+                    <h5><?= $lang['alur_program_title_description']  ?></h5>
+                    <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
+                        <?php
+                        if ($language == "" || $language == "id") {
+                        ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.svg" alt="">
+                        <?php } else if ($language == "jp") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.svg" alt="">
+                        <?php } else if ($language == "en") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_EN.svg" alt="">
+
+                        <?php } ?>
                     </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/301/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/301/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
+                </div>
+                <div class="col-md-4 col-10 text-center">
+                    <h5><?= $lang['alur_program_kemampuan_khusus']  ?></h5>
+                    <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
+                        <?php
+                        if ($language == "" || $language == "id") {
+                        ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
+                        <?php } else if ($language == "jp") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
+                        <?php } else if ($language == "en") { ?>
+                            <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
+
+                        <?php } ?>
                     </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/302/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/302/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/304/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/304/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/305/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/305/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://picsum.photos/id/306/1200/768" data-toggle="lightbox" data-gallery="mygallery">
-                            <img src="https://picsum.photos/id/306/400/533" alt="Foto 2" class="img-fluid w-100 rounded" />
-                        </a>
-                    </div> -->
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+
+                <div class="col-10 text-center">
+                    <?php
+                    if ($language == "" || $language == "id") {
+                    ?>
+                        <p>* Setelah permintaan diterima, pada dasarnya membutuhkan 6 bulan untuk pengiriman peserta ke Jepang</p>
+                    <?php
+                    } else if ($language == "jp") {
+                    ?>
+                        <p>※候補者募集要望をいただいた後、候補者を日本に派遣するまで、基本的6ヶ月かかります。</p>
+                    <?php
+                    } else if ($language == "en") {
+                    ?>
+                        <p>* Once the request is received, it basically takes 6 months for participants to be sent to Japan</p>
+                    <?php
+                    } ?>
+                </div>
             </div>
         </div>
     </div>
+    <!-- flow end -->
+
     <!-- Gallery -->
     <div class="section-full content-inner bg-white">
         <div class="container-fluid">
             <div class="section-head style2 text-center">
                 <h2 class="title"><?= $lang['foto_foto_ojt_text'] ?></h2>
-                <!-- <p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p> -->
             </div>
             <div class="gallery" id="gallery">
 
@@ -419,81 +406,6 @@
                     </div>
                 <?php
                 } ?>
-                <!-- <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,care" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,substance" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,choose" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,past" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,lamp" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,yet" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,eight" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,crew" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,event" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,instrument" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,practical" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,pass" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,bigger" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,number" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,feature" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,line" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,railroad" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,pride" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,too" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,bottle" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,base" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,cell" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,bag" alt=""></div>
-                </div>
-                <div class="col-12">
-                    <div class="content"><img src="https://source.unsplash.com/random/?tech,card" alt=""></div>
-                </div> -->
             </div>
         </div>
     </div>
