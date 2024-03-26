@@ -334,34 +334,37 @@
                 </div>
 
             </div> -->
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mb-5">
 
-                    <div class="col-md-4 col-10 text-center">
+                    <div class="col-md-8 col-10 text-center">
                         <h5><?= $lang['alur_program_title_description']  ?></h5>
-                        <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
+                        <div class="">
                             <?php
                             if ($language == "" || $language == "id") {
                             ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.svg" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.png" alt="">
                             <?php } else if ($language == "jp") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.svg" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.png" alt="">
                             <?php } else if ($language == "en") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_EN.svg" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_EN.png" alt="">
 
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="col-md-4 col-10 text-center">
+                </div>
+                <div class="row justify-content-center">
+
+                    <div class="col-md-8 col-10 text-center">
                         <h5><?= $lang['alur_program_kemampuan_khusus']  ?></h5>
-                        <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
+                        <div class="">
                             <?php
                             if ($language == "" || $language == "id") {
                             ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.png" alt="">
                             <?php } else if ($language == "jp") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.png" alt="">
                             <?php } else if ($language == "en") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.png" alt="">
 
                             <?php } ?>
                         </div>
