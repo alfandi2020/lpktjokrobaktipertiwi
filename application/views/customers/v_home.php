@@ -342,13 +342,15 @@
                             <?php
                             if ($language == "" || $language == "id") {
                             ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.png" alt="">
-                            <?php } else if ($language == "jp") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.png" alt="">
-                            <?php } else if ($language == "en") { ?>
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.PNG" alt="">
+                            <?php
+                            } else if ($language == "jp") { ?>
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.PNG" alt="">
+                            <?php
+                            } else if ($language == "en") { ?>
                                 <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_EN.png" alt="">
-
-                            <?php } ?>
+                            <?php
+                            } ?>
                         </div>
                     </div>
                 </div>
@@ -360,13 +362,16 @@
                             <?php
                             if ($language == "" || $language == "id") {
                             ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.png" alt="">
-                            <?php } else if ($language == "jp") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.png" alt="">
-                            <?php } else if ($language == "en") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.png" alt="">
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.PNG" alt="">
+                            <?php
+                            } else if ($language == "jp") { ?>
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.PNG" alt="">
+                            <?php
+                            } else if ($language == "en") { ?>
+                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.PNG" alt="">
 
-                            <?php } ?>
+                            <?php
+                            } ?>
                         </div>
                     </div>
                 </div>
