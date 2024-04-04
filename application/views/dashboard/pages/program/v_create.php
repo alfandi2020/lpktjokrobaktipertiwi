@@ -27,6 +27,17 @@
 <div class="container-fluid">
     <div class="row">
         <?php
+        if ($this->uri->segment(3) == "create_cp") {
+            $store = "store_cp";
+            $update_photo = "";
+        } else if ($this->uri->segment(3) == "edit_cp") {
+            $store = "store_cp";
+            $update_photo = "update_photo_cp";
+        } else {
+            $store = "store";
+            $update_photo = "update_photo";
+        }
+
         if ($this->uri->segment(4) == true) {
         ?>
             <div class="col-sm-8">
@@ -34,7 +45,7 @@
                     <div class="card-header pb-0 card-no-border">
                         <h5>Edit program</h5>
                     </div>
-                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/program/store/' . $program['slug']) ?>">
+                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/program/' . $store . '/' . $program['slug']) ?>">
                         <div class="card-body">
                             <?= $this->session->flashdata('message_name') ?>
                             <div class="row">
@@ -112,7 +123,7 @@
                     <div class="card-header pb-0 card-no-border">
                         <h5>Program photo</h5>
                     </div>
-                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/program/update_photo' . $program['slug']) ?>" enctype="multipart/form-data">
+                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/program/' . $update_photo . '/' . $program['slug']) ?>" enctype="multipart/form-data">
                         <div class="card-body">
                             <?= $this->session->flashdata('message_name') ?>
                             <div class="row">
@@ -146,7 +157,7 @@
                     <div class="card-header pb-0 card-no-border">
                         <h5>Create new program</h5>
                     </div>
-                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/program/store') ?>" enctype="multipart/form-data">
+                    <form class="form theme-form dark-inputs" method="POST" action="<?= base_url('dash/program/' . $store) ?>" enctype="multipart/form-data">
                         <div class="card-body">
                             <?= $this->session->flashdata('message_name')  ?>
                             <div class="row">
@@ -201,19 +212,19 @@
                                         <label class="form-label" for="program_content">Content</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-id"></i></span>
-                                            <input type="text" class="form-control input-air-primary" id="hiddenInput_id" name="content_id">
+                                            <input type="hidden" class="form-control input-air-primary" id="hiddenInput_id" name="content_id" readonly>
                                         </div>
                                         <div id="program_content_id" style="min-height: 160px;"></div>
 
                                         <div class="input-group mt-3">
                                             <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-gb-eng"></i></span>
-                                            <input type="text" class="form-control input-air-primary" id="hiddenInput_en" name="content_en">
+                                            <input type="hidden" class="form-control input-air-primary" id="hiddenInput_en" name="content_en" readonly>
                                         </div>
                                         <div id="program_content_en" style="min-height: 160px;"></div>
 
                                         <div class="input-group mt-3">
                                             <span class="input-group-text" id="inputGroup-sizing-default"><i class="flag-icon flag-icon-jp"></i></span>
-                                            <input type="text" class="form-control input-air-primary" id="hiddenInput_jp" name="content_jp">
+                                            <input type="hidden" class="form-control input-air-primary" id="hiddenInput_jp" name="content_jp" readonly>
                                         </div>
                                         <div id="program_content_jp" style="min-height: 160px;"></div>
                                     </div>

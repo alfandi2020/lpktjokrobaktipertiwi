@@ -67,10 +67,27 @@
                             <li>
                                 <i class="ti-mobile"></i>
                                 <strong><?= $telepon['judul_setting'] ?></strong>
-                                <?= $telepon['content'] ?>
+                                <?php
+                                // Pattern untuk mencari nomor telepon
+                                $pattern = '/(\+62[0-9]+)/';
+
+                                // Penggantian nomor telepon dengan format link WhatsApp
+                                $replacement = '<a href="https://wa.me/$1" target="_blank">$1</a>';
+
+                                // Melakukan pencarian dan penggantian
+                                $telepon_format = preg_replace($pattern, $replacement, $telepon['content']); ?>
+                                <?= $telepon_format ?>
+                            </li>
                             <li>
                                 <i class="ti-email"></i>
-                                <strong><?= $email['judul_setting'] ?></strong> <?= $email['content'] ?>
+                                <strong><?= $email['judul_setting'] ?></strong>
+                                <?php
+                                $pattern = '/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})/';
+                                $replacement = '<a href="mailto:$1">$1</a>';
+
+                                $email_format = preg_replace($pattern, $replacement, $email['content']);
+                                ?>
+                                <?= $email_format ?>
                             </li>
                         </ul>
                     </div>

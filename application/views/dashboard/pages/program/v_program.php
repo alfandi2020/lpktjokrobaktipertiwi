@@ -20,6 +20,14 @@
     </div>
 </div>
 <!-- Container-fluid starts-->
+<?php
+if ($this->uri->segment(3) == "customer") {
+    $create = "create_cp";
+    $edit = "edit_cp";
+} else {
+    $create = "create";
+    $edit = "edit";
+} ?>
 <div class="container-fluid">
     <div class="row">
         <!-- Zero Configuration  Starts-->
@@ -27,7 +35,7 @@
             <div class="card">
                 <div class="card-header card-no-border">
                     <div class="card-header-right">
-                        <a href="<?= base_url('dash/program/create') ?>" type="button" class="btn btn-primary">Create new</a>
+                        <a href="<?= base_url('dash/program/' . $create) ?>" type="button" class="btn btn-primary">Create new</a>
                     </div>
                 </div>
 
@@ -53,7 +61,7 @@
                                         <td><?= $no++ ?>.</td>
                                         <td><?= $p->nama_program ?></td>
                                         <td>
-                                            <a href="<?= base_url('dash/program/edit/' . $p->slug) ?>" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="<?= base_url('dash/program/' . $edit . '/' . $p->slug) ?>" class="btn btn-primary btn-sm">Edit</a>
                                             <!-- <button class="btn btn-success sweet-8" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-8']);">Login successfully</button> -->
                                         </td>
                                     </tr>

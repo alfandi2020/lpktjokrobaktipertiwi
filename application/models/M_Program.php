@@ -25,62 +25,16 @@ class M_Program extends CI_Model
         return $query;
     }
 
-    public function list_dashboard()
+    public function list_dashboard($table)
     {
-        $query = $this->db->select('nama_program_id as nama_program, slug, nama_program_singkat_id')->order_by('nama_program_id', 'ASC')->get('program')->result();
+        $query = $this->db->select('nama_program_id as nama_program, slug, nama_program_singkat_id')->order_by('nama_program_id', 'ASC')->get($table)->result();
 
         return $query;
     }
 
     public function add_program($data)
     {
-        $this->db->select('count(Id) as id');
-        $this->db->where('slug', $data["slug"]);
-        $query_check = $this->db->get('program')->row_array();
-
-        $hasil = $query_check["id"];
-
-        if ($hasil > 0) {
-            $this->session->set_flashdata('message_name', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-			The program is already available.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>');
-            redirect('dash/program/create');
-        } else {
-
-            $config = array(
-                'upload_path' => 'assets/images/programs/',
-                'allowed_types' => "gif|jpg|png|jpeg|JPEG|JPG|PNG|GIF",
-                'overwrite' => TRUE,
-                'max_size' => "99999999999",
-                'max_height' => "3000",
-                'max_width' => "2500",
-                'file_name' => $data["photo"]
-            );
-
-            // var_dump($config);exit;
-            $this->load->library('upload', $config);
-
-            if (!$this->upload->do_upload('program_photo')) {
-                $error = array('error' => $this->upload->display_errors());
-
-                $this->session->set_flashdata('message_name', '<div class="alert alert-danger fade show" role="alert">
-				Error message: ' . $this->upload->display_errors() . '.
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>');
-                // After that you need to used redirect function instead of load view such as 
-                redirect("dash/program/create", $error);
-            } else {
-
-                $this->db->insert('program', $data);
-                $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-				The program inserted successfully.
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>');
-                // After that you need to used redirect function instead of load view such as 
-                redirect("dash/program/create");
-            }
-        }
+        return $this->db->insert('program', $data);
     }
 
     public function detail_program($id, $language, $table)
@@ -90,9 +44,9 @@ class M_Program extends CI_Model
         return $query;
     }
 
-    public function detail_program_edit($id)
+    public function detail_program_edit($id, $table)
     {
-        $query = $this->db->select('nama_program_id, nama_program_en, nama_program_jp, keterangan_id, keterangan_en, keterangan_jp, content_id, content_en, content_jp, slug, photo')->where('slug', $id)->get('program')->row_array();
+        $query = $this->db->select('nama_program_id, nama_program_en, nama_program_jp, keterangan_id, keterangan_en, keterangan_jp, content_id, content_en, content_jp, slug, photo')->where('slug', $id)->get($table)->row_array();
 
         return $query;
     }
@@ -100,13 +54,7 @@ class M_Program extends CI_Model
     public function update_program($data, $old_slug)
     {
         $this->db->where('slug', $old_slug);
-        $this->db->update('program', $data);
-        $this->session->set_flashdata('message_name', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        The program updated successfully.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>');
-        // After that you need to used redirect function instead of load view such as 
-        redirect("dash/program");
+        return $this->db->update('program', $data);
     }
 
     public function video()
@@ -126,5 +74,22 @@ class M_Program extends CI_Model
         $query = $this->db->insert('siswa', $data);
 
         return $query;
+    }
+
+    public function program_customer()
+    {
+        $query = $this->db->select('nama_program_id as nama_program, slug, nama_program_singkat_id')->order_by('nama_program_id', 'ASC')->get('program')->result();
+
+        return $query;
+    }
+
+    public function is_available($id, $table)
+    {
+        return $this->db->select('photo')->where('slug', $id)->get($table)->row_array();
+    }
+
+    public function update_photo($data, $slug, $table)
+    {
+        return $this->db->where('slug', $slug)->update($table, $data);
     }
 }

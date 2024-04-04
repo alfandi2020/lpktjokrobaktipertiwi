@@ -301,6 +301,8 @@ class Registrasi extends CI_Controller
             $bodyContent .= ucfirst(str_replace('_', ' ', $key)) . ': ' . $value . '<br>';
         }
 
+        $email = "lpktjokrobaktipertiwi@gmail.com";
+        
         $mail = $this->mailer->load();
         $mail->isSMTP();
         $mail->Host = 'mail.lpktjokrobaktipertiwi.id';
@@ -310,7 +312,7 @@ class Registrasi extends CI_Controller
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
         $mail->setFrom("info@lpktjokrobaktipertiwi.id", "LPK Tjokro Bakti Pertiwi");
-        $mail->addAddress($data['email']);
+        $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = "Registrasi LPK";
         $mail->Body    = "Dear, " . $data['name'] . ".<br> Thank you for registering with us!<br><br>" . $bodyContent;

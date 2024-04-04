@@ -243,6 +243,12 @@
                                             <span>Galeri</span>
                                         </a>
                                     </li>
+                                    <li class="sidebar-list">
+                                        <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('dash/program/customer') ?>">
+                                            <i data-feather="book"></i>
+                                            <span>Layanan</span>
+                                        </a>
+                                    </li>
                                     <!-- <li class="sidebar-list">
                                         <a class="sidebar-link sidebar-title <?php if ($this->uri->segment(2) == 'settings') echo 'active' ?>" href="#">
                                             <i data-feather="settings"></i>
