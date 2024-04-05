@@ -354,10 +354,11 @@
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="row justify-content-center">
 
                     <div class="col-md-8 col-10 text-center">
-                        <h5><?= $lang['alur_program_kemampuan_khusus']  ?></h5>
+                        <h3><?= $lang['alur_program_kemampuan_khusus']  ?></h3>
                         <div class="">
                             <?php
                             if ($language == "" || $language == "id") {
