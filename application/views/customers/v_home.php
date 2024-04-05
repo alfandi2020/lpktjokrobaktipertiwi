@@ -298,8 +298,8 @@
         <div class="section-full content-inner bg-white">
             <div class="row justify-content-center mb-5">
                 <div class="section-head style2 text-center">
-                    <h2 class="title"><?= $lang['alur_program_title'] ?>
-                    </h2>
+                    <!-- <h2 class="title"><?= $lang['alur_program_title'] ?></h2> -->
+                    <h2 class="title">Alur Program LPK Tjokro Bakti Pertiwi</h2>
                 </div>
                 <!-- <div class="col-md-4 col-10 text-center">
 
@@ -337,7 +337,7 @@
                 <div class="row justify-content-center mb-5">
 
                     <div class="col-md-8 col-10 text-center">
-                        <h5><?= $lang['alur_program_title_description']  ?></h5>
+                        <h3><?= $lang['alur_program_title_description']  ?></h4>
                         <div class="">
                             <?php
                             if ($language == "" || $language == "id") {

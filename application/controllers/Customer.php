@@ -69,7 +69,7 @@ class Customer extends CI_Controller
         $data = [
             'title' => $lang['program_text'],
             'pages' => 'id/pages/v_program',
-            'programs' => $this->M_Program->lists($language),
+            'programs' => $this->M_Program->lists_customers($language),
             'alamat' => $this->M_Setting->footer_section($language, 'alamat'),
             'telepon' => $this->M_Setting->footer_section($language, 'telepon'),
             'email' => $this->M_Setting->footer_section($language, 'email'),
@@ -78,7 +78,7 @@ class Customer extends CI_Controller
         ];
 
         $this->load->view('customers/head', $data);
-        $this->load->view('id/pages/v_program', $data);
+        $this->load->view('id/pages/v_program_customer', $data);
         $this->load->view('customers/footer');
     }
 

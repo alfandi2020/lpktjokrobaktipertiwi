@@ -30,10 +30,10 @@
                 <div class="dlab-post-text">
                     <?= $program['keterangan'] ?>
                 </div>
-                <div class="dlab-post-text">
+                <!-- <div class="dlab-post-text">
 
                     <?= $program['content'] ?>
-                </div>
+                </div> -->
                 <div class="dlab-post-tags clear">
                     <!-- <div class="post-tags"> <a href="javascript:void(0);">Child </a> <a href="javascript:void(0);">Eduction </a> <a href="javascript:void(0);">Money </a> <a href="javascript:void(0);">Resturent </a> </div> -->
                 </div>
