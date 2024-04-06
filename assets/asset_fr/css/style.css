@@ -5953,7 +5953,9 @@ blockquote:before {
 }
 
 .dlab-post-readmore {
+    margin-top: 20px;
     margin-bottom: 15px;
+    margin-left: -70px;
 }
 
 .dlab-post-tags {

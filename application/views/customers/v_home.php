@@ -265,8 +265,8 @@
                     $delay = 0.3;
                     foreach ($services as $p) {
                     ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
-                            <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" style="display: flex;flex-wrap: wrap;align-content: center;" class="" />
+                        <div class="col-xl-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+                            <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" style="display: flex;flex-wrap: wrap;align-content: center;" class="h-50 w-100" />
                             <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">
                                 <div class="icon-bx-sm bg-primary m-b20">
                                     <span class="icon-cell">
@@ -298,8 +298,7 @@
         <div class="section-full content-inner bg-white">
             <div class="row justify-content-center mb-5">
                 <div class="section-head style2 text-center">
-                    <!-- <h2 class="title"><?= $lang['alur_program_title'] ?></h2> -->
-                    <h2 class="title">Alur Program LPK Tjokro Bakti Pertiwi</h2>
+                    <h2 class="title"><?= $lang['alur_program_title'] ?></h2>
                 </div>
                 <!-- <div class="col-md-4 col-10 text-center">
 
@@ -337,7 +336,7 @@
                 <div class="row justify-content-center mb-5">
 
                     <div class="col-md-8 col-10 text-center">
-                        <h3><?= $lang['alur_program_title_description']  ?></h4>
+                        <h3><?= $lang['alur_program_title_description']  ?></h3>
                         <div class="">
                             <?php
                             if ($language == "" || $language == "id") {
