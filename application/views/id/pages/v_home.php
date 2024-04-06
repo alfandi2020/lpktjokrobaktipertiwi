@@ -44,7 +44,7 @@
                     foreach ($programs as $p) {
                     ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
-                            <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" class="" />
+                            <img src="<?= base_url() ?>assets/images/programs/<?= $p->photo ?>" alt="" height="200px" class="w-100 h-50" />
                             <div class="icon-bx-wraper bx-style-2 m-l40 p-a30 left bg-gray icon-bx-ho">
                                 <div class="icon-bx-sm bg-primary m-b20">
                                     <span class="icon-cell">
@@ -577,10 +577,10 @@
                             $delay = 0.3;
                             foreach ($articles as $a) {
                             ?>
-                                <div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp h-100" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
+                                <div class="col-lg-4 col-md-6 col-sm-6 wow bounceInUp" data-wow-duration="<?= $duration ?>s" data-wow-delay="<?= $delay ?>s">
                                     <div class="blog-post blog-grid blog-rounded blog-effect1">
                                         <div class="dlab-post-media-thumbnail dlab-img-effect rotate"> <a href="javascript:void(0);">
-                                                <img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="">
+                                                <img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="" class=" w-100 h-50">
                                             </a>
                                         </div>
                                         <div class="dlab-info p-a20 border-1">

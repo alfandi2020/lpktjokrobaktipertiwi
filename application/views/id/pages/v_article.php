@@ -3,7 +3,6 @@
     <div class="dlab-bnr-inr overlay-black-middle bg-pt">
         <div class="container">
             <div class="dlab-bnr-inr-entry mt-5">
-                <!-- <h1 class="text-white"><?= $lang['article_text'] ?></h1> -->
                 <!-- Breadcrumb row -->
                 <div class="breadcrumb-row">
                     <ul class="list-inline">
@@ -18,6 +17,7 @@
         </div>
     </div>
     <!-- inner page banner END -->
+
     <!-- contact area -->
     <div class="content-area">
         <div class="container">
@@ -36,7 +36,7 @@
 
                     <div class="blog-post blog-md clearfix">
                         <div class="dlab-post-media dlab-img-effect zoom-slow">
-                            <a href="<?= base_url('article/detail/' . $a->slug) ?>"><img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt=""></a>
+                            <a href="<?= base_url('article/detail/' . $a->slug) ?>"><img src="<?= base_url('assets/images/articles/' . $a->photo) ?>" alt="" class="w-100 h-50"></a>
 
                         </div>
                         <div class="dlab-post-info">
@@ -52,7 +52,7 @@
                             <div class="dlab-post-text">
                                 <p><?= $a->headline ?></p>
                             </div>
-                            <div class="dlab-post-readmore">
+                            <div class="dlab-post-readmore" style="margin-left: 0px;">
                                 <a href="<?= base_url('article/detail/' . $a->slug) ?>" title="<?= $lang['detail_text'] ?>" rel="bookmark" class="site-button"><?= $lang['detail_text'] ?>
                                     <i class="ti-arrow-right"></i>
                                 </a>
@@ -64,18 +64,8 @@
             }
             ?>
             <!-- Artikel END -->
+
             <!-- Pagination  -->
-            <!-- <div class="pagination-bx clearfix text-center">
-                <ul class="pagination">
-                    <li class="previous"><a href="javascript:void(0);"><i class="ti-arrow-left"></i> Prev</a></li>
-                    <li class="active"><a href="javascript:void(0);">1</a></li>
-                    <li>
-                        <a href="javascript:void(0);">2</a></li>
-                    <li>
-                        <a href="javascript:void(0);">3</a></li>
-                    <li class="next"><a href="javascript:void(0);">Next <i class="ti-arrow-right"></i></a></li>
-                </ul>
-            </div> -->
             <?= $this->pagination->create_links(); ?>
             <!-- Pagination END -->
         </div>

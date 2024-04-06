@@ -224,7 +224,7 @@
                     <div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
                         <div class="blog-post post-style-2">
                             <div class="dlab-post-media dlab-img-effect">
-                                <a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/<?= $f->photo ?>" alt=""></a>
+                                <a href="blog-single.html"><img src="<?= base_url() ?>assets/asset_fr/images/<?= $f->photo ?>" alt="" class="w-100 h-50"></a>
                             </div>
                             <div class="dlab-post-info">
                                 <div class="dlab-post-meta">
