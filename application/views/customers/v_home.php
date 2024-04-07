@@ -3,7 +3,7 @@
     .parent {
         /* width:200px; */
         /* height:200px; */
-        width: 100%;
+        width: 120%;
         position: relative;
         /* right:20px; */
     }
@@ -318,9 +318,9 @@
                 <div class="section-head style2 text-center">
                     <h2 class="title"><?= $lang['alur_program_title'] ?></h2>
                 </div>
-                <div class="row justify-content-center text-center">
+                <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
 
-                    <h3><?= $lang['alur_program_title_description']  ?></h3>
+                    <h3 class="text-white mt-3"><?= $lang['alur_program_title_description']  ?></h3>
                 </div>
             </div>
         </div>
@@ -335,7 +335,7 @@
                                 <?php
                                 if ($language == "" || $language == "id") {
                                 ?>
-                                    <img class="ps" style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.svg" alt="">
+                                    <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.svg" alt="">
                                 <?php
                                 } else if ($language == "jp") { ?>
                                     <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.svg" alt="">
@@ -350,47 +350,53 @@
                 </div>
             </div>
         </div>
+         
+                        <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
+                            <h3 class="mt-3 text-white"><?= $lang['alur_program_kemampuan_khusus'] ?>
+                            </h3>
+                        </div>
 
-        <div class="section-full bg-white">
-            <hr>
-            <div class="row justify-content-center">
+        <div class="section-full text-white bg-img-fix content-inner" style="background-image:url(<?= base_url() ?>assets/asset_fr/bg_tg.jpg);">
+            <div class="container">
+            
+                <div class="row justify-content-center" >
 
-                <div class="col-md-8 col-10 text-center">
-                    <h3><?= $lang['alur_program_kemampuan_khusus']  ?></h3>
-                    <div class="">
+                    <div class="col-md-8 col-10 text-center">
+                        <div class="parent">
+                            <?php
+                            if ($language == "" || $language == "id") {
+                            ?>
+                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
+                            <?php
+                            } else if ($language == "jp") { ?>
+                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
+                            <?php
+                            } else if ($language == "en") { ?>
+                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
+
+                            <?php
+                            } ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+
+                    <div class="col-10 text-center">
                         <?php
                         if ($language == "" || $language == "id") {
                         ?>
-                            <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
+                            <p>* Setelah permintaan diterima, pada dasarnya membutuhkan 6 bulan untuk pengiriman peserta ke Jepang</p>
                         <?php
-                        } else if ($language == "jp") { ?>
-                            <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
+                        } else if ($language == "jp") {
+                        ?>
+                            <p>※候補者募集要望をいただいた後、候補者を日本に派遣するまで、基本的6ヶ月かかります。</p>
                         <?php
-                        } else if ($language == "en") { ?>
-                            <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
-
+                        } else if ($language == "en") {
+                        ?>
+                            <p>* Once the request is received, it basically takes 6 months for participants to be sent to Japan</p>
                         <?php
                         } ?>
                     </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-3">
-
-                <div class="col-10 text-center">
-                    <?php
-                    if ($language == "" || $language == "id") {
-                    ?>
-                        <p>* Setelah permintaan diterima, pada dasarnya membutuhkan 6 bulan untuk pengiriman peserta ke Jepang</p>
-                    <?php
-                    } else if ($language == "jp") {
-                    ?>
-                        <p>※候補者募集要望をいただいた後、候補者を日本に派遣するまで、基本的6ヶ月かかります。</p>
-                    <?php
-                    } else if ($language == "en") {
-                    ?>
-                        <p>* Once the request is received, it basically takes 6 months for participants to be sent to Japan</p>
-                    <?php
-                    } ?>
                 </div>
             </div>
         </div>
