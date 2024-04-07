@@ -1,20 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-    .parent{
+    .parent {
         /* width:200px; */
         /* height:200px; */
-          width: 100%;
-        position:relative;
+        width: 100%;
+        position: relative;
         /* right:20px; */
     }
 
-    .inner{
-        position:absolute;
+    .inner {
+        position: absolute;
         top: 1px;
         right: 1px;
         left: 8px;
         bottom: 2px;
     }
+
     .shape_2 {
         background-color: #00AFEF;
         color: white;
@@ -311,51 +312,26 @@
 
     <!---- flow --->
     <div class="content-block">
-        <div class="section-full content-inner bg-white">
-            <div class="row justify-content-center mb-5">
+
+        <div class="section-full bg-white">
+            <div class="row justify-content-center mb-0 p-0">
                 <div class="section-head style2 text-center">
                     <h2 class="title"><?= $lang['alur_program_title'] ?></h2>
                 </div>
-                <!-- <div class="col-md-4 col-10 text-center">
+                <div class="row justify-content-center text-center">
 
-                    <h5><?= $lang['alur_program_title_description']  ?></h5>
-                    <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
-                        <?php
-                        if ($language == "" || $language == "id") {
-                        ?>
-                            <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(ID).jpg" alt="">
-                        <?php } else if ($language == "jp") { ?>
-                            <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(JP).jpg" alt="">
-                        <?php } else if ($language == "en") { ?>
-                            <img src="<?= base_url() ?>assets/asset_fr/alur-program-pemagangan-ke-jepang-(EN).jpg" alt="">
-
-                        <?php } ?>
-                    </div>
+                    <h3><?= $lang['alur_program_title_description']  ?></h3>
                 </div>
-                <div class="col-md-4 col-10 text-center">
-                    <h5><?= $lang['alur_program_kemampuan_khusus']  ?></h5>
-                    <div class="icon-bx-wraper service-box style5 shadow fly-box wow fadeInUp">
-                        <?php
-                        if ($language == "" || $language == "id") {
-                        ?>
-                            <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(ID).jpg" alt="">
-                        <?php } else if ($language == "jp") { ?>
-                            <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(JP).jpg" alt="">
-                        <?php } else if ($language == "en") { ?>
-                            <img src="<?= base_url() ?>assets/asset_fr/ALUR-PROGRAM-TOKUTEI-GINOU-(EN).jpg" alt="">
-
-                        <?php } ?>
-                    </div>
-                </div>
-
-            </div> -->
+            </div>
+        </div>
+        <div class="section-full text-white bg-img-fix content-inner" style="background-image:url(<?= base_url() ?>assets/asset_fr/bg_magang.jpg);">
+            <div class="container">
                 <div class="row justify-content-center mb-5">
 
                     <div class="col-md-8 col-10 text-center">
-                        <h3><?= $lang['alur_program_title_description']  ?></h4>
                         <div class="parent">
-                            <img class="overlay" src="<?= base_url() ?>assets/asset_fr/bg_magang.jpg" alt="">
-                            <div class="inner">
+                            <!-- <img class="overlay" src="<?= base_url() ?>assets/asset_fr/bg_magang.jpg" alt=""> -->
+                            <div class="">
                                 <?php
                                 if ($language == "" || $language == "id") {
                                 ?>
@@ -372,46 +348,49 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="row justify-content-center">
+            </div>
+        </div>
 
-                    <div class="col-md-8 col-10 text-center">
-                        <h3><?= $lang['alur_program_kemampuan_khusus']  ?></h3>
-                        <div class="">
-                            <?php
-                            if ($language == "" || $language == "id") {
-                            ?>
-                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
-                            <?php
-                            } else if ($language == "jp") { ?>
-                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
-                            <?php
-                            } else if ($language == "en") { ?>
-                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
+        <div class="section-full bg-white">
+            <hr>
+            <div class="row justify-content-center">
 
-                            <?php
-                            } ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center mt-3">
-
-                    <div class="col-10 text-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h3><?= $lang['alur_program_kemampuan_khusus']  ?></h3>
+                    <div class="">
                         <?php
                         if ($language == "" || $language == "id") {
                         ?>
-                            <p>* Setelah permintaan diterima, pada dasarnya membutuhkan 6 bulan untuk pengiriman peserta ke Jepang</p>
+                            <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
                         <?php
-                        } else if ($language == "jp") {
-                        ?>
-                            <p>※候補者募集要望をいただいた後、候補者を日本に派遣するまで、基本的6ヶ月かかります。</p>
+                        } else if ($language == "jp") { ?>
+                            <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
                         <?php
-                        } else if ($language == "en") {
-                        ?>
-                            <p>* Once the request is received, it basically takes 6 months for participants to be sent to Japan</p>
+                        } else if ($language == "en") { ?>
+                            <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
+
                         <?php
                         } ?>
                     </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+
+                <div class="col-10 text-center">
+                    <?php
+                    if ($language == "" || $language == "id") {
+                    ?>
+                        <p>* Setelah permintaan diterima, pada dasarnya membutuhkan 6 bulan untuk pengiriman peserta ke Jepang</p>
+                    <?php
+                    } else if ($language == "jp") {
+                    ?>
+                        <p>※候補者募集要望をいただいた後、候補者を日本に派遣するまで、基本的6ヶ月かかります。</p>
+                    <?php
+                    } else if ($language == "en") {
+                    ?>
+                        <p>* Once the request is received, it basically takes 6 months for participants to be sent to Japan</p>
+                    <?php
+                    } ?>
                 </div>
             </div>
         </div>
