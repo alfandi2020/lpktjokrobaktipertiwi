@@ -353,19 +353,22 @@
 
                     <div class="col-md-8 col-10 text-center">
                         <h3><?= $lang['alur_program_title_description']  ?></h4>
-                        <div class="">
-                            <?php
-                            if ($language == "" || $language == "id") {
-                            ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.PNG" alt="">
-                            <?php
-                            } else if ($language == "jp") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.PNG" alt="">
-                            <?php
-                            } else if ($language == "en") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_EN.png" alt="">
-                            <?php
-                            } ?>
+                        <div class="parent">
+                            <img class="overlay" src="<?= base_url() ?>assets/asset_fr/bg_magang.jpg" alt="">
+                            <div class="inner">
+                                <?php
+                                if ($language == "" || $language == "id") {
+                                ?>
+                                    <img class="ps" style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_ID.svg" alt="">
+                                <?php
+                                } else if ($language == "jp") { ?>
+                                    <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_JP.svg" alt="">
+                                <?php
+                                } else if ($language == "en") { ?>
+                                    <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_PEMAGANGAN_KE_JEPANG_EN.svg" alt="">
+                                <?php
+                                } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
