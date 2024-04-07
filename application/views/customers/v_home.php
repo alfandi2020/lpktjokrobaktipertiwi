@@ -1,5 +1,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+    .parent{
+        /* width:200px; */
+        /* height:200px; */
+          width: 100%;
+        position:relative;
+        /* right:20px; */
+    }
+
+    .inner{
+        position:absolute;
+        top: 1px;
+        right: 1px;
+        left: 8px;
+        bottom: 2px;
+    }
     .shape_2 {
         background-color: #00AFEF;
         color: white;
@@ -14,6 +29,7 @@
         overflow: hidden;
         transform: rotate(45deg);
     }
+
 
     .shape_2 p {
         transform: rotate(-45deg);
@@ -336,7 +352,7 @@
                 <div class="row justify-content-center mb-5">
 
                     <div class="col-md-8 col-10 text-center">
-                        <h3><?= $lang['alur_program_title_description']  ?></h3>
+                        <h3><?= $lang['alur_program_title_description']  ?></h4>
                         <div class="">
                             <?php
                             if ($language == "" || $language == "id") {
@@ -362,13 +378,13 @@
                             <?php
                             if ($language == "" || $language == "id") {
                             ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.PNG" alt="">
+                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_ID.svg" alt="">
                             <?php
                             } else if ($language == "jp") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.PNG" alt="">
+                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_JP.svg" alt="">
                             <?php
                             } else if ($language == "en") { ?>
-                                <img src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.PNG" alt="">
+                                <img style="width: 100%;" src="<?= base_url() ?>assets/asset_fr/ALUR_PROGRAM_TOKUTEI_GINOU_KE_JEPANG_EN.svg" alt="">
 
                             <?php
                             } ?>
