@@ -3,7 +3,7 @@
     .parent {
         /* width:200px; */
         /* height:200px; */
-        width: 120%;
+        width: 100%;
         position: relative;
         /* right:20px; */
     }
@@ -314,7 +314,7 @@
     <div class="content-block">
 
         <div class="section-full bg-white">
-            <div class="row justify-content-center mb-0 p-0">
+            <div class="row justify-content-center mb-0">
                 <div class="section-head style2 text-center">
                     <h2 class="title"><?= $lang['alur_program_title'] ?></h2>
                 </div>
@@ -325,10 +325,10 @@
             </div>
         </div>
         <div class="section-full text-white bg-img-fix content-inner" style="background-image:url(<?= base_url() ?>assets/asset_fr/bg_magang.jpg);">
-            <div class="container">
+            <div class="container" style="padding-bottom: 0.1px;">
                 <div class="row justify-content-center mb-5">
 
-                    <div class="col-md-8 col-10 text-center">
+                    <div class="col-sm-10 col-md-8 col-10 text-center">
                         <div class="parent">
                             <!-- <img class="overlay" src="<?= base_url() ?>assets/asset_fr/bg_magang.jpg" alt=""> -->
                             <div class="">
@@ -350,16 +350,16 @@
                 </div>
             </div>
         </div>
-         
-                        <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
-                            <h3 class="mt-3 text-white"><?= $lang['alur_program_kemampuan_khusus'] ?>
-                            </h3>
-                        </div>
+
+        <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
+            <h3 class="mt-3 text-white"><?= $lang['alur_program_kemampuan_khusus'] ?>
+            </h3>
+        </div>
 
         <div class="section-full text-white bg-img-fix content-inner" style="background-image:url(<?= base_url() ?>assets/asset_fr/bg_tg.jpg);">
             <div class="container">
-            
-                <div class="row justify-content-center" >
+
+                <div class="row justify-content-center">
 
                     <div class="col-md-8 col-10 text-center">
                         <div class="parent">
