@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-700"><?= $lang['foto'] ?> *</label>
-                                    <input name="student_cv" class="" placeholder="<?= $lang['cv'] ?>" type="file">
+                                    <input name="student_foto" class="" placeholder="<?= $lang['foto'] ?>" type="file">
                                 </div>
                                 <div class="text-left m-t15">
                                     <button type="submit" class="site-button button-lg radius-no outline outline-2 btn-process"><?= $lang['register_text'] ?></button>
