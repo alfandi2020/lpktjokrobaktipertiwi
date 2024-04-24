@@ -348,6 +348,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="row justify-content-center mt-3">
+
+                    <div class="col-10 text-center">
+                        <?php
+                        if ($language == "" || $language == "id") {
+                            ?>
+                            <p>* Setelah permintaan diterima, pada dasarnya membutuhkan 6 bulan untuk pengiriman peserta ke Jepang</p>
+                            <?php
+                        } else if ($language == "jp") {
+                            ?>
+                                <p>※候補者募集要望をいただいた後、候補者を日本に派遣するまで、基本的6ヶ月かかります。</p>
+                            <?php
+                        } else if ($language == "en") {
+                            ?>
+                                    <p>* Once the request is received, it basically takes 6 months for participants to be sent to Japan</p>
+                            <?php
+                        } ?>
+                    </div>
+                </div>
             </div>
         </div>
 
