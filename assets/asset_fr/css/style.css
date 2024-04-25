@@ -8835,6 +8835,7 @@ a,
 .site-button.outline:hover {
     border-color: rgba(0, 0, 0, 0);
     color: #fff;
+    background-color: var(--color-primary);
 }
 
 /* button text link */

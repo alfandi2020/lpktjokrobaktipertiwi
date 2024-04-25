@@ -9,7 +9,7 @@ class Registrasi extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('session');
+        $this->load->library(['session', 'upload']);
         $this->load->model(array('M_Setting', 'M_Program', 'M_Article'));
         $this->load->helper(array('form', 'url', 'language_helper'));
         $this->load->library(array('textlibrary', 'form_validation', 'Mailer', 'pagination'));
@@ -95,7 +95,8 @@ class Registrasi extends CI_Controller
             $out = explode(" ", $student_name);
             $slug = preg_replace("/[^A-Za-z0-9\-]/", "", strtolower(implode("-", $out)));
 
-            $cv = $_FILES['student_cv']['name']; // Nama file 
+            // konfigurasi upload cv
+            $cv = $_FILES['student_cv']['name']; // Nama file  
             // Mendapatkan extension
             $pathInfo = pathinfo($cv);
             $extension = $pathInfo['extension']; // Extension file
@@ -111,9 +112,26 @@ class Registrasi extends CI_Controller
                 'file_name' => $newcvFileName
             );
 
-            $this->load->library('upload', $config);
 
-            if (!$this->upload->do_upload('student_cv')) {
+            // konfigurasi upload foto
+            $foto = $_FILES['student_foto']['name']; // Nama file  
+            $pathInfoPhoto = pathinfo($foto);
+            $extensionPhoto = $pathInfoPhoto['extension'];
+            $newPhotoFileName = $new_slug . '.' . $extensionPhoto;
+
+            $config_photo = array(
+                'upload_path' => 'assets/images/siswa/',
+                'allowed_types' => "JPG|jpg|JPEG|jpeg|PNG|png",
+                'overwrite' => TRUE,
+                'max_size' => "1024",
+                'file_name' => $newPhotoFileName
+            );
+
+            $this->upload->initialize($config);
+            $this->upload->initialize($config_photo);
+
+
+            if (!$this->upload->do_upload('student_cv') || !$this->upload->do_upload('student_foto')) {
                 $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> ' . $this->upload->display_errors() . ' </div>');
 
                 $this->session->set_flashdata('student_name', set_value('student_name'));
@@ -164,6 +182,7 @@ class Registrasi extends CI_Controller
                     'slug' => trim($new_slug),
                     'created_at' => $now,
                     'nomor_urut' => $no_urut,
+                    'foto' => $newPhotoFileName
                 ];
 
                 $language = $this->detect_language();
@@ -302,7 +321,7 @@ class Registrasi extends CI_Controller
         }
 
         $email = "lpktjokrobaktipertiwi@gmail.com";
-        
+
         $mail = $this->mailer->load();
         $mail->isSMTP();
         $mail->Host = 'mail.lpktjokrobaktipertiwi.id';
@@ -323,6 +342,7 @@ class Registrasi extends CI_Controller
             return "gagal";
         }
     }
+
     function x()
     {
         $this->load->library('upload');
