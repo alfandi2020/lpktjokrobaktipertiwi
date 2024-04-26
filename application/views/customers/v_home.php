@@ -449,7 +449,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
+                <!-- <div class="row justify-content-center mt-3">
 
                     <div class="col-10 text-center">
                         <?php
@@ -467,7 +467,7 @@
                         <?php
                         } ?>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- flow end -->
