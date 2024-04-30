@@ -426,7 +426,7 @@
             </h3>
         </div>
 
-        <div class="section-full text-white bg-img-fix content-inner" style="background-image:url(<?= base_url() ?>assets/asset_fr/bg_tg.jpg);">
+        <div class="section-full text-white bg-img-fix content-inner" style="background-image:url(<?= base_url() ?>assets/asset_fr/bg-magang-dalam-negeri.jpeg);">
             <div class="container">
 
                 <div class="row justify-content-center">
