@@ -328,7 +328,7 @@
             <div class="container" style="padding-bottom: 0.1px;">
                 <div class="row justify-content-center mb-5">
 
-                    <div class="col-sm-10 col-md-8 col-10 text-center">
+                    <div class="col-sm-10 col-md-10 col-10 text-center">
                         <div class="parent">
                             <!-- <img class="overlay" src="<?= base_url() ?>assets/asset_fr/bg_magang.jpg" alt=""> -->
                             <div class="">
@@ -380,7 +380,7 @@
 
                 <div class="row justify-content-center">
 
-                    <div class="col-md-8 col-10 text-center">
+                    <div class="col-md-10 col-10 text-center">
                         <div class="parent">
                             <?php
                             if ($language == "" || $language == "id") {
@@ -431,7 +431,7 @@
 
                 <div class="row justify-content-center">
 
-                    <div class="col-md-8 col-10 text-center">
+                    <div class="col-md-10 col-10 text-center">
                         <div class="parent">
                             <?php
                             if ($language == "" || $language == "id") {
