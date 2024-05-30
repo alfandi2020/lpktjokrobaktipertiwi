@@ -112,27 +112,10 @@ class Registrasi extends CI_Controller
                 'file_name' => $newcvFileName
             );
 
-
-            // konfigurasi upload foto
-            $foto = $_FILES['student_foto']['name']; // Nama file  
-            $pathInfoPhoto = pathinfo($foto);
-            $extensionPhoto = $pathInfoPhoto['extension'];
-            $newPhotoFileName = $new_slug . '.' . $extensionPhoto;
-
-            $config_photo = array(
-                'upload_path' => 'assets/images/siswa/',
-                'allowed_types' => "JPG|jpg|JPEG|jpeg|PNG|png",
-                'overwrite' => TRUE,
-                'max_size' => "1024",
-                'file_name' => $newPhotoFileName
-            );
-
             $this->upload->initialize($config);
-            $this->upload->initialize($config_photo);
 
-
-            if (!$this->upload->do_upload('student_cv') || !$this->upload->do_upload('student_foto')) {
-                $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> ' . $this->upload->display_errors() . ' </div>');
+            if (!$this->upload->do_upload('student_cv')) {
+                $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> Failed upload CV. ' . $this->upload->display_errors() . ' </div>');
 
                 $this->session->set_flashdata('student_name', set_value('student_name'));
                 $this->session->set_flashdata('student_age', set_value('student_age'));
@@ -153,54 +136,93 @@ class Registrasi extends CI_Controller
                 $this->session->set_flashdata('student_program', set_value('student_program'));
 
                 redirect($_SERVER['HTTP_REFERER']);
-            } else {
-
-                if ($this->input->post('student_last_edu') == "__tambah__") {
-                    $pd_terakhir = $this->input->post('newLastEdu');
-                } else {
-                    $pd_terakhir = $this->input->post('student_last_edu');
-                }
-
-                $data = [
-                    'nama' => $student_name,
-                    'usia' => $this->input->post('student_age'),
-                    'email' => $this->input->post('student_email'),
-                    'no_telepon' => $this->input->post('student_phone'),
-                    'pd_terakhir' => $pd_terakhir,
-                    'jenis_kelamin' => $this->input->post('student_gender'),
-                    'tempat_lahir' => $this->input->post('student_birthplace'),
-                    'tanggal_lahir' => $this->input->post('student_birthdate'),
-                    'tinggi_badan' => $this->input->post('student_height'),
-                    'berat_badan' => $this->input->post('student_weight'),
-                    'kemampuan_bahasa' => $this->input->post('student_lang_skill'),
-                    'pengalaman_kerja' => $this->input->post('student_work_experience'),
-                    'lama_kerja' => $this->input->post('student_years_experience'),
-                    'skill' => $this->input->post('student_skill'),
-                    'hobi' => $this->input->post('student_hobby'),
-                    'program' => $this->input->post('student_program'),
-                    'file_cv' => $newcvFileName,
-                    'slug' => trim($new_slug),
-                    'created_at' => $now,
-                    'nomor_urut' => $no_urut,
-                    'foto' => $newPhotoFileName
-                ];
-
-                $language = $this->detect_language();
-                $lang = $this->M_Setting->lang($language);
-
-                $this->M_Program->tambah_siswa($data);
-
-                // Pengaturan email
-                $send_mail = $this->send_email($data);
-
-                if ($send_mail) {
-                    $this->session->set_flashdata('message_name', '<div class="alert alert-success"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>' . $lang['success_text'] . '! - ' . $lang['email_success_txt'] . '</strong> </div>');
-                } else {
-                    $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>' . $lang['failed_text'] . ' - ' . $lang['email_failed_txt'] . '</strong> </div>');
-                }
-
-                redirect('registrasi');
             }
+
+            // konfigurasi upload foto
+            $foto = $_FILES['student_foto']['name']; // Nama file  
+            $pathInfoPhoto = pathinfo($foto);
+            $extensionPhoto = $pathInfoPhoto['extension'];
+            $newPhotoFileName = $new_slug . '.' . $extensionPhoto;
+
+            $config_photo = array(
+                'upload_path' => 'assets/images/siswa/',
+                'allowed_types' => "JPG|jpg|JPEG|jpeg|PNG|png",
+                'overwrite' => TRUE,
+                'max_size' => "1024",
+                'file_name' => $newPhotoFileName
+            );
+
+            $this->upload->initialize($config_photo);
+
+            if (!$this->upload->do_upload('student_foto')) {
+                $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>Failed!</strong> Failed upload photo. ' . $this->upload->display_errors() . ' </div>');
+
+                $this->session->set_flashdata('student_name', set_value('student_name'));
+                $this->session->set_flashdata('student_age', set_value('student_age'));
+                $this->session->set_flashdata('student_email', set_value('student_email'));
+                $this->session->set_flashdata('student_phone', set_value('student_phone'));
+                $this->session->set_flashdata('student_last_edu', set_value('student_last_edu'));
+                $this->session->set_flashdata('newLastEdu', set_value('newLastEdu'));
+                $this->session->set_flashdata('student_gender', set_value('student_gender'));
+                $this->session->set_flashdata('student_birthplace', set_value('student_birthplace'));
+                $this->session->set_flashdata('student_birthdate', set_value('student_birthdate'));
+                $this->session->set_flashdata('student_height', set_value('student_height'));
+                $this->session->set_flashdata('student_weight', set_value('student_weight'));
+                $this->session->set_flashdata('student_lang_skill', set_value('student_lang_skill'));
+                $this->session->set_flashdata('student_work_experience', set_value('student_work_experience'));
+                $this->session->set_flashdata('student_years_experience', set_value('student_years_experience'));
+                $this->session->set_flashdata('student_skill', set_value('student_skill'));
+                $this->session->set_flashdata('student_hobby', set_value('student_hobby'));
+                $this->session->set_flashdata('student_program', set_value('student_program'));
+
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+
+            if ($this->input->post('student_last_edu') == "__tambah__") {
+                $pd_terakhir = $this->input->post('newLastEdu');
+            } else {
+                $pd_terakhir = $this->input->post('student_last_edu');
+            }
+
+            $data = [
+                'nama' => $student_name,
+                'usia' => $this->input->post('student_age'),
+                'email' => $this->input->post('student_email'),
+                'no_telepon' => $this->input->post('student_phone'),
+                'pd_terakhir' => $pd_terakhir,
+                'jenis_kelamin' => $this->input->post('student_gender'),
+                'tempat_lahir' => $this->input->post('student_birthplace'),
+                'tanggal_lahir' => $this->input->post('student_birthdate'),
+                'tinggi_badan' => $this->input->post('student_height'),
+                'berat_badan' => $this->input->post('student_weight'),
+                'kemampuan_bahasa' => $this->input->post('student_lang_skill'),
+                'pengalaman_kerja' => $this->input->post('student_work_experience'),
+                'lama_kerja' => $this->input->post('student_years_experience'),
+                'skill' => $this->input->post('student_skill'),
+                'hobi' => $this->input->post('student_hobby'),
+                'program' => $this->input->post('student_program'),
+                'file_cv' => $newcvFileName,
+                'slug' => trim($new_slug),
+                'created_at' => $now,
+                'nomor_urut' => $no_urut,
+                'foto' => $newPhotoFileName
+            ];
+
+            $language = $this->detect_language();
+            $lang = $this->M_Setting->lang($language);
+
+            $this->M_Program->tambah_siswa($data);
+
+            // Pengaturan email
+            $send_mail = $this->send_email($data);
+
+            if ($send_mail) {
+                $this->session->set_flashdata('message_name', '<div class="alert alert-success"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>' . $lang['success_text'] . '! - ' . $lang['email_success_txt'] . '</strong> </div>');
+            } else {
+                $this->session->set_flashdata('message_name', '<div class="alert alert-danger"> <a href="javascript:void(0);" class="close ti-close" data-dismiss="alert" aria-label="close"></a> <strong>' . $lang['failed_text'] . ' - ' . $lang['email_failed_txt'] . '</strong> </div>');
+            }
+
+            redirect('registrasi');
         }
     }
 
