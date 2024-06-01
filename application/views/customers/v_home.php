@@ -320,7 +320,7 @@
                 </div>
                 <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
 
-                    <h3 class="text-white mt-3"><?= $lang['alur_program_title_description']  ?></h3>
+                    <h3 class="text-black mt-3"><?= $lang['alur_program_title_description']  ?></h3>
                 </div>
             </div>
         </div>
@@ -371,7 +371,7 @@
         </div>
 
         <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
-            <h3 class="mt-3 text-white"><?= $lang['alur_program_kemampuan_khusus'] ?>
+            <h3 class="mt-3 text-black"><?= $lang['alur_program_kemampuan_khusus'] ?>
             </h3>
         </div>
 
@@ -422,7 +422,7 @@
 
         <!--  -->
         <div class="row justify-content-center text-center" style="background-color: #25cd57;border-style:solid;border-color:gold;">
-            <h3 class="mt-3 text-white"><?= $lang['alur_program_pemagangan_dalam_negeri'] ?>
+            <h3 class="mt-3 text-black"><?= $lang['alur_program_pemagangan_dalam_negeri'] ?>
             </h3>
         </div>
 
